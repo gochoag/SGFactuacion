@@ -52,8 +52,65 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEditarCcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarCcs.Designer.cs">
+      <DependentUpon>FormEditarCcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditarP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarP.Designer.cs">
+      <DependentUpon>FormEditarP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListarC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListarC.Designer.cs">
+      <DependentUpon>FormListarC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListarPcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListarPcs.Designer.cs">
+      <DependentUpon>FormListarPcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistrarC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrarC.Designer.cs">
+      <DependentUpon>FormRegistrarC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormResgistrarP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormResgistrarP.Designer.cs">
+      <DependentUpon>FormResgistrarP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarCcs.resx">
+      <DependentUpon>FormEditarCcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarP.resx">
+      <DependentUpon>FormEditarP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListarC.resx">
+      <DependentUpon>FormListarC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListarPcs.resx">
+      <DependentUpon>FormListarPcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrarC.resx">
+      <DependentUpon>FormRegistrarC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormResgistrarP.resx">
+      <DependentUpon>FormResgistrarP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
