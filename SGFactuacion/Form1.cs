@@ -15,9 +15,10 @@ namespace SGFactuacion
         FormRegistrarC RegistroC;
         FormResgistrarP RegistrarP;
         FormListarC ListarC;
-        FormListarPcs ListarP;
-        FormEditarCcs EditarC;
+        FormListarP ListarP;
+        FormEditarC EditarC;
         FormEditarP EditarP;
+        FormFacturarR Facturar;
         public Principal()
         {
             InitializeComponent();
@@ -144,7 +145,7 @@ namespace SGFactuacion
         {
             if (EditarC == null)
             {
-                EditarC = new FormEditarCcs();
+                EditarC = new FormEditarC();
                 EditarC.FormClosed += EditarC_FormClosed;
                 EditarC.MdiParent = this;
                 EditarC.Dock = DockStyle.Fill;
@@ -229,7 +230,7 @@ namespace SGFactuacion
         {
             if (ListarP == null)
             {
-                ListarP = new FormListarPcs();
+                ListarP = new FormListarP();
                 ListarP.FormClosed += ListarP_FormClosed; ;
                 ListarP.MdiParent = this;
                 ListarP.Dock = DockStyle.Fill;
@@ -249,6 +250,30 @@ namespace SGFactuacion
         private void Principal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void Facturar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Facturar = null;
+        }
+        private void btnFacturar_Click(object sender, EventArgs e)
+        {
+            if (Facturar == null)
+            {
+                Facturar = new FormFacturarR();
+                Facturar.FormClosed += Facturar_FormClosed;
+                Facturar.MdiParent = this;
+                Facturar.Dock = DockStyle.Fill;
+                Facturar.Show();
+            }
+            else
+            {
+                Facturar.Activate();
+            }
         }
     }
 }

@@ -35,6 +35,8 @@
             this.SGFacturacion = new System.Windows.Forms.Label();
             this.Imagelateral = new System.Windows.Forms.PictureBox();
             this.Panelmenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Flowcliente = new System.Windows.Forms.FlowLayoutPanel();
             this.Panelcliente = new System.Windows.Forms.Panel();
             this.Bcliente = new System.Windows.Forms.Button();
@@ -53,15 +55,17 @@
             this.BeditarP = new System.Windows.Forms.Button();
             this.PanellistarP = new System.Windows.Forms.Panel();
             this.BlistarP = new System.Windows.Forms.Button();
+            this.PanelFactura = new System.Windows.Forms.Panel();
+            this.btnFacturar = new System.Windows.Forms.Button();
             this.Menutransacion = new System.Windows.Forms.Timer(this.components);
             this.MenuTrP = new System.Windows.Forms.Timer(this.components);
             this.SidbarTr = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.Barra_Arriba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Imagelateral)).BeginInit();
             this.Panelmenu.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Flowcliente.SuspendLayout();
             this.Panelcliente.SuspendLayout();
             this.Panelregistrar.SuspendLayout();
@@ -72,8 +76,7 @@
             this.Panelregistrarp.SuspendLayout();
             this.PaneleditarP.SuspendLayout();
             this.PanellistarP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.PanelFactura.SuspendLayout();
             this.SuspendLayout();
             // 
             // Barra_Arriba
@@ -126,11 +129,31 @@
             this.Panelmenu.Controls.Add(this.panel1);
             this.Panelmenu.Controls.Add(this.Flowcliente);
             this.Panelmenu.Controls.Add(this.FlowProducto);
+            this.Panelmenu.Controls.Add(this.PanelFactura);
             this.Panelmenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Panelmenu.Location = new System.Drawing.Point(0, 34);
             this.Panelmenu.Name = "Panelmenu";
             this.Panelmenu.Size = new System.Drawing.Size(205, 502);
             this.Panelmenu.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(23, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(152, 97);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // Flowcliente
             // 
@@ -163,10 +186,9 @@
             this.Bcliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Bcliente.Location = new System.Drawing.Point(-5, -2);
             this.Bcliente.Name = "Bcliente";
-            this.Bcliente.Size = new System.Drawing.Size(212, 44);
+            this.Bcliente.Size = new System.Drawing.Size(213, 44);
             this.Bcliente.TabIndex = 2;
-            this.Bcliente.Text = "                 Cliente ";
-            this.Bcliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Bcliente.Text = "Cliente ";
             this.Bcliente.UseVisualStyleBackColor = false;
             this.Bcliente.Click += new System.EventHandler(this.Bcliente_Click);
             // 
@@ -265,7 +287,7 @@
             this.Panelproducto.Controls.Add(this.Bproducto);
             this.Panelproducto.Location = new System.Drawing.Point(3, 3);
             this.Panelproducto.Name = "Panelproducto";
-            this.Panelproducto.Size = new System.Drawing.Size(200, 37);
+            this.Panelproducto.Size = new System.Drawing.Size(200, 42);
             this.Panelproducto.TabIndex = 4;
             // 
             // Bproducto
@@ -277,19 +299,18 @@
             this.Bproducto.ForeColor = System.Drawing.Color.Transparent;
             this.Bproducto.Image = ((System.Drawing.Image)(resources.GetObject("Bproducto.Image")));
             this.Bproducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Bproducto.Location = new System.Drawing.Point(-4, -2);
+            this.Bproducto.Location = new System.Drawing.Point(-6, -2);
             this.Bproducto.Name = "Bproducto";
             this.Bproducto.Size = new System.Drawing.Size(212, 44);
             this.Bproducto.TabIndex = 2;
-            this.Bproducto.Text = "                 Producto ";
-            this.Bproducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Bproducto.Text = "Producto ";
             this.Bproducto.UseVisualStyleBackColor = false;
             this.Bproducto.Click += new System.EventHandler(this.Bproducto_Click);
             // 
             // Panelregistrarp
             // 
             this.Panelregistrarp.Controls.Add(this.BregistrarP);
-            this.Panelregistrarp.Location = new System.Drawing.Point(3, 46);
+            this.Panelregistrarp.Location = new System.Drawing.Point(3, 51);
             this.Panelregistrarp.Name = "Panelregistrarp";
             this.Panelregistrarp.Size = new System.Drawing.Size(200, 37);
             this.Panelregistrarp.TabIndex = 5;
@@ -315,7 +336,7 @@
             // PaneleditarP
             // 
             this.PaneleditarP.Controls.Add(this.BeditarP);
-            this.PaneleditarP.Location = new System.Drawing.Point(3, 89);
+            this.PaneleditarP.Location = new System.Drawing.Point(3, 94);
             this.PaneleditarP.Name = "PaneleditarP";
             this.PaneleditarP.Size = new System.Drawing.Size(200, 37);
             this.PaneleditarP.TabIndex = 6;
@@ -341,7 +362,7 @@
             // PanellistarP
             // 
             this.PanellistarP.Controls.Add(this.BlistarP);
-            this.PanellistarP.Location = new System.Drawing.Point(3, 132);
+            this.PanellistarP.Location = new System.Drawing.Point(3, 137);
             this.PanellistarP.Name = "PanellistarP";
             this.PanellistarP.Size = new System.Drawing.Size(200, 37);
             this.PanellistarP.TabIndex = 7;
@@ -364,37 +385,45 @@
             this.BlistarP.UseVisualStyleBackColor = false;
             this.BlistarP.Click += new System.EventHandler(this.BlistarP_Click);
             // 
+            // PanelFactura
+            // 
+            this.PanelFactura.Controls.Add(this.btnFacturar);
+            this.PanelFactura.Location = new System.Drawing.Point(3, 195);
+            this.PanelFactura.Name = "PanelFactura";
+            this.PanelFactura.Size = new System.Drawing.Size(200, 42);
+            this.PanelFactura.TabIndex = 6;
+            // 
+            // btnFacturar
+            // 
+            this.btnFacturar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnFacturar.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnFacturar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFacturar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacturar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnFacturar.Image = ((System.Drawing.Image)(resources.GetObject("btnFacturar.Image")));
+            this.btnFacturar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFacturar.Location = new System.Drawing.Point(-3, -1);
+            this.btnFacturar.Name = "btnFacturar";
+            this.btnFacturar.Size = new System.Drawing.Size(212, 44);
+            this.btnFacturar.TabIndex = 3;
+            this.btnFacturar.Text = "Facturar";
+            this.btnFacturar.UseVisualStyleBackColor = false;
+            this.btnFacturar.Click += new System.EventHandler(this.btnFacturar_Click);
+            // 
             // Menutransacion
             // 
+            this.Menutransacion.Interval = 50;
             this.Menutransacion.Tick += new System.EventHandler(this.Menutransacion_Tick);
             // 
             // MenuTrP
             // 
+            this.MenuTrP.Interval = 50;
             this.MenuTrP.Tick += new System.EventHandler(this.MenuTrP_Tick);
             // 
             // SidbarTr
             // 
             this.SidbarTr.Interval = 10;
             this.SidbarTr.Tick += new System.EventHandler(this.SidbarTr_Tick);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(23, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(152, 97);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 4;
             // 
             // Principal
             // 
@@ -414,6 +443,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Close)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Imagelateral)).EndInit();
             this.Panelmenu.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Flowcliente.ResumeLayout(false);
             this.Panelcliente.ResumeLayout(false);
             this.Panelregistrar.ResumeLayout(false);
@@ -424,8 +455,7 @@
             this.Panelregistrarp.ResumeLayout(false);
             this.PaneleditarP.ResumeLayout(false);
             this.PanellistarP.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.PanelFactura.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -460,6 +490,8 @@
         private System.Windows.Forms.Timer SidbarTr;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PanelFactura;
+        private System.Windows.Forms.Button btnFacturar;
     }
 }
 

@@ -1,6 +1,6 @@
 ﻿namespace SGFactuacion
 {
-    partial class FormListarPcs
+    partial class FormListarP
     {
         /// <summary>
         /// Required designer variable.

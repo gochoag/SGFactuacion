@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace SGFactuacion
 {
-    public partial class FormEditarCcs : Form
+    public partial class FormListarP : Form
     {
-        public FormEditarCcs()
+        public FormListarP()
         {
             InitializeComponent();
         }
-
-        
     }
 }

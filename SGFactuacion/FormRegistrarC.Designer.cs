@@ -30,16 +30,16 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.TBrcedulaC = new System.Windows.Forms.TextBox();
-            this.TBNombreC = new System.Windows.Forms.TextBox();
+            this.txtcedulaC = new System.Windows.Forms.TextBox();
+            this.txtNombreC = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.TBApellidoC = new System.Windows.Forms.TextBox();
+            this.txtApellidoC = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.TBEmailC = new System.Windows.Forms.TextBox();
+            this.txtEmailC = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.DTFechaC = new System.Windows.Forms.DateTimePicker();
-            this.BTRegistrarC = new System.Windows.Forms.Button();
+            this.dtFechaC = new System.Windows.Forms.DateTimePicker();
+            this.BTNRegistrarC = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -63,20 +63,20 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Cedula:";
             // 
-            // TBrcedulaC
+            // txtcedulaC
             // 
-            this.TBrcedulaC.Location = new System.Drawing.Point(226, 73);
-            this.TBrcedulaC.Name = "TBrcedulaC";
-            this.TBrcedulaC.Size = new System.Drawing.Size(174, 20);
-            this.TBrcedulaC.TabIndex = 2;
+            this.txtcedulaC.Location = new System.Drawing.Point(226, 73);
+            this.txtcedulaC.Name = "txtcedulaC";
+            this.txtcedulaC.Size = new System.Drawing.Size(174, 20);
+            this.txtcedulaC.TabIndex = 2;
             // 
-            // TBNombreC
+            // txtNombreC
             // 
-            this.TBNombreC.Location = new System.Drawing.Point(226, 132);
-            this.TBNombreC.Name = "TBNombreC";
-            this.TBNombreC.Size = new System.Drawing.Size(174, 20);
-            this.TBNombreC.TabIndex = 4;
-            this.TBNombreC.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtNombreC.Location = new System.Drawing.Point(226, 132);
+            this.txtNombreC.Name = "txtNombreC";
+            this.txtNombreC.Size = new System.Drawing.Size(174, 20);
+            this.txtNombreC.TabIndex = 4;
+            this.txtNombreC.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
@@ -88,12 +88,12 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Nombres:";
             // 
-            // TBApellidoC
+            // txtApellidoC
             // 
-            this.TBApellidoC.Location = new System.Drawing.Point(226, 196);
-            this.TBApellidoC.Name = "TBApellidoC";
-            this.TBApellidoC.Size = new System.Drawing.Size(174, 20);
-            this.TBApellidoC.TabIndex = 6;
+            this.txtApellidoC.Location = new System.Drawing.Point(226, 196);
+            this.txtApellidoC.Name = "txtApellidoC";
+            this.txtApellidoC.Size = new System.Drawing.Size(174, 20);
+            this.txtApellidoC.TabIndex = 6;
             // 
             // label4
             // 
@@ -105,12 +105,12 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Apellidos:";
             // 
-            // TBEmailC
+            // txtEmailC
             // 
-            this.TBEmailC.Location = new System.Drawing.Point(227, 263);
-            this.TBEmailC.Name = "TBEmailC";
-            this.TBEmailC.Size = new System.Drawing.Size(174, 20);
-            this.TBEmailC.TabIndex = 8;
+            this.txtEmailC.Location = new System.Drawing.Point(227, 263);
+            this.txtEmailC.Name = "txtEmailC";
+            this.txtEmailC.Size = new System.Drawing.Size(174, 20);
+            this.txtEmailC.TabIndex = 8;
             // 
             // label5
             // 
@@ -132,41 +132,43 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Fecha de nacimiento:";
             // 
-            // DTFechaC
+            // dtFechaC
             // 
-            this.DTFechaC.Location = new System.Drawing.Point(226, 333);
-            this.DTFechaC.Name = "DTFechaC";
-            this.DTFechaC.Size = new System.Drawing.Size(200, 20);
-            this.DTFechaC.TabIndex = 10;
+            this.dtFechaC.Location = new System.Drawing.Point(226, 333);
+            this.dtFechaC.Name = "dtFechaC";
+            this.dtFechaC.Size = new System.Drawing.Size(200, 20);
+            this.dtFechaC.TabIndex = 10;
+            this.dtFechaC.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
-            // BTRegistrarC
+            // BTNRegistrarC
             // 
-            this.BTRegistrarC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(103)))), ((int)(((byte)(0)))));
-            this.BTRegistrarC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BTRegistrarC.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTRegistrarC.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BTRegistrarC.Location = new System.Drawing.Point(385, 429);
-            this.BTRegistrarC.Name = "BTRegistrarC";
-            this.BTRegistrarC.Size = new System.Drawing.Size(99, 33);
-            this.BTRegistrarC.TabIndex = 11;
-            this.BTRegistrarC.Text = "Registrar";
-            this.BTRegistrarC.UseVisualStyleBackColor = false;
+            this.BTNRegistrarC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(103)))), ((int)(((byte)(0)))));
+            this.BTNRegistrarC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BTNRegistrarC.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNRegistrarC.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BTNRegistrarC.Location = new System.Drawing.Point(385, 429);
+            this.BTNRegistrarC.Name = "BTNRegistrarC";
+            this.BTNRegistrarC.Size = new System.Drawing.Size(99, 33);
+            this.BTNRegistrarC.TabIndex = 11;
+            this.BTNRegistrarC.Text = "Registrar";
+            this.BTNRegistrarC.UseVisualStyleBackColor = false;
+            this.BTNRegistrarC.Click += new System.EventHandler(this.BTNRegistrarC_Click);
             // 
             // FormRegistrarC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 509);
-            this.Controls.Add(this.BTRegistrarC);
-            this.Controls.Add(this.DTFechaC);
+            this.Controls.Add(this.BTNRegistrarC);
+            this.Controls.Add(this.dtFechaC);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.TBEmailC);
+            this.Controls.Add(this.txtEmailC);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.TBApellidoC);
+            this.Controls.Add(this.txtApellidoC);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.TBNombreC);
+            this.Controls.Add(this.txtNombreC);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.TBrcedulaC);
+            this.Controls.Add(this.txtcedulaC);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -181,15 +183,15 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TBrcedulaC;
-        private System.Windows.Forms.TextBox TBNombreC;
+        private System.Windows.Forms.TextBox txtcedulaC;
+        private System.Windows.Forms.TextBox txtNombreC;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TBApellidoC;
+        private System.Windows.Forms.TextBox txtApellidoC;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TBEmailC;
+        private System.Windows.Forms.TextBox txtEmailC;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker DTFechaC;
-        private System.Windows.Forms.Button BTRegistrarC;
+        private System.Windows.Forms.DateTimePicker dtFechaC;
+        private System.Windows.Forms.Button BTNRegistrarC;
     }
 }

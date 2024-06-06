@@ -46,17 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="csCliente.cs" />
+    <Compile Include="csConexion.cs" />
+    <Compile Include="csFactura.cs" />
+    <Compile Include="csProducto.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEditarCcs.cs">
+    <Compile Include="FormEditarC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEditarCcs.Designer.cs">
-      <DependentUpon>FormEditarCcs.cs</DependentUpon>
+    <Compile Include="FormEditarC.Designer.cs">
+      <DependentUpon>FormEditarC.cs</DependentUpon>
     </Compile>
     <Compile Include="FormEditarP.cs">
       <SubType>Form</SubType>
@@ -64,17 +68,23 @@
     <Compile Include="FormEditarP.Designer.cs">
       <DependentUpon>FormEditarP.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormFacturarR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFacturarR.Designer.cs">
+      <DependentUpon>FormFacturarR.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormListarC.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormListarC.Designer.cs">
       <DependentUpon>FormListarC.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormListarPcs.cs">
+    <Compile Include="FormListarP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormListarPcs.Designer.cs">
-      <DependentUpon>FormListarPcs.cs</DependentUpon>
+    <Compile Include="FormListarP.Designer.cs">
+      <DependentUpon>FormListarP.cs</DependentUpon>
     </Compile>
     <Compile Include="FormRegistrarC.cs">
       <SubType>Form</SubType>
@@ -93,17 +103,20 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEditarCcs.resx">
-      <DependentUpon>FormEditarCcs.cs</DependentUpon>
+    <EmbeddedResource Include="FormEditarC.resx">
+      <DependentUpon>FormEditarC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditarP.resx">
       <DependentUpon>FormEditarP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormFacturarR.resx">
+      <DependentUpon>FormFacturarR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormListarC.resx">
       <DependentUpon>FormListarC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormListarPcs.resx">
-      <DependentUpon>FormListarPcs.cs</DependentUpon>
+    <EmbeddedResource Include="FormListarP.resx">
+      <DependentUpon>FormListarP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistrarC.resx">
       <DependentUpon>FormRegistrarC.cs</DependentUpon>
