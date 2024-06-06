@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace SGFactuacion
 {
-    public partial class FormListarP : Form
+    public partial class FrmReporte : Form
     {
-        public FormListarP()
+        public FrmReporte()
         {
             InitializeComponent();
+        }
+
+        private void FrmReporte_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
         }
     }
 }

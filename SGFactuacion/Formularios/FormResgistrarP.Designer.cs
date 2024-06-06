@@ -112,6 +112,7 @@
             this.BTRegistrarP.TabIndex = 12;
             this.BTRegistrarP.Text = "Registrar";
             this.BTRegistrarP.UseVisualStyleBackColor = false;
+            this.BTRegistrarP.Click += new System.EventHandler(this.BTRegistrarP_Click);
             // 
             // FormResgistrarP
             // 
@@ -129,6 +130,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormResgistrarP";
             this.Text = "FormResgistrarP";
+            this.Load += new System.EventHandler(this.FormResgistrarP_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -35,9 +35,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvEditProdu = new System.Windows.Forms.DataGridView();
             this.BTEditarP = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEditProdu)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -102,13 +104,14 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Nombre:";
             // 
-            // dataGridView1
+            // dgvEditProdu
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(46, 221);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(523, 150);
-            this.dataGridView1.TabIndex = 14;
+            this.dgvEditProdu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEditProdu.Location = new System.Drawing.Point(46, 221);
+            this.dgvEditProdu.Name = "dgvEditProdu";
+            this.dgvEditProdu.Size = new System.Drawing.Size(523, 150);
+            this.dgvEditProdu.TabIndex = 14;
+            this.dgvEditProdu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEditProdu_CellClick);
             // 
             // BTEditarP
             // 
@@ -122,14 +125,35 @@
             this.BTEditarP.TabIndex = 22;
             this.BTEditarP.Text = "Editar";
             this.BTEditarP.UseVisualStyleBackColor = false;
+            this.BTEditarP.Click += new System.EventHandler(this.BTEditarP_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(80, 191);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(229, 20);
+            this.txtBuscar.TabIndex = 25;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(21, 191);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 17);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Buscar:";
             // 
             // FormEditarP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 450);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.BTEditarP);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvEditProdu);
             this.Controls.Add(this.TBStockP);
             this.Controls.Add(this.TBPrecioP);
             this.Controls.Add(this.TBNombreP);
@@ -140,7 +164,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormEditarP";
             this.Text = "FormEditarP";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormEditarP_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEditProdu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,7 +180,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvEditProdu;
         private System.Windows.Forms.Button BTEditarP;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label7;
     }
 }

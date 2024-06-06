@@ -60,6 +60,7 @@
             this.Menutransacion = new System.Windows.Forms.Timer(this.components);
             this.MenuTrP = new System.Windows.Forms.Timer(this.components);
             this.SidbarTr = new System.Windows.Forms.Timer(this.components);
+            this.btnReportes = new System.Windows.Forms.Button();
             this.Barra_Arriba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Imagelateral)).BeginInit();
@@ -130,6 +131,7 @@
             this.Panelmenu.Controls.Add(this.Flowcliente);
             this.Panelmenu.Controls.Add(this.FlowProducto);
             this.Panelmenu.Controls.Add(this.PanelFactura);
+            this.Panelmenu.Controls.Add(this.btnReportes);
             this.Panelmenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Panelmenu.Location = new System.Drawing.Point(0, 34);
             this.Panelmenu.Name = "Panelmenu";
@@ -425,6 +427,23 @@
             this.SidbarTr.Interval = 10;
             this.SidbarTr.Tick += new System.EventHandler(this.SidbarTr_Tick);
             // 
+            // btnReportes
+            // 
+            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnReportes.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReportes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.ForeColor = System.Drawing.Color.Transparent;
+            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(3, 243);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(212, 44);
+            this.btnReportes.TabIndex = 7;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.UseVisualStyleBackColor = false;
+            this.btnReportes.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,6 +455,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SGFacturacion";
             this.Load += new System.EventHandler(this.Principal_Load);
             this.Barra_Arriba.ResumeLayout(false);
@@ -492,6 +512,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel PanelFactura;
         private System.Windows.Forms.Button btnFacturar;
+        private System.Windows.Forms.Button btnReportes;
     }
 }
 

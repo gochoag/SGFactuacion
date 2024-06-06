@@ -33,9 +33,9 @@ namespace SGFactuacion
         }
         private void BTNRegistrarC_Click(object sender, EventArgs e)
         {
-            if(txtcedulaC.Text != string.Empty && txtNombreC.Text != string.Empty && txtApellidoC.Text != string.Empty)
+            if (txtcedulaC.Text != string.Empty && txtNombreC.Text != string.Empty && txtApellidoC.Text != string.Empty && txtEmailC.Text != string.Empty)
             {
-                csCliente clienteRegistrar = new csCliente(txtcedulaC.Text, txtNombreC.Text, txtApellidoC.Text, dtFechaC.Value);
+                csCliente clienteRegistrar = new csCliente(txtcedulaC.Text, txtNombreC.Text, txtApellidoC.Text, dtFechaC.Value, txtEmailC.Text);
                 if (clienteRegistrar.RegistrarCliente())
                 {
                     MessageBox.Show("Cliente registrado con exito", "Registro de cliente", MessageBoxButtons.OK);
@@ -49,6 +49,16 @@ namespace SGFactuacion
            
 
 
+
+        }
+
+        private void txtEmailC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormRegistrarC_Load(object sender, EventArgs e)
+        {
 
         }
     }

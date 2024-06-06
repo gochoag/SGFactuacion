@@ -56,7 +56,7 @@ namespace SGFactuacion
                 txtNombreC.Text = row.Cells["Nombre"].Value.ToString();
                 txtApellidoC.Text = row.Cells["Apellido"].Value.ToString();
                 dtFechaC.Value = Convert.ToDateTime(row.Cells["FechaNacimiento"].Value);
-                MessageBox.Show(idCLIENTE.ToString());
+                txtEmailC.Text = row.Cells["Email"].Value.ToString();
             }
         }
         public void LimpiarControles()
@@ -67,6 +67,7 @@ namespace SGFactuacion
             txtEmailC.Text = string.Empty;
             dtFechaC.Value = new DateTime(2000, 9, 1);
             txtBuscar.Text = String.Empty;
+            txtEmailC.Text = string.Empty;
         }
         private void BTEditarC_Click(object sender, EventArgs e)
         {
@@ -74,8 +75,9 @@ namespace SGFactuacion
             string nombre = txtNombreC.Text;
             string apellido = txtApellidoC.Text;
             DateTime fechaNacimiento = dtFechaC.Value;
-
-            csCliente cliente = new csCliente(idCLIENTE, cedula, nombre, apellido, fechaNacimiento);
+            string email = txtEmailC.Text;
+            
+            csCliente cliente = new csCliente(idCLIENTE, cedula, nombre, apellido, fechaNacimiento, email);
 
             if (cliente.EditarCliente())
             {

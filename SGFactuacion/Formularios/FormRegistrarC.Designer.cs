@@ -111,6 +111,7 @@
             this.txtEmailC.Name = "txtEmailC";
             this.txtEmailC.Size = new System.Drawing.Size(174, 20);
             this.txtEmailC.TabIndex = 8;
+            this.txtEmailC.TextChanged += new System.EventHandler(this.txtEmailC_TextChanged);
             // 
             // label5
             // 
@@ -174,6 +175,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormRegistrarC";
             this.Text = "FormRegistrarC";
+            this.Load += new System.EventHandler(this.FormRegistrarC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

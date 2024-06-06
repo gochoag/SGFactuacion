@@ -16,6 +16,7 @@ namespace SGFactuacion
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public DateTime FechaNacimiento { get; set; }
+        public string Email { get; set; }
         public string NombreCompleto
         {
             get { return $"{Nombre} {Apellido}"; }
@@ -23,23 +24,25 @@ namespace SGFactuacion
 
 
         private csConexion conexion;
-
-        public csCliente(long idcliente, string cedula, string nombre, string apellido, DateTime fechaNacimiento)
+        
+        public csCliente(long idcliente, string cedula, string nombre, string apellido, DateTime fechaNacimiento, string email)
         {
             IdCliente = idcliente;
             Cedula = cedula;
             Nombre = nombre;
             Apellido = apellido;
             FechaNacimiento = fechaNacimiento.Date;
+            Email = email;
             conexion = new csConexion();
         }
-        public csCliente(string cedula, string nombre, string apellido, DateTime fechaNacimiento)
+        public csCliente(string cedula, string nombre, string apellido, DateTime fechaNacimiento, string email)
         {
        
             Cedula = cedula;
             Nombre = nombre;
             Apellido = apellido;
             FechaNacimiento = fechaNacimiento.Date;
+            Email=email;
             conexion = new csConexion();
         }
         public bool RegistrarCliente()
@@ -53,6 +56,7 @@ namespace SGFactuacion
                     cmd.Parameters.AddWithValue("@Nombre", Nombre);
                     cmd.Parameters.AddWithValue("@Apellido", Apellido);
                     cmd.Parameters.AddWithValue("@Fecha_Nac", FechaNacimiento.Date);
+                    cmd.Parameters.AddWithValue("@Correo", Email);
 
                     conexion.OpenOrCloseConnection();
                     cmd.ExecuteNonQuery();
@@ -79,7 +83,8 @@ namespace SGFactuacion
                     cmd.Parameters.AddWithValue("@Cedula", Cedula);
                     cmd.Parameters.AddWithValue("@Nombre", Nombre);
                     cmd.Parameters.AddWithValue("@Apellido", Apellido);
-                    cmd.Parameters.AddWithValue("@Fecha_Nac", FechaNacimiento.Date); 
+                    cmd.Parameters.AddWithValue("@Fecha_Nac", FechaNacimiento.Date);
+                    cmd.Parameters.AddWithValue("@Correo", Email);
 
                     conexion.OpenOrCloseConnection();
                     cmd.ExecuteNonQuery();
@@ -102,7 +107,7 @@ namespace SGFactuacion
             csConexion conexion = new csConexion();
             try
             {
-                using (SqlCommand cmd = new SqlCommand("Sp_Listado_Cliente", conexion.GetConnection()))
+                using (SqlCommand cmd = new SqlCommand("sp_rep_Listado_cliente", conexion.GetConnection()))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     conexion.OpenOrCloseConnection();
@@ -115,7 +120,8 @@ namespace SGFactuacion
                                 reader["Cedula"].ToString(),
                                 reader["Nombre"].ToString(),
                                 reader["Apellido"].ToString(),
-                                Convert.ToDateTime(reader["Fecha Nacimiento"]).Date
+                                Convert.ToDateTime(reader["Fecha Nacimiento"]).Date,
+                                reader["Correo"].ToString()
                             );
                             clientes.Add(cliente);
                         }
@@ -152,7 +158,8 @@ namespace SGFactuacion
                                 reader["Cedula"].ToString(),
                                 reader["Nombre"].ToString(),
                                 reader["Apellido"].ToString(),
-                                Convert.ToDateTime(reader["Fecha_nacimiento"]).Date  
+                                Convert.ToDateTime(reader["Fecha_nacimiento"]).Date,
+                                reader["Correo"].ToString()
                             );
                             clientes.Add(cliente);
                         }

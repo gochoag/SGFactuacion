@@ -18,7 +18,6 @@ namespace SGFactuacion
 
         private csConexion conexion;
 
-        // Constructor sin IdProducto
         public csProducto(string nombre, decimal precioUnitario, int stock)
         {
             Nombre = nombre;
@@ -27,7 +26,6 @@ namespace SGFactuacion
             conexion = new csConexion();
         }
 
-        // Constructor con IdProducto
         public csProducto(long idProducto, string nombre, decimal precioUnitario, int stock)
         {
             IdProducto = idProducto;
@@ -93,7 +91,7 @@ namespace SGFactuacion
             try
             {
                
-                    using (SqlCommand cmd = new SqlCommand("Sp_Listado_Producto", conexion.GetConnection()))
+                    using (SqlCommand cmd = new SqlCommand("sp_rep_Listado_Producto", conexion.GetConnection()))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         conexion.OpenOrCloseConnection();

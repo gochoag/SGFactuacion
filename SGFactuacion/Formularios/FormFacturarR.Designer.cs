@@ -152,6 +152,7 @@
             this.dgvListaProductos.ReadOnly = true;
             this.dgvListaProductos.Size = new System.Drawing.Size(604, 155);
             this.dgvListaProductos.TabIndex = 11;
+            this.dgvListaProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaProductos_CellContentClick);
             // 
             // label8
             // 
@@ -175,6 +176,7 @@
             this.BTNRegistrarFactura.TabIndex = 13;
             this.BTNRegistrarFactura.Text = "Realizar factura";
             this.BTNRegistrarFactura.UseVisualStyleBackColor = false;
+            this.BTNRegistrarFactura.Click += new System.EventHandler(this.BTNRegistrarFactura_Click);
             // 
             // btnAgregarProductoToDGV
             // 
@@ -189,6 +191,7 @@
             this.btnAgregarProductoToDGV.Size = new System.Drawing.Size(35, 35);
             this.btnAgregarProductoToDGV.TabIndex = 14;
             this.btnAgregarProductoToDGV.UseVisualStyleBackColor = false;
+            this.btnAgregarProductoToDGV.Click += new System.EventHandler(this.btnAgregarProductoToDGV_Click);
             // 
             // btnQuitarProductoToDGV
             // 
@@ -203,6 +206,7 @@
             this.btnQuitarProductoToDGV.Size = new System.Drawing.Size(35, 35);
             this.btnQuitarProductoToDGV.TabIndex = 15;
             this.btnQuitarProductoToDGV.UseVisualStyleBackColor = false;
+            this.btnQuitarProductoToDGV.Click += new System.EventHandler(this.btnQuitarProductoToDGV_Click);
             // 
             // txtCantidad
             // 
