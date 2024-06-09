@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SGFactuacion
 {
@@ -17,6 +18,8 @@ namespace SGFactuacion
         public FormResgistrarP()
         {
             InitializeComponent();
+            TBPrecioP.KeyPress += TBPrecioP_KeyPress;
+            TBStockP.KeyPress += TBStockP_KeyPress;
         }
         public void LimpiarCampos()
         {
@@ -32,17 +35,64 @@ namespace SGFactuacion
 
         private void BTRegistrarP_Click(object sender, EventArgs e)
         {
-            if (TBNombreP.Text != string.Empty && TBPrecioP.Text != string.Empty && TBStockP.Text!=string.Empty)
+            if (TBNombreP.Text != string.Empty && TBPrecioP.Text != string.Empty && TBStockP.Text != string.Empty)
             {
-                csProducto regisprodu = new csProducto(TBNombreP.Text, decimal.Parse(TBPrecioP.Text, CultureInfo.InvariantCulture), int.Parse(TBStockP.Text));
-                if (regisprodu.RegistrarProducto())
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea registrar el producto?", "Confirmar Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("El producto se ha registrado con exito","Registro de producto",MessageBoxButtons.OK);
-                    LimpiarCampos();
+                    csProducto regisprodu = new csProducto(TBNombreP.Text, decimal.Parse(TBPrecioP.Text, CultureInfo.InvariantCulture), int.Parse(TBStockP.Text));
+                    if (regisprodu.RegistrarProducto())
+                    {
+                        MessageBox.Show("El producto se ha registrado con éxito", "Registro de producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarCampos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo lograr el registro del producto", "Error de registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else MessageBox.Show("No se pudo lograr el registro del producto","Error de registro",MessageBoxButtons.OK);
+                else
+                {
+                    MessageBox.Show("El registro del producto ha sido cancelado.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else MessageBox.Show("Complete todos los campos necesarios para el registro del producto","Alerta campos vacios",MessageBoxButtons.OK);
+            else
+            {
+                MessageBox.Show("Complete todos los campos necesarios para el registro del producto", "Alerta campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void TBPrecioP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+            if (char.IsDigit(e.KeyChar))
+            {
+                return;
+            }
+            if (e.KeyChar == '.' && !TBPrecioP.Text.Contains("."))
+            {
+                return;
+            }
+            e.Handled = true;
+
+
+        }
+
+        private void TBStockP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+            if (char.IsDigit(e.KeyChar))
+            {
+                return;
+            }
+            e.Handled = true;
         }
     }
 }

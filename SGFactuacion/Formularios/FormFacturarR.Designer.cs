@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFacturarR));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,15 +52,17 @@
             this.lblNombreProducto = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
+            this.PnDiseñoF = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProductos)).BeginInit();
+            this.PnDiseñoF.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(245, 12);
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(229, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 25);
             this.label1.TabIndex = 2;
@@ -146,11 +151,40 @@
             // 
             this.dgvListaProductos.AllowUserToAddRows = false;
             this.dgvListaProductos.AllowUserToDeleteRows = false;
+            this.dgvListaProductos.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvListaProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvListaProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(255)))), ((int)(((byte)(226)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaProductos.Location = new System.Drawing.Point(12, 274);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(249)))), ((int)(((byte)(201)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaProductos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListaProductos.EnableHeadersVisualStyles = false;
+            this.dgvListaProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            this.dgvListaProductos.Location = new System.Drawing.Point(76, 272);
             this.dgvListaProductos.Name = "dgvListaProductos";
             this.dgvListaProductos.ReadOnly = true;
-            this.dgvListaProductos.Size = new System.Drawing.Size(604, 155);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(249)))), ((int)(((byte)(201)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvListaProductos.Size = new System.Drawing.Size(442, 155);
             this.dgvListaProductos.TabIndex = 11;
             this.dgvListaProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaProductos_CellContentClick);
             // 
@@ -166,9 +200,9 @@
             // 
             // BTNRegistrarFactura
             // 
-            this.BTNRegistrarFactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(103)))), ((int)(((byte)(0)))));
+            this.BTNRegistrarFactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(118)))), ((int)(((byte)(34)))));
             this.BTNRegistrarFactura.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BTNRegistrarFactura.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNRegistrarFactura.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNRegistrarFactura.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BTNRegistrarFactura.Location = new System.Drawing.Point(221, 442);
             this.BTNRegistrarFactura.Name = "BTNRegistrarFactura";
@@ -214,11 +248,12 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(89, 20);
             this.txtCantidad.TabIndex = 16;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // lblNombreCliente
             // 
             this.lblNombreCliente.AutoSize = true;
-            this.lblNombreCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreCliente.Location = new System.Drawing.Point(124, 106);
             this.lblNombreCliente.Name = "lblNombreCliente";
             this.lblNombreCliente.Size = new System.Drawing.Size(0, 17);
@@ -237,7 +272,7 @@
             // lblNombreProducto
             // 
             this.lblNombreProducto.AutoSize = true;
-            this.lblNombreProducto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreProducto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreProducto.Location = new System.Drawing.Point(92, 198);
             this.lblNombreProducto.Name = "lblNombreProducto";
             this.lblNombreProducto.Size = new System.Drawing.Size(0, 17);
@@ -246,7 +281,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecio.Location = new System.Drawing.Point(375, 198);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(0, 17);
@@ -255,17 +290,29 @@
             // lblStock
             // 
             this.lblStock.AutoSize = true;
-            this.lblStock.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStock.Location = new System.Drawing.Point(518, 198);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(0, 17);
             this.lblStock.TabIndex = 21;
             // 
+            // PnDiseñoF
+            // 
+            this.PnDiseñoF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(165)))), ((int)(((byte)(93)))));
+            this.PnDiseñoF.Controls.Add(this.label1);
+            this.PnDiseñoF.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PnDiseñoF.Location = new System.Drawing.Point(0, 0);
+            this.PnDiseñoF.Margin = new System.Windows.Forms.Padding(0);
+            this.PnDiseñoF.Name = "PnDiseñoF";
+            this.PnDiseñoF.Size = new System.Drawing.Size(633, 37);
+            this.PnDiseñoF.TabIndex = 22;
+            // 
             // FormFacturarR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 484);
+            this.ClientSize = new System.Drawing.Size(633, 502);
+            this.Controls.Add(this.PnDiseñoF);
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblNombreProducto);
@@ -285,13 +332,14 @@
             this.Controls.Add(this.cbBuscarCliente);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormFacturarR";
             this.Text = "FormFacturarR";
             this.Activated += new System.EventHandler(this.FormFacturarR_Activated);
             this.Load += new System.EventHandler(this.FormFacturarR_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProductos)).EndInit();
+            this.PnDiseñoF.ResumeLayout(false);
+            this.PnDiseñoF.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,5 +367,6 @@
         private System.Windows.Forms.Label lblNombreProducto;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblStock;
+        private System.Windows.Forms.Panel PnDiseñoF;
     }
 }

@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvListadoCliente = new System.Windows.Forms.DataGridView();
             this.dtFechaC = new System.Windows.Forms.DateTimePicker();
@@ -43,29 +46,61 @@
             this.BTEditarC = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.PnDiseñoC = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoCliente)).BeginInit();
+            this.PnDiseñoC.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(245, 9);
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(253, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Editar cliente";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dgvListadoCliente
             // 
             this.dgvListadoCliente.AllowUserToAddRows = false;
             this.dgvListadoCliente.AllowUserToDeleteRows = false;
             this.dgvListadoCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListadoCliente.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvListadoCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvListadoCliente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(249)))), ((int)(((byte)(201)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListadoCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListadoCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(249)))), ((int)(((byte)(201)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListadoCliente.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListadoCliente.EnableHeadersVisualStyles = false;
+            this.dgvListadoCliente.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
             this.dgvListadoCliente.Location = new System.Drawing.Point(38, 266);
             this.dgvListadoCliente.Name = "dgvListadoCliente";
             this.dgvListadoCliente.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(249)))), ((int)(((byte)(201)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListadoCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListadoCliente.Size = new System.Drawing.Size(558, 150);
             this.dgvListadoCliente.TabIndex = 2;
             this.dgvListadoCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoCliente_CellClick);
@@ -73,7 +108,7 @@
             // 
             // dtFechaC
             // 
-            this.dtFechaC.Location = new System.Drawing.Point(287, 202);
+            this.dtFechaC.Location = new System.Drawing.Point(287, 176);
             this.dtFechaC.Name = "dtFechaC";
             this.dtFechaC.Size = new System.Drawing.Size(200, 20);
             this.dtFechaC.TabIndex = 20;
@@ -82,7 +117,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(135, 202);
+            this.label6.Location = new System.Drawing.Point(135, 176);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(139, 17);
             this.label6.TabIndex = 19;
@@ -145,6 +180,7 @@
             this.txtcedulaC.Name = "txtcedulaC";
             this.txtcedulaC.Size = new System.Drawing.Size(174, 20);
             this.txtcedulaC.TabIndex = 12;
+            this.txtcedulaC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcedulaC_KeyPress);
             // 
             // label2
             // 
@@ -158,11 +194,11 @@
             // 
             // BTEditarC
             // 
-            this.BTEditarC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(103)))), ((int)(((byte)(0)))));
+            this.BTEditarC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(118)))), ((int)(((byte)(34)))));
             this.BTEditarC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BTEditarC.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTEditarC.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTEditarC.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BTEditarC.Location = new System.Drawing.Point(497, 422);
+            this.BTEditarC.Location = new System.Drawing.Point(497, 437);
             this.BTEditarC.Name = "BTEditarC";
             this.BTEditarC.Size = new System.Drawing.Size(99, 33);
             this.BTEditarC.TabIndex = 21;
@@ -189,11 +225,23 @@
             this.txtBuscar.TabIndex = 23;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
+            // PnDiseñoC
+            // 
+            this.PnDiseñoC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(165)))), ((int)(((byte)(93)))));
+            this.PnDiseñoC.Controls.Add(this.label1);
+            this.PnDiseñoC.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PnDiseñoC.Location = new System.Drawing.Point(0, 0);
+            this.PnDiseñoC.Margin = new System.Windows.Forms.Padding(0);
+            this.PnDiseñoC.Name = "PnDiseñoC";
+            this.PnDiseñoC.Size = new System.Drawing.Size(633, 37);
+            this.PnDiseñoC.TabIndex = 24;
+            // 
             // FormEditarC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 485);
+            this.ClientSize = new System.Drawing.Size(633, 502);
+            this.Controls.Add(this.PnDiseñoC);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.BTEditarC);
@@ -208,12 +256,13 @@
             this.Controls.Add(this.txtcedulaC);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvListadoCliente);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormEditarC";
             this.Text = "FormEditarCcs";
             this.Load += new System.EventHandler(this.FormEditarC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoCliente)).EndInit();
+            this.PnDiseñoC.ResumeLayout(false);
+            this.PnDiseñoC.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,5 +285,6 @@
         private System.Windows.Forms.Button BTEditarC;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Panel PnDiseñoC;
     }
 }

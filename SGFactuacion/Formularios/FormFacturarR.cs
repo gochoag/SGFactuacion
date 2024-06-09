@@ -169,18 +169,38 @@ namespace SGFactuacion
 
             DateTime fechaActual = DateTime.Now;
 
-            if (facturaManager.RegistrarFactura(idCliente, fechaActual, detallesFactura))
+            DialogResult result = MessageBox.Show("¿Está seguro de que desea registrar la factura?", "Confirmar Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
             {
-                MessageBox.Show("La factura se ha registrado correctamente.", "Factura Registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dgvListaProductos.Rows.Clear();
+                if (facturaManager.RegistrarFactura(idCliente, fechaActual, detallesFactura))
+                {
+                    MessageBox.Show("La factura se ha registrado correctamente.", "Factura Registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   
+                }
+                else
+                {
+                    MessageBox.Show("Ha ocurrido un error al registrar la factura.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Ha ocurrido un error al registrar la factura.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El registro de la factura ha sido cancelado.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
 
-
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+            if (char.IsDigit(e.KeyChar))
+            {
+                return;
+            }
+            e.Handled = true;
+        }
     }
 }

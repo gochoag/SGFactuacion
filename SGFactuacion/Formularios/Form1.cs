@@ -12,13 +12,7 @@ namespace SGFactuacion
 {
     public partial class Principal : Form
     {
-        FormRegistrarC RegistroC;
-        FormResgistrarP RegistrarP;
-        FormListarC ListarC;
-        FormListarP ListarP;
-        FormEditarC EditarC;
-        FormEditarP EditarP;
-        FormFacturarR Facturar;
+        private Form activeForm = null;
         public Principal()
         {
             InitializeComponent();
@@ -93,8 +87,7 @@ namespace SGFactuacion
                 {
                     sidbarExpand = false;
                     SidbarTr.Stop();
-                    Panelcliente.Width = Panelmenu.Width;
-                    Panelproducto.Width = Panelmenu.Width;
+                   
                 }
             }
             else
@@ -104,8 +97,7 @@ namespace SGFactuacion
                 {
                     sidbarExpand = true;
                     SidbarTr.Stop();
-                    Panelcliente.Width = Panelmenu.Width;
-                    Panelproducto.Width = Panelmenu.Width;
+                   
                 }
             }
         }
@@ -119,166 +111,83 @@ namespace SGFactuacion
         {
             this.Close(); 
         }
-
-        private void BregistarC_Click(object sender, EventArgs e)
+        private void AbrirHijo (object hijo)
         {
-            if (RegistroC == null)
+            if (activeForm != null)
             {
-                RegistroC = new FormRegistrarC();
-                RegistroC.FormClosed += RegistroC_FormClosed;
-                RegistroC.MdiParent = this;
-                RegistroC.Dock = DockStyle.Fill;
-                RegistroC.Show();
+                activeForm.Close();
             }
-            else
-            {
-                RegistroC.Activate();
-            }
-        }
 
-        private void RegistroC_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            RegistroC = null;
+            if (this.PnContenedor.Controls.Count>0)
+            {
+                this.PnContenedor.Controls.RemoveAt(0);
+            }
+            Form fh = hijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.PnContenedor.Controls.Add(fh);
+            this.PnContenedor.Tag = fh;
+            fh.Show(); 
         }
 
         private void BEditarC_Click(object sender, EventArgs e)
         {
-            if (EditarC == null)
-            {
-                EditarC = new FormEditarC();
-                EditarC.FormClosed += EditarC_FormClosed;
-                EditarC.MdiParent = this;
-                EditarC.Dock = DockStyle.Fill;
-                EditarC.Show();
-            }
-            else
-            {
-                EditarC.Activate();
-            }
-
-        }
-
-        private void EditarC_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            EditarC = null;
-        }
-
-        private void BlistarC_Click(object sender, EventArgs e)
-        {
-            if (ListarC == null)
-            {
-                ListarC = new FormListarC();
-                ListarC.FormClosed += ListarC_FormClosed;
-                ListarC.MdiParent = this;
-                ListarC.Dock = DockStyle.Fill;
-                ListarC.Show();
-            }
-            else
-            {
-                ListarC.Activate();
-            }
-        }
-
-        private void ListarC_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ListarC = null;
-        }
-
-        private void BregistrarP_Click(object sender, EventArgs e)
-        {
-            if (RegistrarP == null)
-            {
-                RegistrarP = new FormResgistrarP();
-                RegistrarP.FormClosed += RegistrarP_FormClosed; ;
-                RegistrarP.MdiParent = this;
-                RegistrarP.Dock = DockStyle.Fill;
-                RegistrarP.Show();
-            }
-            else
-            {
-                RegistrarP.Activate();
-            }
-        }
-
-        private void RegistrarP_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            RegistrarP = null;
+            AbrirHijo(new FormEditarC());
         }
 
         private void BeditarP_Click(object sender, EventArgs e)
         {
-            if (EditarP == null)
-            {
-                EditarP = new FormEditarP();
-                EditarP.FormClosed += EditarP_FormClosed;
-                EditarP.MdiParent = this;
-                EditarP.Dock = DockStyle.Fill;
-                EditarP.Show();
-            }
-            else
-            {
-                EditarP.Activate();
-            }
+            AbrirHijo(new FormEditarP());
         }
 
-        private void EditarP_FormClosed(object sender, FormClosedEventArgs e)
+        private void BlistarC_Click(object sender, EventArgs e)
         {
-            EditarP = null;
+            AbrirHijo(new FormListarC());
         }
 
         private void BlistarP_Click(object sender, EventArgs e)
         {
-            if (ListarP == null)
-            {
-                ListarP = new FormListarP();
-                ListarP.FormClosed += ListarP_FormClosed; ;
-                ListarP.MdiParent = this;
-                ListarP.Dock = DockStyle.Fill;
-                ListarP.Show();
-            }
-            else
-            {
-                ListarP.Activate();
-            }
+            AbrirHijo(new FormListarP());
         }
 
-        private void ListarP_FormClosed(object sender, FormClosedEventArgs e)
+        private void btnFacturar_Click(object sender, EventArgs e)
         {
-            ListarP = null;
+            AbrirHijo(new FormFacturarR());
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            AbrirHijo(new FrmReporte());
+        }
+
+        private void BregistarC_Click(object sender, EventArgs e)
+        {
+            AbrirHijo(new FormRegistrarC());
+        }
+
+        private void BregistrarP_Click(object sender, EventArgs e)
+        {
+            AbrirHijo(new FormResgistrarP());
         }
 
         private void Principal_Load(object sender, EventArgs e)
         {
-
+            btnFacturar_Click(null, e);
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        int posY = 0;
+        int posX = 0;   
+        private void Barra_Arriba_MouseMove(object sender, MouseEventArgs e)
         {
-
-        }
-        private void Facturar_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Facturar = null;
-        }
-        private void btnFacturar_Click(object sender, EventArgs e)
-        {
-            if (Facturar == null)
+            if (e.Button!=MouseButtons.Left)
             {
-                Facturar = new FormFacturarR();
-                Facturar.FormClosed += Facturar_FormClosed;
-                Facturar.MdiParent = this;
-                Facturar.Dock = DockStyle.Fill;
-                Facturar.Show();
+                posY = e.Y;
+                posX = e.X;
             }
             else
             {
-                Facturar.Activate();
+                Left=Left+(e.X-posX);
+                Top=Top+(e.Y-posY); 
             }
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

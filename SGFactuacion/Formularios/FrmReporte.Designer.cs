@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbTipoReporte = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.cbTipoReporte = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1.SuspendLayout();
@@ -39,39 +39,41 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(165)))), ((int)(((byte)(93)))));
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.cbTipoReporte);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 60);
+            this.panel1.Size = new System.Drawing.Size(800, 54);
             this.panel1.TabIndex = 3;
-            // 
-            // cbTipoReporte
-            // 
-            this.cbTipoReporte.FormattingEnabled = true;
-            this.cbTipoReporte.Location = new System.Drawing.Point(273, 27);
-            this.cbTipoReporte.Name = "cbTipoReporte";
-            this.cbTipoReporte.Size = new System.Drawing.Size(329, 21);
-            this.cbTipoReporte.TabIndex = 0;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(159, 27);
+            this.label7.ForeColor = System.Drawing.SystemColors.Window;
+            this.label7.Location = new System.Drawing.Point(159, 18);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 17);
             this.label7.TabIndex = 11;
             this.label7.Text = "Tipo de reporte:";
             // 
+            // cbTipoReporte
+            // 
+            this.cbTipoReporte.FormattingEnabled = true;
+            this.cbTipoReporte.Location = new System.Drawing.Point(273, 18);
+            this.cbTipoReporte.Name = "cbTipoReporte";
+            this.cbTipoReporte.Size = new System.Drawing.Size(329, 21);
+            this.cbTipoReporte.TabIndex = 0;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.reportViewer1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 60);
+            this.panel2.Location = new System.Drawing.Point(0, 54);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 390);
+            this.panel2.Size = new System.Drawing.Size(800, 396);
             this.panel2.TabIndex = 4;
             // 
             // reportViewer1
@@ -81,7 +83,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 390);
+            this.reportViewer1.Size = new System.Drawing.Size(800, 396);
             this.reportViewer1.TabIndex = 0;
             // 
             // FrmReporte

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SGFactuacion
 {
@@ -15,6 +16,7 @@ namespace SGFactuacion
         public FormRegistrarC()
         {
             InitializeComponent();
+            txtcedulaC.KeyPress += txtcedulaC_KeyPress;
         }
 
        
@@ -35,21 +37,26 @@ namespace SGFactuacion
         {
             if (txtcedulaC.Text != string.Empty && txtNombreC.Text != string.Empty && txtApellidoC.Text != string.Empty && txtEmailC.Text != string.Empty)
             {
-                csCliente clienteRegistrar = new csCliente(txtcedulaC.Text, txtNombreC.Text, txtApellidoC.Text, dtFechaC.Value, txtEmailC.Text);
-                if (clienteRegistrar.RegistrarCliente())
+                DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas registrar a este cliente?", "Confirmar registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
                 {
-                    MessageBox.Show("Cliente registrado con exito", "Registro de cliente", MessageBoxButtons.OK);
-                    LimpiarControles();
+                    csCliente clienteRegistrar = new csCliente(txtcedulaC.Text, txtNombreC.Text, txtApellidoC.Text, dtFechaC.Value, txtEmailC.Text);
+                    if (clienteRegistrar.RegistrarCliente())
+                    {
+                        MessageBox.Show("Cliente registrado con éxito", "Registro de cliente", MessageBoxButtons.OK);
+                        LimpiarControles();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo lograr el registro", "Registro de cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-                else MessageBox.Show("No se puedo lograr el registro", "Registro de cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
-            else MessageBox.Show("Complete todos los campos", "Campos vacios",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-            
-           
-
-
-
+            else
+            {
+                MessageBox.Show("Completa todos los campos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void txtEmailC_TextChanged(object sender, EventArgs e)
@@ -60,6 +67,24 @@ namespace SGFactuacion
         private void FormRegistrarC_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtcedulaC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+            if (char.IsDigit(e.KeyChar))
+            {
+                if (txtcedulaC.Text.Length >= 10)
+                {
+                    e.Handled = true;
+                }
+                return;
+            }
+            e.Handled = true;
         }
     }
 }

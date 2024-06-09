@@ -22,6 +22,8 @@ namespace SGFactuacion
             bindingSource=new BindingSource();
             bindingSource.DataSource= producto;
             dgvEditProdu.DataSource=bindingSource;
+            TBPrecioP.KeyPress += TBPrecioP_KeyPress;
+            TBStockP.KeyPress += TBStockP_KeyPress;
 
         }
         private void CargarProductos()
@@ -71,17 +73,68 @@ namespace SGFactuacion
         private void BTEditarP_Click(object sender, EventArgs e)
         {
             string nombre = TBNombreP.Text;
-            decimal preciouni = Decimal.Parse(TBPrecioP.Text, CultureInfo.InvariantCulture);
-            int stock = int.Parse(TBStockP.Text);
-            csProducto product = new csProducto(idProducto, nombre, preciouni, stock);
-            if (product.EditarProducto())
+            string precioTexto = TBPrecioP.Text;
+            string stockTexto = TBStockP.Text;
+            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(precioTexto) || string.IsNullOrWhiteSpace(stockTexto))
             {
-                MessageBox.Show("El producto ha sido editado con exito","Modificacion de producto", MessageBoxButtons.OK);
-                LimpiarCampos();
-                CargarProductos();
-                bindingSource.DataSource = producto;
+                MessageBox.Show("Por favor, completa todos los campos.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else MessageBox.Show("Ha ocurrido un error al editar el producto","Error de edicion", MessageBoxButtons.OK);
+            decimal preciouni;
+            int stock;
+            if (!decimal.TryParse(precioTexto, NumberStyles.Number, CultureInfo.InvariantCulture, out preciouni) ||
+                !int.TryParse(stockTexto, out stock))
+            {
+                MessageBox.Show("Por favor, introduce valores válidos en los campos de precio y stock.", "Valores inválidos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas editar este producto?", "Confirmar edición", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                csProducto product = new csProducto(idProducto, nombre, preciouni, stock);
+                if (product.EditarProducto())
+                {
+                    MessageBox.Show("El producto ha sido editado con éxito", "Modificación de producto", MessageBoxButtons.OK);
+                    LimpiarCampos();
+                    CargarProductos();
+                    bindingSource.DataSource = producto;
+                }
+                else
+                {
+                    MessageBox.Show("Ha ocurrido un error al editar el producto", "Error de edición", MessageBoxButtons.OK);
+                }
+            }
+        }
+
+        private void TBStockP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+            if (char.IsDigit(e.KeyChar))
+            {
+                return;
+            }
+            e.Handled = true;
+        }
+
+        private void TBPrecioP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+            if (char.IsDigit(e.KeyChar))
+            {
+                return;
+            }
+            if (e.KeyChar == '.' && !TBPrecioP.Text.Contains("."))
+            {
+                return;
+            }
+            e.Handled = true;
         }
     }
 }

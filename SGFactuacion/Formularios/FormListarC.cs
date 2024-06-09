@@ -44,5 +44,10 @@ namespace SGFactuacion
                 bindingSource.DataSource = csCliente.BuscarClientes(filterText);
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
