@@ -68,6 +68,11 @@
     <Compile Include="Clases\csConexion.cs" />
     <Compile Include="Clases\csFactura.cs" />
     <Compile Include="Clases\csProducto.cs" />
+    <Compile Include="DataSets\DSFacturadetalle.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSFacturadetalle.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,7 +166,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\RP_FacturaDetalle.rdlc" />
+    <None Include="DataSets\DSFacturadetalle.xsc">
+      <DependentUpon>DSFacturadetalle.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSFacturadetalle.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSFacturadetalle.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DSFacturadetalle.xss">
+      <DependentUpon>DSFacturadetalle.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
