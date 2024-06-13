@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SGFactuacion
 {
     internal class csCliente
@@ -60,13 +61,14 @@ namespace SGFactuacion
 
                     conexion.OpenOrCloseConnection();
                     cmd.ExecuteNonQuery();
-                    conexion.OpenOrCloseConnection(); return true;
+                    conexion.OpenOrCloseConnection();
                 }
-               
+                return true;
+
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("Error cliente: "+ex.ToString());
+                MessageBox.Show("Error cliente: " + ex.Message, "Error de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
