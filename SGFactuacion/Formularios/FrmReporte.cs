@@ -21,7 +21,6 @@ namespace SGFactuacion
 
         private void FrmReporte_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dSFacturadetalle.sp_GetFacturaDetalles' Puede moverla o quitarla según sea necesario.
             
             lblDatos.Text = string.Empty; 
             txtNum.Visible = false;
@@ -35,25 +34,34 @@ namespace SGFactuacion
 
         private void cbTipoReporte_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (cbTipoReporte.SelectedItem.ToString())
+            try
             {
-                case "Detalle de factura":
-                    lblDatos.Text = "Nº Factura";
-                    txtNum.Visible = true;
-                    break;
-                case "Clientes":
-                    lblDatos.Text = "ID Cliente";
-                    txtNum.Visible = true;
-                    break;
-                case "Productos":
-                    lblDatos.Text = "ID Producto";
-                    txtNum.Visible = true;
-                    break;
-                default:
-                    lblDatos.Text = string.Empty;
-                    txtNum.Visible = false;
-                    break;
+                switch (cbTipoReporte.SelectedItem.ToString())
+                {
+                    case "Detalle de factura":
+                        lblDatos.Text = "Nº Factura";
+                        txtNum.Visible = true;
+                        break;
+                    case "Clientes":
+                        lblDatos.Text = "ID Cliente";
+                        txtNum.Visible = true;
+                        break;
+                    case "Productos":
+                        lblDatos.Text = "ID Producto";
+                        txtNum.Visible = true;
+                        break;
+                    default:
+                        lblDatos.Text = string.Empty;
+                        txtNum.Visible = false;
+                        break;
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al seleccionar los tipos de reporte {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            
         }
 
         private void txtNum_KeyPress(object sender, KeyPressEventArgs e)
@@ -73,11 +81,19 @@ namespace SGFactuacion
         }
         private void GenerarReporte(string valorParametro)
         {
-            int id;
-            id = int.Parse(txtNum.Text);
-            this.sp_GetFacturaDetallesTableAdapter.Fill(this.dSFacturadetalle.sp_GetFacturaDetalles, id);
+            try
+            {
+                int id;
+                id = int.Parse(txtNum.Text);
+                this.sp_GetFacturaDetallesTableAdapter.Fill(this.dSFacturadetalle.sp_GetFacturaDetalles, id);
+
+                this.reportViewer1.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al generar el reporte: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             
-            this.reportViewer1.RefreshReport();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

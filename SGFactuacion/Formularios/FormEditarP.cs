@@ -18,17 +18,31 @@ namespace SGFactuacion
         public FormEditarP()
         {
             InitializeComponent();
-            CargarProductos();
-            bindingSource=new BindingSource();
-            bindingSource.DataSource= producto;
-            dgvEditProdu.DataSource=bindingSource;
-            TBPrecioP.KeyPress += TBPrecioP_KeyPress;
-            TBStockP.KeyPress += TBStockP_KeyPress;
+            try
+            {
+                CargarProductos();
+                bindingSource = new BindingSource();
+                bindingSource.DataSource = producto;
+                dgvEditProdu.DataSource = bindingSource;
+                TBPrecioP.KeyPress += TBPrecioP_KeyPress;
+                TBStockP.KeyPress += TBStockP_KeyPress;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al inicializar el formulario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
         private void CargarProductos()
         {
-            producto = csProducto.ListarProductos();
+            try
+            {
+                producto = csProducto.ListarProductos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al cargar los productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public void LimpiarCampos()
         {
@@ -45,66 +59,89 @@ namespace SGFactuacion
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            string filterText = txtBuscar.Text;
-            if (string.IsNullOrWhiteSpace(filterText))
+            try
             {
-                bindingSource.DataSource = producto;
+                string filterText = txtBuscar.Text;
+                if (string.IsNullOrWhiteSpace(filterText))
+                {
+                    bindingSource.DataSource = producto;
+                }
+                else
+                {
+                    bindingSource.DataSource = csProducto.BuscarProductoPorNombre(filterText);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                bindingSource.DataSource = csProducto.BuscarProductoPorNombre(filterText);
+                MessageBox.Show($"Ocurrió un error al buscar productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
         long idProducto;
 
         private void dgvEditProdu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex>=0)
+            try
             {
-                DataGridViewRow row = dgvEditProdu.Rows[e.RowIndex];
-                idProducto = long.Parse(row.Cells["IdProducto"].Value.ToString());
-                TBNombreP.Text = row.Cells["Nombre"].Value.ToString();
-                TBPrecioP.Text = row.Cells["PrecioUnitario"].Value.ToString();
-                TBStockP.Text = row.Cells["Stock"].Value.ToString();
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = dgvEditProdu.Rows[e.RowIndex];
+                    idProducto = long.Parse(row.Cells["IdProducto"].Value.ToString());
+                    TBNombreP.Text = row.Cells["Nombre"].Value.ToString();
+                    TBPrecioP.Text = row.Cells["PrecioUnitario"].Value.ToString();
+                    TBStockP.Text = row.Cells["Stock"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al seleccionar un producto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
         private void BTEditarP_Click(object sender, EventArgs e)
         {
-            string nombre = TBNombreP.Text;
-            string precioTexto = TBPrecioP.Text;
-            string stockTexto = TBStockP.Text;
-            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(precioTexto) || string.IsNullOrWhiteSpace(stockTexto))
+            try
             {
-                MessageBox.Show("Por favor, completa todos los campos.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            decimal preciouni;
-            int stock;
-            if (!decimal.TryParse(precioTexto, NumberStyles.Number, CultureInfo.InvariantCulture, out preciouni) ||
-                !int.TryParse(stockTexto, out stock))
-            {
-                MessageBox.Show("Por favor, introduce valores válidos en los campos de precio y stock.", "Valores inválidos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas editar este producto?", "Confirmar edición", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                string nombre = TBNombreP.Text;
+                string precioTexto = TBPrecioP.Text;
+                string stockTexto = TBStockP.Text;
+                if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(precioTexto) || string.IsNullOrWhiteSpace(stockTexto))
+                {
+                    MessageBox.Show("Por favor, completa todos los campos.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                decimal preciouni;
+                int stock;
+                if (!decimal.TryParse(precioTexto, NumberStyles.Number, CultureInfo.InvariantCulture, out preciouni) ||
+                    !int.TryParse(stockTexto, out stock))
+                {
+                    MessageBox.Show("Por favor, introduce valores válidos en los campos de precio y stock.", "Valores inválidos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas editar este producto?", "Confirmar edición", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (resultado == DialogResult.Yes)
-            {
-                csProducto product = new csProducto(idProducto, nombre, preciouni, stock);
-                if (product.EditarProducto())
+                if (resultado == DialogResult.Yes)
                 {
-                    MessageBox.Show("El producto ha sido editado con éxito", "Modificación de producto", MessageBoxButtons.OK);
-                    LimpiarCampos();
-                    CargarProductos();
-                    bindingSource.DataSource = producto;
-                }
-                else
-                {
-                    MessageBox.Show("Ha ocurrido un error al editar el producto", "Error de edición", MessageBoxButtons.OK);
+                    csProducto product = new csProducto(idProducto, nombre, preciouni, stock);
+                    if (product.EditarProducto())
+                    {
+                        MessageBox.Show("El producto ha sido editado con éxito", "Modificación de producto", MessageBoxButtons.OK);
+                        LimpiarCampos();
+                        CargarProductos();
+                        bindingSource.DataSource = producto;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ha ocurrido un error al editar el producto", "Error de edición", MessageBoxButtons.OK);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al procesar la entrada de stock: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void TBStockP_KeyPress(object sender, KeyPressEventArgs e)

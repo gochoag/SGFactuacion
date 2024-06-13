@@ -19,7 +19,7 @@ namespace SGFactuacion
             txtcedulaC.KeyPress += txtcedulaC_KeyPress;
         }
 
-       
+
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -28,35 +28,43 @@ namespace SGFactuacion
         public void LimpiarControles()
         {
             txtcedulaC.Text = string.Empty;
-            txtApellidoC.Text= string.Empty;
-            txtNombreC.Text=string.Empty;
-            txtEmailC.Text= string.Empty;
+            txtApellidoC.Text = string.Empty;
+            txtNombreC.Text = string.Empty;
+            txtEmailC.Text = string.Empty;
             dtFechaC.Value = new DateTime(2000, 9, 1);
         }
         private void BTNRegistrarC_Click(object sender, EventArgs e)
         {
-            if (txtcedulaC.Text != string.Empty && txtNombreC.Text != string.Empty && txtApellidoC.Text != string.Empty && txtEmailC.Text != string.Empty)
+            try
             {
-                DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas registrar a este cliente?", "Confirmar registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (resultado == DialogResult.Yes)
+                if (txtcedulaC.Text != string.Empty && txtNombreC.Text != string.Empty && txtApellidoC.Text != string.Empty && txtEmailC.Text != string.Empty)
                 {
-                    csCliente clienteRegistrar = new csCliente(txtcedulaC.Text, txtNombreC.Text, txtApellidoC.Text, dtFechaC.Value, txtEmailC.Text);
-                    if (clienteRegistrar.RegistrarCliente())
+                    DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas registrar a este cliente?", "Confirmar registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (resultado == DialogResult.Yes)
                     {
-                        MessageBox.Show("Cliente registrado con éxito", "Registro de cliente", MessageBoxButtons.OK);
-                        LimpiarControles();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo lograr el registro", "Registro de cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        csCliente clienteRegistrar = new csCliente(txtcedulaC.Text, txtNombreC.Text, txtApellidoC.Text, dtFechaC.Value, txtEmailC.Text);
+                        if (clienteRegistrar.RegistrarCliente())
+                        {
+                            MessageBox.Show("Cliente registrado con éxito", "Registro de cliente", MessageBoxButtons.OK);
+                            LimpiarControles();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo lograr el registro", "Registro de cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Completa todos los campos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Completa todos los campos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void txtEmailC_TextChanged(object sender, EventArgs e)
@@ -72,7 +80,7 @@ namespace SGFactuacion
         private void txtcedulaC_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-        if (char.IsControl(e.KeyChar))
+            if (char.IsControl(e.KeyChar))
             {
                 return;
             }

@@ -20,36 +20,62 @@ namespace SGFactuacion
         public FormFacturarR()
         {
             InitializeComponent();
-            CargarCliente();
-            CargarProductos();
-            
+            try
+            {
+                CargarCliente();
+                CargarProductos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al inicializar el formulario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+
 
         }
         private void CargarCliente()
         {
-            clientes = csCliente.ListarClientes();
-            cbBuscarCliente.DataSource = clientes;
-            cbBuscarCliente.DisplayMember = "NombreCompleto";
-            cbBuscarCliente.ValueMember = "IdCliente";
+            try
+            {
+                clientes = csCliente.ListarClientes();
+                cbBuscarCliente.DataSource = clientes;
+                cbBuscarCliente.DisplayMember = "NombreCompleto";
+                cbBuscarCliente.ValueMember = "IdCliente";
 
-            cbBuscarCliente.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cbBuscarCliente.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            cbBuscarCliente.AutoCompleteCustomSource = csCliente.Autocompletado();
+                cbBuscarCliente.AutoCompleteMode = AutoCompleteMode.Suggest;
+                cbBuscarCliente.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                cbBuscarCliente.AutoCompleteCustomSource = csCliente.Autocompletado();
 
-            cbBuscarCliente.SelectedIndex = -1;
+                cbBuscarCliente.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al cargar los clientes: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
         private void CargarProductos()
         {
-            productos = csProducto.ListarProductos();
-            cbBuscarProducto.DataSource = productos;
-            cbBuscarProducto.DisplayMember = "Nombre";
-            cbBuscarProducto.ValueMember = "IdProducto";
+            try
+            {
+                productos = csProducto.ListarProductos();
+                cbBuscarProducto.DataSource = productos;
+                cbBuscarProducto.DisplayMember = "Nombre";
+                cbBuscarProducto.ValueMember = "IdProducto";
 
-            cbBuscarProducto.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cbBuscarProducto.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            cbBuscarProducto.AutoCompleteCustomSource = csProducto.Autocompletado();
+                cbBuscarProducto.AutoCompleteMode = AutoCompleteMode.Suggest;
+                cbBuscarProducto.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                cbBuscarProducto.AutoCompleteCustomSource = csProducto.Autocompletado();
 
-            cbBuscarProducto.SelectedIndex = -1;
+                cbBuscarProducto.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al cargar los productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            
 
         }
         private void FormFacturarR_Load(object sender, EventArgs e)
@@ -68,15 +94,23 @@ namespace SGFactuacion
 
         private void cbBuscarCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbBuscarCliente.SelectedItem != null && cbBuscarCliente.SelectedIndex != -1)
+            try
             {
-                csCliente selectedCliente = (csCliente)cbBuscarCliente.SelectedItem;
-                lblNombreCliente.Text = selectedCliente.NombreCompleto;
+                if (cbBuscarCliente.SelectedItem != null && cbBuscarCliente.SelectedIndex != -1)
+                {
+                    csCliente selectedCliente = (csCliente)cbBuscarCliente.SelectedItem;
+                    lblNombreCliente.Text = selectedCliente.NombreCompleto;
+                }
+                else
+                {
+                    lblNombreCliente.Text = string.Empty;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lblNombreCliente.Text = string.Empty;
+                MessageBox.Show($"Ocurrió un error al buscar los clientes: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void FormFacturarR_Activated(object sender, EventArgs e)
@@ -86,19 +120,27 @@ namespace SGFactuacion
 
         private void cbBuscarProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbBuscarProducto.SelectedItem != null && cbBuscarProducto.SelectedIndex != -1)
+            try
             {
-                csProducto productoSeleccionado = (csProducto)cbBuscarProducto.SelectedItem;
-                lblNombreProducto.Text = productoSeleccionado.Nombre;
-                lblPrecio.Text = productoSeleccionado.PrecioUnitario.ToString("F2");
-                lblStock.Text = productoSeleccionado.Stock.ToString();
+                if (cbBuscarProducto.SelectedItem != null && cbBuscarProducto.SelectedIndex != -1)
+                {
+                    csProducto productoSeleccionado = (csProducto)cbBuscarProducto.SelectedItem;
+                    lblNombreProducto.Text = productoSeleccionado.Nombre;
+                    lblPrecio.Text = productoSeleccionado.PrecioUnitario.ToString("F2");
+                    lblStock.Text = productoSeleccionado.Stock.ToString();
+                }
+                else
+                {
+                    lblNombreProducto.Text = string.Empty;
+                    lblPrecio.Text = string.Empty;
+                    lblStock.Text = string.Empty;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lblNombreProducto.Text = string.Empty;
-                lblPrecio.Text = string.Empty;
-                lblStock.Text = string.Empty;
+                MessageBox.Show($"Ocurrió un error al buscar los productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
         private void LimpiarCamposProducto()
         {
@@ -116,35 +158,51 @@ namespace SGFactuacion
 
         private void btnAgregarProductoToDGV_Click(object sender, EventArgs e)
         {
-            if (cbBuscarCliente.SelectedItem == null || cbBuscarProducto.SelectedItem == null || string.IsNullOrEmpty(txtCantidad.Text))
+            try
             {
-                MessageBox.Show("Por favor, complete todos los campos antes de agregar el producto.", "Campos Vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (cbBuscarCliente.SelectedItem == null || cbBuscarProducto.SelectedItem == null || string.IsNullOrEmpty(txtCantidad.Text))
+                {
+                    MessageBox.Show("Por favor, complete todos los campos antes de agregar el producto.", "Campos Vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                var productoSeleccionado = (csProducto)cbBuscarProducto.SelectedItem;
+                int cantidad;
+                if (!int.TryParse(txtCantidad.Text, out cantidad))
+                {
+                    MessageBox.Show("La cantidad ingresada no es válida.", "Cantidad Inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (cantidad > productoSeleccionado.Stock)
+                {
+                    MessageBox.Show("La cantidad ingresada excede el stock disponible.", "Stock Insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                dgvListaProductos.Rows.Add(productoSeleccionado.IdProducto, productoSeleccionado.Nombre, productoSeleccionado.PrecioUnitario, cantidad);
+                LimpiarCamposProducto();
             }
-            var productoSeleccionado = (csProducto)cbBuscarProducto.SelectedItem;
-            int cantidad;
-            if (!int.TryParse(txtCantidad.Text, out cantidad))
+            catch (Exception ex)
             {
-                MessageBox.Show("La cantidad ingresada no es válida.", "Cantidad Inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                MessageBox.Show($"Ocurrió un error al agregar el producto a la lista: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (cantidad > productoSeleccionado.Stock)
-            {
-                MessageBox.Show("La cantidad ingresada excede el stock disponible.", "Stock Insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            dgvListaProductos.Rows.Add(productoSeleccionado.IdProducto, productoSeleccionado.Nombre, productoSeleccionado.PrecioUnitario, cantidad);
-            LimpiarCamposProducto();
+            
         }
 
         private void btnQuitarProductoToDGV_Click(object sender, EventArgs e)
         {
-            if (dgvListaProductos.SelectedRows.Count == 0)
+            try
             {
-                MessageBox.Show("Por favor, seleccione un producto de la lista para eliminar.", "Producto no Seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (dgvListaProductos.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Por favor, seleccione un producto de la lista para eliminar.", "Producto no Seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                dgvListaProductos.Rows.RemoveAt(dgvListaProductos.SelectedRows[0].Index);
             }
-            dgvListaProductos.Rows.RemoveAt(dgvListaProductos.SelectedRows[0].Index);
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al quitar el producto a la lista: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
 
         }
 

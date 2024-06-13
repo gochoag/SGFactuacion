@@ -17,15 +17,28 @@ namespace SGFactuacion
         public FormListarC()
         {
             InitializeComponent();
-            CargarClientes();
-            bindingSource = new BindingSource();
-            bindingSource.DataSource = clientes;
-            dgvListarCliente.DataSource = bindingSource;
+            try
+            {
+                CargarClientes();
+                bindingSource = new BindingSource();
+                bindingSource.DataSource = clientes;
+                dgvListarCliente.DataSource = bindingSource;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al inicializar el formulario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void CargarClientes()
         {
-            clientes = csCliente.ListarClientes();
-
+            try
+            {
+                clientes = csCliente.ListarClientes();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al cargar los clientes: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void FormListarC_Load(object sender, EventArgs e)
         {
@@ -34,15 +47,23 @@ namespace SGFactuacion
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            string filterText = txtBuscar.Text;
-            if (string.IsNullOrWhiteSpace(filterText))
+            try
             {
-                bindingSource.DataSource = clientes;
+                string filterText = txtBuscar.Text;
+                if (string.IsNullOrWhiteSpace(filterText))
+                {
+                    bindingSource.DataSource = clientes;
+                }
+                else
+                {
+                    bindingSource.DataSource = csCliente.BuscarClientes(filterText);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                bindingSource.DataSource = csCliente.BuscarClientes(filterText);
+                MessageBox.Show($"Ocurrió un error al buscar clientes: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void label1_Click(object sender, EventArgs e)
