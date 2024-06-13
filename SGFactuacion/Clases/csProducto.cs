@@ -126,10 +126,10 @@ namespace SGFactuacion
             try
             {
                 
-                    using (SqlCommand cmd = new SqlCommand("Sp_Producto_By_Nombre", conexion.GetConnection()))
+                    using (SqlCommand cmd = new SqlCommand("Sp_Buscar_ProductoPorNombre", conexion.GetConnection()))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@PatronNombre", patronNombre);
+                        cmd.Parameters.AddWithValue("@Buscador", patronNombre);
                         conexion.OpenOrCloseConnection();
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
