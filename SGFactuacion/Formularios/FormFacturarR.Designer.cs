@@ -53,6 +53,8 @@
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
             this.PnDiseñoF = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtIVA = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProductos)).BeginInit();
             this.PnDiseñoF.SuspendLayout();
             this.SuspendLayout();
@@ -120,6 +122,7 @@
             // 
             // cbBuscarProducto
             // 
+            this.cbBuscarProducto.Enabled = false;
             this.cbBuscarProducto.FormattingEnabled = true;
             this.cbBuscarProducto.Location = new System.Drawing.Point(127, 152);
             this.cbBuscarProducto.Name = "cbBuscarProducto";
@@ -151,6 +154,7 @@
             // 
             this.dgvListaProductos.AllowUserToAddRows = false;
             this.dgvListaProductos.AllowUserToDeleteRows = false;
+            this.dgvListaProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaProductos.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvListaProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListaProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -173,7 +177,7 @@
             this.dgvListaProductos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListaProductos.EnableHeadersVisualStyles = false;
             this.dgvListaProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
-            this.dgvListaProductos.Location = new System.Drawing.Point(76, 272);
+            this.dgvListaProductos.Location = new System.Drawing.Point(12, 272);
             this.dgvListaProductos.Name = "dgvListaProductos";
             this.dgvListaProductos.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -184,7 +188,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListaProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvListaProductos.Size = new System.Drawing.Size(442, 155);
+            this.dgvListaProductos.Size = new System.Drawing.Size(593, 155);
             this.dgvListaProductos.TabIndex = 11;
             this.dgvListaProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaProductos_CellContentClick);
             // 
@@ -244,6 +248,7 @@
             // 
             // txtCantidad
             // 
+            this.txtCantidad.Enabled = false;
             this.txtCantidad.Location = new System.Drawing.Point(414, 153);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(89, 20);
@@ -258,6 +263,7 @@
             this.lblNombreCliente.Name = "lblNombreCliente";
             this.lblNombreCliente.Size = new System.Drawing.Size(0, 17);
             this.lblNombreCliente.TabIndex = 17;
+            this.lblNombreCliente.TextChanged += new System.EventHandler(this.lblNombreCliente_TextChanged);
             // 
             // label9
             // 
@@ -307,11 +313,36 @@
             this.PnDiseñoF.Size = new System.Drawing.Size(633, 37);
             this.PnDiseñoF.TabIndex = 22;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(518, 156);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(33, 17);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "IVA:";
+            // 
+            // txtIVA
+            // 
+            this.txtIVA.Enabled = false;
+            this.txtIVA.Location = new System.Drawing.Point(559, 153);
+            this.txtIVA.MaxLength = 2;
+            this.txtIVA.Name = "txtIVA";
+            this.txtIVA.Size = new System.Drawing.Size(46, 20);
+            this.txtIVA.TabIndex = 24;
+            this.txtIVA.Text = "15";
+            this.txtIVA.Enter += new System.EventHandler(this.txtIVA_Enter);
+            this.txtIVA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIVA_KeyPress);
+            this.txtIVA.Leave += new System.EventHandler(this.txtIVA_Leave);
+            // 
             // FormFacturarR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 502);
+            this.Controls.Add(this.txtIVA);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.PnDiseñoF);
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.lblPrecio);
@@ -368,5 +399,7 @@
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.Panel PnDiseñoF;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtIVA;
     }
 }

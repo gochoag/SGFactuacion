@@ -202,7 +202,7 @@ namespace SGFactuacion.DataSets {
             this.DataSetName = "DSFacturadetalle";
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/DSFacturadetalle.xsd";
-            this.EnforceConstraints = true;
+            this.EnforceConstraints = false;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablesp_GetFacturaDetalles = new sp_GetFacturaDetallesDataTable();
             base.Tables.Add(this.tablesp_GetFacturaDetalles);
@@ -480,6 +480,13 @@ namespace SGFactuacion.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public sp_GetFacturaDetallesRow FindByID_Factu(long ID_Factu) {
+                return ((sp_GetFacturaDetallesRow)(this.Rows.Find(new object[] {
+                            ID_Factu})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 sp_GetFacturaDetallesDataTable cln = ((sp_GetFacturaDetallesDataTable)(base.Clone()));
                 cln.InitVars();
@@ -533,11 +540,12 @@ namespace SGFactuacion.DataSets {
                 base.Columns.Add(this.columnSub_Total);
                 this.columnTotal = new global::System.Data.DataColumn("Total", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID_Factu}, true));
                 this.columnID_Factu.AutoIncrement = true;
-                this.columnID_Factu.AutoIncrementSeed = -1;
-                this.columnID_Factu.AutoIncrementStep = -1;
                 this.columnID_Factu.AllowDBNull = false;
                 this.columnID_Factu.ReadOnly = true;
+                this.columnID_Factu.Unique = true;
                 this.columnID_Cliente.AllowDBNull = false;
                 this.columnCliente.ReadOnly = true;
                 this.columnCliente.MaxLength = 71;
@@ -912,13 +920,13 @@ namespace SGFactuacion.DataSets.DSFacturadetalleTableAdapters {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class sp_GetFacturaDetallesTableAdapter : global::System.ComponentModel.Component {
         
-        private global::System.Data.Odbc.OdbcDataAdapter _adapter;
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
-        private global::System.Data.Odbc.OdbcConnection _connection;
+        private global::System.Data.SqlClient.SqlConnection _connection;
         
-        private global::System.Data.Odbc.OdbcTransaction _transaction;
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
         
-        private global::System.Data.Odbc.OdbcCommand[] _commandCollection;
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
         
         private bool _clearBeforeFill;
         
@@ -930,7 +938,7 @@ namespace SGFactuacion.DataSets.DSFacturadetalleTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::System.Data.Odbc.OdbcDataAdapter Adapter {
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
             get {
                 if ((this._adapter == null)) {
                     this.InitAdapter();
@@ -941,7 +949,7 @@ namespace SGFactuacion.DataSets.DSFacturadetalleTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.Odbc.OdbcConnection Connection {
+        internal global::System.Data.SqlClient.SqlConnection Connection {
             get {
                 if ((this._connection == null)) {
                     this.InitConnection();
@@ -961,7 +969,7 @@ namespace SGFactuacion.DataSets.DSFacturadetalleTableAdapters {
                 }
                 for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
                     if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.Odbc.OdbcCommand)(this.CommandCollection[i])).Connection = value;
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
                     }
                 }
             }
@@ -969,7 +977,7 @@ namespace SGFactuacion.DataSets.DSFacturadetalleTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.Odbc.OdbcTransaction Transaction {
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
             get {
                 return this._transaction;
             }
@@ -995,7 +1003,7 @@ namespace SGFactuacion.DataSets.DSFacturadetalleTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::System.Data.Odbc.OdbcCommand[] CommandCollection {
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
             get {
                 if ((this._commandCollection == null)) {
                     this.InitCommandCollection();
@@ -1018,7 +1026,7 @@ namespace SGFactuacion.DataSets.DSFacturadetalleTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitAdapter() {
-            this._adapter = new global::System.Data.Odbc.OdbcDataAdapter();
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "sp_GetFacturaDetalles";
@@ -1039,30 +1047,30 @@ namespace SGFactuacion.DataSets.DSFacturadetalleTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
-            this._connection = new global::System.Data.Odbc.OdbcConnection();
-            this._connection.ConnectionString = global::SGFactuacion.Properties.Settings.Default.ConnectionString;
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::SGFactuacion.Properties.Settings.Default.BDFacturaConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[1];
-            this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "{? = CALL dbo.sp_GetFacturaDetalles(?)}";
+            this._commandCollection[0].CommandText = "dbo.sp_GetFacturaDetalles";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("@RETURN_VALUE", global::System.Data.Odbc.OdbcType.Int, 2147483647, global::System.Data.ParameterDirection.ReturnValue, ((byte)(255)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("@ID_Factu", global::System.Data.Odbc.OdbcType.BigInt, 19, global::System.Data.ParameterDirection.Input, ((byte)(255)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Factu", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 19, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSFacturadetalle.sp_GetFacturaDetallesDataTable dataTable, global::System.Nullable<long> @ID_Factu) {
+        public virtual int Fill(DSFacturadetalle.sp_GetFacturaDetallesDataTable dataTable, global::System.Nullable<long> ID_Factu) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((@ID_Factu.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((long)(@ID_Factu.Value));
+            if ((ID_Factu.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((long)(ID_Factu.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -1078,10 +1086,10 @@ namespace SGFactuacion.DataSets.DSFacturadetalleTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSFacturadetalle.sp_GetFacturaDetallesDataTable GetData(global::System.Nullable<long> @ID_Factu) {
+        public virtual DSFacturadetalle.sp_GetFacturaDetallesDataTable GetData(global::System.Nullable<long> ID_Factu) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((@ID_Factu.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((long)(@ID_Factu.Value));
+            if ((ID_Factu.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((long)(ID_Factu.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;

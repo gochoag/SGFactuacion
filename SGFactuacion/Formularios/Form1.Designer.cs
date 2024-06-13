@@ -467,6 +467,7 @@
             this.PnContenedor.Name = "PnContenedor";
             this.PnContenedor.Size = new System.Drawing.Size(633, 502);
             this.PnContenedor.TabIndex = 10;
+            this.PnContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.PnContenedor_Paint);
             // 
             // Principal
             // 

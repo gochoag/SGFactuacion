@@ -189,6 +189,11 @@ namespace SGFactuacion
                 Top=Top+(e.Y-posY); 
             }
         }
+
+        private void PnContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

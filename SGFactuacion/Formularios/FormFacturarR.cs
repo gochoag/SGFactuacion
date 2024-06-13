@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static SGFactuacion.csFactura;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SGFactuacion
 {
@@ -21,7 +22,7 @@ namespace SGFactuacion
             InitializeComponent();
             CargarCliente();
             CargarProductos();
-            this.Activated += new EventHandler(FormFacturarR_Activated);
+            
 
         }
         private void CargarCliente()
@@ -107,6 +108,11 @@ namespace SGFactuacion
             lblPrecio.Text = string.Empty;
             lblStock.Text = string.Empty;
         }
+        private void LimpiarCamposCliente()
+        {
+            cbBuscarCliente.SelectedIndex = -1;
+            lblNombreCliente.Text = string.Empty;
+        }
 
         private void btnAgregarProductoToDGV_Click(object sender, EventArgs e)
         {
@@ -149,44 +155,56 @@ namespace SGFactuacion
 
         private void BTNRegistrarFactura_Click(object sender, EventArgs e)
         {
-            long idCliente = (long)cbBuscarCliente.SelectedValue;
-            List<FacturaDetalle> detallesFactura = new List<FacturaDetalle>();
-            foreach (DataGridViewRow fila in dgvListaProductos.Rows)
+            try
             {
-                long idProducto = Convert.ToInt64(fila.Cells["ID_Producto"].Value);
-                decimal precio = Convert.ToDecimal(fila.Cells["Precio"].Value);
-                int cantidad = Convert.ToInt32(fila.Cells["Cantidad"].Value);
-                FacturaDetalle detalle = new FacturaDetalle
+                long idCliente = (long)cbBuscarCliente.SelectedValue;
+                List<FacturaDetalle> detallesFactura = new List<FacturaDetalle>();
+                foreach (DataGridViewRow fila in dgvListaProductos.Rows)
                 {
-                    ID_Produc = idProducto,
-                    Precio = precio,
-                    Cantidad = cantidad,
-                    IVA = 0.15m, 
-                };
-                detallesFactura.Add(detalle);
-            }
-            csFactura facturaManager = new csFactura();
+                    long idProducto = Convert.ToInt64(fila.Cells["ID_Producto"].Value);
+                    decimal precio = Convert.ToDecimal(fila.Cells["Precio"].Value);
+                    int cantidad = Convert.ToInt32(fila.Cells["Cantidad"].Value);
+                    FacturaDetalle detalle = new FacturaDetalle
+                    {
+                        ID_Produc = idProducto,
+                        Precio = precio,
+                        Cantidad = cantidad,
+                        IVA = decimal.Parse(txtIVA.Text)/100,
+                    };
+                    detallesFactura.Add(detalle);
+                }
+                csFactura facturaManager = new csFactura();
 
-            DateTime fechaActual = DateTime.Now;
+                DateTime fechaActual = DateTime.Now;
 
-            DialogResult result = MessageBox.Show("¿Está seguro de que desea registrar la factura?", "Confirmar Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea registrar la factura?", "Confirmar Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (result == DialogResult.Yes)
-            {
-                if (facturaManager.RegistrarFactura(idCliente, fechaActual, detallesFactura))
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("La factura se ha registrado correctamente.", "Factura Registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   
+                    if (facturaManager.RegistrarFactura(idCliente, fechaActual, detallesFactura))
+                    {
+                        MessageBox.Show("La factura se ha registrado correctamente.", "Factura Registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dgvListaProductos.Rows.Clear();
+                        LimpiarCamposCliente();
+                        CargarProductos();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ha ocurrido un error al registrar la factura.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Ha ocurrido un error al registrar la factura.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El registro de la factura ha sido cancelado.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("El registro de la factura ha sido cancelado.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                MessageBox.Show(ex.Message);
             }
+            
 
         }
 
@@ -201,6 +219,52 @@ namespace SGFactuacion
                 return;
             }
             e.Handled = true;
+        }
+
+        private void lblNombreCliente_TextChanged(object sender, EventArgs e)
+        {
+            if (lblNombreCliente.Text != string.Empty)
+            {
+                cbBuscarProducto.Enabled = true;
+                txtCantidad.Enabled=true;
+                txtIVA.Enabled=true;
+            }
+            else
+            {
+                cbBuscarProducto.Enabled = false;
+                txtCantidad.Enabled = false;
+                txtIVA.Enabled=false;
+            }
+
+        }
+
+        private void txtIVA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+            if (char.IsDigit(e.KeyChar))
+            {
+                return;
+            }
+            e.Handled = true;
+        }
+
+        private void txtIVA_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtIVA.Text))
+            {
+                txtIVA.Text = "15";
+            }
+        }
+
+        private void txtIVA_Enter(object sender, EventArgs e)
+        {
+            if (txtIVA.Text == "15")
+            {
+                txtIVA.Text = "";
+            }
         }
     }
 }

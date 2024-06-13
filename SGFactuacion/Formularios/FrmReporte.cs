@@ -76,6 +76,7 @@ namespace SGFactuacion
             int id;
             id = int.Parse(txtNum.Text);
             this.sp_GetFacturaDetallesTableAdapter.Fill(this.dSFacturadetalle.sp_GetFacturaDetalles, id);
+            
             this.reportViewer1.RefreshReport();
         }
 
