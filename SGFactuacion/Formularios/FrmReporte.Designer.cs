@@ -29,24 +29,35 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.sp_GetFacturaDetallesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSFacturadetalle = new SGFactuacion.DataSets.DSFacturadetalle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblDatos = new System.Windows.Forms.Label();
+            this.txtNum = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cbTipoReporte = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtNum = new System.Windows.Forms.TextBox();
-            this.lblDatos = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dSFacturadetalle = new SGFactuacion.DataSets.DSFacturadetalle();
             this.spGetFacturaDetallesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sp_GetFacturaDetallesTableAdapter = new SGFactuacion.DataSets.DSFacturadetalleTableAdapters.sp_GetFacturaDetallesTableAdapter();
-            this.sp_GetFacturaDetallesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.sp_GetFacturaDetallesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSFacturadetalle)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dSFacturadetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spGetFacturaDetallesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sp_GetFacturaDetallesBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // sp_GetFacturaDetallesBindingSource
+            // 
+            this.sp_GetFacturaDetallesBindingSource.DataMember = "sp_GetFacturaDetalles";
+            this.sp_GetFacturaDetallesBindingSource.DataSource = this.dSFacturadetalle;
+            // 
+            // dSFacturadetalle
+            // 
+            this.dSFacturadetalle.DataSetName = "DSFacturadetalle";
+            this.dSFacturadetalle.EnforceConstraints = false;
+            this.dSFacturadetalle.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -61,6 +72,25 @@
             this.panel1.Size = new System.Drawing.Size(800, 54);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblDatos
+            // 
+            this.lblDatos.AutoSize = true;
+            this.lblDatos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatos.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblDatos.Location = new System.Drawing.Point(341, 20);
+            this.lblDatos.Name = "lblDatos";
+            this.lblDatos.Size = new System.Drawing.Size(0, 17);
+            this.lblDatos.TabIndex = 13;
+            // 
+            // txtNum
+            // 
+            this.txtNum.Location = new System.Drawing.Point(471, 20);
+            this.txtNum.Name = "txtNum";
+            this.txtNum.Size = new System.Drawing.Size(100, 20);
+            this.txtNum.TabIndex = 12;
+            this.txtNum.TextChanged += new System.EventHandler(this.txtNum_TextChanged);
+            this.txtNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
             // 
             // label7
             // 
@@ -96,42 +126,18 @@
             this.panel2.TabIndex = 4;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // txtNum
-            // 
-            this.txtNum.Location = new System.Drawing.Point(471, 20);
-            this.txtNum.Name = "txtNum";
-            this.txtNum.Size = new System.Drawing.Size(100, 20);
-            this.txtNum.TabIndex = 12;
-            this.txtNum.TextChanged += new System.EventHandler(this.txtNum_TextChanged);
-            this.txtNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
-            // 
-            // lblDatos
-            // 
-            this.lblDatos.AutoSize = true;
-            this.lblDatos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatos.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblDatos.Location = new System.Drawing.Point(341, 20);
-            this.lblDatos.Name = "lblDatos";
-            this.lblDatos.Size = new System.Drawing.Size(0, 17);
-            this.lblDatos.TabIndex = 13;
-            // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DSFacturaDetails";
-            reportDataSource1.Value = this.sp_GetFacturaDetallesBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DSFacturaDetails";
+            reportDataSource2.Value = this.sp_GetFacturaDetallesBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "SGFactuacion.Reportes.RP_FacturaDetalle.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 396);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dSFacturadetalle
-            // 
-            this.dSFacturadetalle.DataSetName = "DSFacturadetalle";
-            this.dSFacturadetalle.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // spGetFacturaDetallesBindingSource
             // 
@@ -141,11 +147,6 @@
             // sp_GetFacturaDetallesTableAdapter
             // 
             this.sp_GetFacturaDetallesTableAdapter.ClearBeforeFill = true;
-            // 
-            // sp_GetFacturaDetallesBindingSource
-            // 
-            this.sp_GetFacturaDetallesBindingSource.DataMember = "sp_GetFacturaDetalles";
-            this.sp_GetFacturaDetallesBindingSource.DataSource = this.dSFacturadetalle;
             // 
             // FrmReporte
             // 
@@ -158,12 +159,12 @@
             this.Name = "FrmReporte";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.FrmReporte_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.sp_GetFacturaDetallesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSFacturadetalle)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dSFacturadetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spGetFacturaDetallesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sp_GetFacturaDetallesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
