@@ -76,15 +76,14 @@ namespace SGFactuacion
         {
             if (!string.IsNullOrEmpty(txtNum.Text))
             {
-                GenerarReporte(txtNum.Text);
+                GenerarReporte(long.Parse(txtNum.Text));
             }
         }
-        private void GenerarReporte(string valorParametro)
+        public void GenerarReporte(long id)
         {
             try
             {
-                int id;
-                id = int.Parse(txtNum.Text);
+                
                 this.sp_GetFacturaDetallesTableAdapter.Fill(this.dSFacturadetalle.sp_GetFacturaDetalles, id);
 
                 this.reportViewer1.RefreshReport();
@@ -97,6 +96,11 @@ namespace SGFactuacion
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
         {
 
         }

@@ -210,7 +210,24 @@ namespace SGFactuacion
         {
 
         }
+        private void GenerarReporte(long idFactura)
+        {
+            try
+            {
+                FrmReporte rp = new FrmReporte();
+                rp.panel1.Visible = false;
+                rp.FormBorderStyle=FormBorderStyle.SizableToolWindow;
+                rp.StartPosition = FormStartPosition.CenterScreen;
+                rp.Width = 630;
+                rp.GenerarReporte(idFactura);
 
+                rp.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al generar el reporte: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void BTNRegistrarFactura_Click(object sender, EventArgs e)
         {
             try
@@ -245,7 +262,7 @@ namespace SGFactuacion
                         dgvListaProductos.Rows.Clear();
                         LimpiarCamposCliente();
                         CargarProductos();
-
+                        GenerarReporte(facturaManager.ObtenerUltimoIDFactura());
                     }
                     else
                     {

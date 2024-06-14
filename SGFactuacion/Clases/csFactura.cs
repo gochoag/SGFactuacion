@@ -1,10 +1,11 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SGFactuacion
 {
@@ -25,7 +26,24 @@ namespace SGFactuacion
         {
             conexion = new csConexion();
         }
-
+        public long ObtenerUltimoIDFactura()
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_GetMaxFacturaID", conexion.GetConnection()))
+                {
+                    conexion.OpenOrCloseConnection();
+                    long id = Convert.ToInt64(cmd.ExecuteScalar());
+                    conexion.OpenOrCloseConnection();
+                    return id;
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error al obtener el último ID de factura: " + ex.Message);
+                return 0;
+            }
+        }
         public bool RegistrarFactura(long idCliente, DateTime fecha, List<FacturaDetalle> detalles)
         {
             try
