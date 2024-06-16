@@ -11,10 +11,18 @@ namespace SGFactuacion
     {
         private SqlConnection connection;
         private string connectionString;
+        public string Server { get; set; }
+        public string DataBase { get; set; }
+        public string Usuario { get; set; }
+        public string Contraseña { get; set; }
 
         public csConexion()
         {
-            connectionString = "Server=.;Database=BDFactura;User Id=sa;Password=123456;";
+            Server = ".";
+            DataBase = "BDFactura";
+            Usuario = "sa";
+            Contraseña = "123456";
+            connectionString = $"Server={Server};Database={DataBase};User Id={Usuario};Password={Contraseña};";
             connection = new SqlConnection(connectionString);
         }
 

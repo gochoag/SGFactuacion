@@ -200,6 +200,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Reportes\RP_FacturaDetalle.rdlc" />
+    <None Include="ClassDiagramFacture.cd" />
     <None Include="DataSets\DSFacturadetalle.xsc">
       <DependentUpon>DSFacturadetalle.xsd</DependentUpon>
     </None>
