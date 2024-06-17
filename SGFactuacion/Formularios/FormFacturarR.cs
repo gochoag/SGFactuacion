@@ -160,6 +160,7 @@ namespace SGFactuacion
         {
             try
             {
+
                 if (cbBuscarCliente.SelectedItem == null || cbBuscarProducto.SelectedItem == null || string.IsNullOrEmpty(txtCantidad.Text))
                 {
                     MessageBox.Show("Por favor, complete todos los campos antes de agregar el producto.", "Campos Vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -188,6 +189,11 @@ namespace SGFactuacion
                 }
 
                 dgvListaProductos.Rows.Add(productoSeleccionado.IdProducto, productoSeleccionado.Nombre, productoSeleccionado.PrecioUnitario, cantidad);
+
+                //validar que tenga contenido el dgv
+                BTNRegistrarFactura.Enabled = dgvListaProductos.Rows.Count > 0;
+
+
                 LimpiarCamposProducto();
             }
             catch (Exception ex)
@@ -207,6 +213,7 @@ namespace SGFactuacion
                     return;
                 }
                 dgvListaProductos.Rows.RemoveAt(dgvListaProductos.SelectedRows[0].Index);
+                BTNRegistrarFactura.Enabled = dgvListaProductos.Rows.Count > 0;
             }
             catch (Exception ex)
             {
@@ -242,6 +249,7 @@ namespace SGFactuacion
         {
             try
             {
+
                 long idCliente = (long)cbBuscarCliente.SelectedValue;
                 List<FacturaDetalle> detallesFactura = new List<FacturaDetalle>();
                 foreach (DataGridViewRow fila in dgvListaProductos.Rows)
@@ -289,7 +297,12 @@ namespace SGFactuacion
 
                 MessageBox.Show(ex.Message);
             }
-            
+            finally
+            {
+                MessageBox.Show("sdsdsd");
+
+            }
+
 
         }
 
@@ -350,6 +363,10 @@ namespace SGFactuacion
             {
                 txtIVA.Text = "";
             }
+        }
+
+        private void dgvListaProductos_DataSourceChanged(object sender, EventArgs e)
+        {
         }
     }
 }

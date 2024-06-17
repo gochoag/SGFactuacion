@@ -190,6 +190,7 @@
             this.dgvListaProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListaProductos.Size = new System.Drawing.Size(593, 155);
             this.dgvListaProductos.TabIndex = 11;
+            this.dgvListaProductos.DataSourceChanged += new System.EventHandler(this.dgvListaProductos_DataSourceChanged);
             this.dgvListaProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaProductos_CellContentClick);
             // 
             // label8
@@ -205,6 +206,7 @@
             // BTNRegistrarFactura
             // 
             this.BTNRegistrarFactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(118)))), ((int)(((byte)(34)))));
+            this.BTNRegistrarFactura.Enabled = false;
             this.BTNRegistrarFactura.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BTNRegistrarFactura.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNRegistrarFactura.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
