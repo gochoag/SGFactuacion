@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
+using System.Text.RegularExpressions;
 namespace SGFactuacion
 {
     public partial class FormRegistrarC : Form
@@ -20,7 +21,11 @@ namespace SGFactuacion
         }
 
 
-
+        private bool EsCorreoValido(string email)
+        {
+            string patron = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            return Regex.IsMatch(email, patron);
+        }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -39,6 +44,11 @@ namespace SGFactuacion
             {
                 if (txtcedulaC.Text != string.Empty && txtNombreC.Text != string.Empty && txtApellidoC.Text != string.Empty && txtEmailC.Text != string.Empty)
                 {
+                    if (!EsCorreoValido(txtEmailC.Text))
+                    {
+                        MessageBox.Show("El correo electrónico ingresado no es válido.", "Correo Electrónico Inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                     DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas registrar a este cliente?", "Confirmar registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (resultado == DialogResult.Yes)
@@ -60,10 +70,15 @@ namespace SGFactuacion
                     MessageBox.Show("Completa todos los campos", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+            catch (SqlException exq)
+            {
+                MessageBox.Show($"Ocurrió un error: {exq.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
 
         }
 

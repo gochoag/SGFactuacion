@@ -177,6 +177,16 @@ namespace SGFactuacion
                     MessageBox.Show("La cantidad ingresada excede el stock disponible.", "Stock Insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+                foreach (DataGridViewRow row in dgvListaProductos.Rows)
+                {
+                    if (row.Cells["ID_Producto"].Value != null && (long)row.Cells["ID_Producto"].Value == productoSeleccionado.IdProducto)
+                    {
+                        MessageBox.Show("El producto ya está en la lista.", "Producto Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
                 dgvListaProductos.Rows.Add(productoSeleccionado.IdProducto, productoSeleccionado.Nombre, productoSeleccionado.PrecioUnitario, cantidad);
                 LimpiarCamposProducto();
             }

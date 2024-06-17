@@ -48,6 +48,7 @@ namespace SGFactuacion
         }
         public bool RegistrarCliente()
         {
+            bool registrado = false;
             try
             {
                 using (SqlCommand cmd = new SqlCommand("[Sp_Insert_Cliente]", conexion.GetConnection()))
@@ -61,16 +62,24 @@ namespace SGFactuacion
 
                     conexion.OpenOrCloseConnection();
                     cmd.ExecuteNonQuery();
-                    conexion.OpenOrCloseConnection();
+                    registrado = true;
+                   
                 }
-                return true;
+             
 
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Error cliente: " + ex.Message, "Error de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                MessageBox.Show("Error cliente: Cedula duplicada", "Error de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                registrado = false;
             }
+            finally
+            {
+
+               conexion.OpenOrCloseConnection();
+            }
+
+            return registrado;
         }
 
 
