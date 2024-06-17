@@ -72,6 +72,7 @@
             this.TBPrecioP.Name = "TBPrecioP";
             this.TBPrecioP.Size = new System.Drawing.Size(184, 20);
             this.TBPrecioP.TabIndex = 12;
+            this.TBPrecioP.TextChanged += new System.EventHandler(this.TBPrecioP_TextChanged);
             this.TBPrecioP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBPrecioP_KeyPress);
             // 
             // TBNombreP

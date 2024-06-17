@@ -173,5 +173,10 @@ namespace SGFactuacion
             }
             e.Handled = true;
         }
+
+        private void TBPrecioP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

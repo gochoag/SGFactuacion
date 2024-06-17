@@ -112,6 +112,7 @@
             this.dtFechaC.Name = "dtFechaC";
             this.dtFechaC.Size = new System.Drawing.Size(200, 20);
             this.dtFechaC.TabIndex = 20;
+            this.dtFechaC.Value = new System.DateTime(1999, 12, 27, 0, 0, 0, 0);
             // 
             // label6
             // 
