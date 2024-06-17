@@ -175,7 +175,7 @@ namespace SGFactuacion
             }
             return clientes;
         }
-
+        
         public static AutoCompleteStringCollection Autocompletado()
         {
             AutoCompleteStringCollection coleccion = new AutoCompleteStringCollection();
@@ -188,6 +188,37 @@ namespace SGFactuacion
 
             return coleccion;
         }
-    
+        public static long GetFacturaIDByClienteIDAndFecha(long idCliente, DateTime fecha)
+        {
+            long idFactura = -1;
+            csConexion conexion = new csConexion();
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("Sp_Get_Factura_By_Cedula_And_Fecha", conexion.GetConnection()))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ID", idCliente);
+                    cmd.Parameters.AddWithValue("@Fecha", fecha);
+                    conexion.OpenOrCloseConnection();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            idFactura = Convert.ToInt64(reader["ID_Factu"]);
+                        }
+                    }
+
+                    conexion.OpenOrCloseConnection();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error al obtener el ID de la factura: " + ex.Message);
+            }
+
+            return idFactura;
+        }
     }
 }

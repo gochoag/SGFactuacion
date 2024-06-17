@@ -11,8 +11,9 @@ namespace SGFactuacion
 {
     internal class csFactura
     {
+       
+        public DateTime FechaFactura { get; set; }
         private csConexion conexion;
-
         public class FacturaDetalle
         {
             public long ID_DetalleFact { get; set; }
@@ -21,7 +22,41 @@ namespace SGFactuacion
             public int Cantidad { get; set; }
             public decimal IVA { get; set; }
         }
+        public static List<csFactura> FechaFacturaCliente(long id)
+        {
+            List<csFactura> fechasFacturas = new List<csFactura>();
+            csConexion conexion = new csConexion();
 
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("Sp_Get_Facturas_By_ClienteID", conexion.GetConnection()))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ID_Cliente", id);
+                    conexion.OpenOrCloseConnection();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            csFactura factura = new csFactura
+                            {
+                                FechaFactura = Convert.ToDateTime(reader["Fecha"])
+                            };
+                            fechasFacturas.Add(factura);
+                        }
+                    }
+
+                    conexion.OpenOrCloseConnection();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error al buscar las fechas de las facturas: " + ex.Message);
+            }
+
+            return fechasFacturas;
+        }
         public csFactura()
         {
             conexion = new csConexion();

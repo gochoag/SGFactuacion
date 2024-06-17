@@ -54,6 +54,9 @@
             // 
             // dgvListProductos
             // 
+            this.dgvListProductos.AllowUserToAddRows = false;
+            this.dgvListProductos.AllowUserToDeleteRows = false;
+            this.dgvListProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListProductos.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvListProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -76,8 +79,9 @@
             this.dgvListProductos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListProductos.EnableHeadersVisualStyles = false;
             this.dgvListProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
-            this.dgvListProductos.Location = new System.Drawing.Point(84, 160);
+            this.dgvListProductos.Location = new System.Drawing.Point(26, 160);
             this.dgvListProductos.Name = "dgvListProductos";
+            this.dgvListProductos.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -86,7 +90,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvListProductos.Size = new System.Drawing.Size(443, 248);
+            this.dgvListProductos.Size = new System.Drawing.Size(580, 314);
             this.dgvListProductos.TabIndex = 3;
             // 
             // txtBuscar
