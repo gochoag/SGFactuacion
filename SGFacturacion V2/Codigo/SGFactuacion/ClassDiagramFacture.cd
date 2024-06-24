@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SGFactuacion.csCliente">
+    <Position X="1" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAEACAAAAIEAAAAgABAAAIAAAAAAgAABAIAAAE=</HashCode>
+      <FileName>Clases\csCliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SGFactuacion.csConexion">
+    <Position X="8" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAoABAARAAAAAAAAAAAAAAAEAhAAAAA=</HashCode>
+      <FileName>Clases\csConexion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SGFactuacion.csFactura">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="SGFactuacion.csFactura.FacturaDetalle">
+        <TypeIdentifier>
+          <NewMemberFileName>Clases\csFactura.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACE=</HashCode>
+      <FileName>Clases\csFactura.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SGFactuacion.csProducto">
+    <Position X="5.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABQACBAAAAgAAAAAAAAgAAAgAAAAAAAEgAAAAAAAAE=</HashCode>
+      <FileName>Clases\csProducto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
