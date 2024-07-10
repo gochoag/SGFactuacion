@@ -63,6 +63,16 @@
             this.MenuTrP = new System.Windows.Forms.Timer(this.components);
             this.SidbarTr = new System.Windows.Forms.Timer(this.components);
             this.PnContenedor = new System.Windows.Forms.Panel();
+            this.FlowEmpleado = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnEmpleado = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnRegistrarE = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnEditarE = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnListarE = new System.Windows.Forms.Button();
+            this.MenuTrE = new System.Windows.Forms.Timer(this.components);
             this.Barra_Arriba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Imagelateral)).BeginInit();
@@ -81,6 +91,11 @@
             this.PanellistarP.SuspendLayout();
             this.PanelFactura.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.FlowEmpleado.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // Barra_Arriba
@@ -136,6 +151,7 @@
             this.Panelmenu.Controls.Add(this.FlowProducto);
             this.Panelmenu.Controls.Add(this.PanelFactura);
             this.Panelmenu.Controls.Add(this.panel2);
+            this.Panelmenu.Controls.Add(this.FlowEmpleado);
             this.Panelmenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Panelmenu.Location = new System.Drawing.Point(0, 34);
             this.Panelmenu.Margin = new System.Windows.Forms.Padding(0);
@@ -469,6 +485,126 @@
             this.PnContenedor.TabIndex = 10;
             this.PnContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.PnContenedor_Paint);
             // 
+            // FlowEmpleado
+            // 
+            this.FlowEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            this.FlowEmpleado.Controls.Add(this.panel3);
+            this.FlowEmpleado.Controls.Add(this.panel4);
+            this.FlowEmpleado.Controls.Add(this.panel5);
+            this.FlowEmpleado.Controls.Add(this.panel6);
+            this.FlowEmpleado.Location = new System.Drawing.Point(0, 254);
+            this.FlowEmpleado.Margin = new System.Windows.Forms.Padding(0);
+            this.FlowEmpleado.Name = "FlowEmpleado";
+            this.FlowEmpleado.Size = new System.Drawing.Size(206, 35);
+            this.FlowEmpleado.TabIndex = 6;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnEmpleado);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(206, 37);
+            this.panel3.TabIndex = 3;
+            // 
+            // btnEmpleado
+            // 
+            this.btnEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(165)))), ((int)(((byte)(93)))));
+            this.btnEmpleado.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEmpleado.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpleado.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btnEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleado.Image")));
+            this.btnEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpleado.Location = new System.Drawing.Point(-2, -2);
+            this.btnEmpleado.Margin = new System.Windows.Forms.Padding(0);
+            this.btnEmpleado.Name = "btnEmpleado";
+            this.btnEmpleado.Size = new System.Drawing.Size(213, 47);
+            this.btnEmpleado.TabIndex = 2;
+            this.btnEmpleado.Text = "Empleado";
+            this.btnEmpleado.UseVisualStyleBackColor = false;
+            this.btnEmpleado.Click += new System.EventHandler(this.btnEmpleado_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnRegistrarE);
+            this.panel4.Location = new System.Drawing.Point(3, 40);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 37);
+            this.panel4.TabIndex = 4;
+            // 
+            // btnRegistrarE
+            // 
+            this.btnRegistrarE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            this.btnRegistrarE.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnRegistrarE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegistrarE.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarE.ForeColor = System.Drawing.Color.Transparent;
+            this.btnRegistrarE.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarE.Image")));
+            this.btnRegistrarE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrarE.Location = new System.Drawing.Point(-2, -2);
+            this.btnRegistrarE.Name = "btnRegistrarE";
+            this.btnRegistrarE.Size = new System.Drawing.Size(212, 44);
+            this.btnRegistrarE.TabIndex = 2;
+            this.btnRegistrarE.Text = "Registrar";
+            this.btnRegistrarE.UseVisualStyleBackColor = false;
+            this.btnRegistrarE.Click += new System.EventHandler(this.btnRegistrarE_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.btnEditarE);
+            this.panel5.Location = new System.Drawing.Point(3, 83);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(200, 37);
+            this.panel5.TabIndex = 5;
+            // 
+            // btnEditarE
+            // 
+            this.btnEditarE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            this.btnEditarE.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnEditarE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEditarE.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarE.ForeColor = System.Drawing.Color.Transparent;
+            this.btnEditarE.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarE.Image")));
+            this.btnEditarE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarE.Location = new System.Drawing.Point(-2, -2);
+            this.btnEditarE.Name = "btnEditarE";
+            this.btnEditarE.Size = new System.Drawing.Size(212, 44);
+            this.btnEditarE.TabIndex = 2;
+            this.btnEditarE.Text = " Editar";
+            this.btnEditarE.UseVisualStyleBackColor = false;
+            this.btnEditarE.Click += new System.EventHandler(this.btnEditarE_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.btnListarE);
+            this.panel6.Location = new System.Drawing.Point(3, 126);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(200, 37);
+            this.panel6.TabIndex = 6;
+            // 
+            // btnListarE
+            // 
+            this.btnListarE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            this.btnListarE.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnListarE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnListarE.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarE.ForeColor = System.Drawing.Color.Transparent;
+            this.btnListarE.Image = ((System.Drawing.Image)(resources.GetObject("btnListarE.Image")));
+            this.btnListarE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnListarE.Location = new System.Drawing.Point(-2, -2);
+            this.btnListarE.Name = "btnListarE";
+            this.btnListarE.Size = new System.Drawing.Size(212, 44);
+            this.btnListarE.TabIndex = 2;
+            this.btnListarE.Text = "Listar";
+            this.btnListarE.UseVisualStyleBackColor = false;
+            this.btnListarE.Click += new System.EventHandler(this.btnListarE_Click);
+            // 
+            // MenuTrE
+            // 
+            this.MenuTrE.Interval = 50;
+            this.MenuTrE.Tick += new System.EventHandler(this.MenuTrE_Tick);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -503,6 +639,11 @@
             this.PanellistarP.ResumeLayout(false);
             this.PanelFactura.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.FlowEmpleado.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -542,6 +683,16 @@
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel PnContenedor;
+        private System.Windows.Forms.FlowLayoutPanel FlowEmpleado;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnEmpleado;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnRegistrarE;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btnEditarE;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button btnListarE;
+        private System.Windows.Forms.Timer MenuTrE;
     }
 }
 

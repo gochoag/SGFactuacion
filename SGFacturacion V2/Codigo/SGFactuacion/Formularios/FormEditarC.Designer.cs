@@ -181,6 +181,7 @@
             this.txtcedulaC.Name = "txtcedulaC";
             this.txtcedulaC.Size = new System.Drawing.Size(174, 20);
             this.txtcedulaC.TabIndex = 12;
+            this.txtcedulaC.TextChanged += new System.EventHandler(this.txtcedulaC_TextChanged);
             this.txtcedulaC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcedulaC_KeyPress);
             // 
             // label2

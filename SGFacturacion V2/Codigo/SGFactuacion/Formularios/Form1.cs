@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGFactuacion.Formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,7 @@ namespace SGFactuacion
         }
         bool menuExpand = false;
         bool menuExpand2 = false;
+        bool menuExpand3 = false;
 
         private void Menutransacion_Tick(object sender, EventArgs e)
         {
@@ -109,7 +111,7 @@ namespace SGFactuacion
 
         private void Close_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            Application.Exit();
         }
         private void AbrirHijo (object hijo)
         {
@@ -193,6 +195,48 @@ namespace SGFactuacion
         private void PnContenedor_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void MenuTrE_Tick(object sender, EventArgs e)
+        {
+            if (menuExpand3 == false)
+            {
+                FlowEmpleado.Height += 40;
+                if (FlowEmpleado.Height >= 160)
+                {
+                    MenuTrE.Stop();
+                    menuExpand3 = true;
+                }
+            }
+            else
+            {
+                FlowEmpleado.Height -= 40;
+                if (FlowEmpleado.Height <= 37)
+                {
+                    MenuTrE.Stop();
+                    menuExpand3 = false;
+                }
+            }
+        }
+
+        private void btnEmpleado_Click(object sender, EventArgs e)
+        {
+            MenuTrE.Start();
+        }
+
+        private void btnRegistrarE_Click(object sender, EventArgs e)
+        {
+            AbrirHijo(new FrmRegistrarE());
+        }
+
+        private void btnEditarE_Click(object sender, EventArgs e)
+        {
+            AbrirHijo(new FrmEditarE());
+        }
+
+        private void btnListarE_Click(object sender, EventArgs e)
+        {
+            AbrirHijo(new FrmListarE());
         }
     }
 }

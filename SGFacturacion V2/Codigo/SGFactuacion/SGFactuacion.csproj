@@ -113,6 +113,30 @@
     <Compile Include="Formularios\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmEditarE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmEditarE.Designer.cs">
+      <DependentUpon>FrmEditarE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmListarE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmListarE.Designer.cs">
+      <DependentUpon>FrmListarE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmRegistrarE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmRegistrarE.Designer.cs">
+      <DependentUpon>FrmRegistrarE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmReporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +210,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormResgistrarP.resx">
       <DependentUpon>FormResgistrarP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmEditarE.resx">
+      <DependentUpon>FrmEditarE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmListarE.resx">
+      <DependentUpon>FrmListarE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmRegistrarE.resx">
+      <DependentUpon>FrmRegistrarE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmReporte.resx">
       <DependentUpon>FrmReporte.cs</DependentUpon>

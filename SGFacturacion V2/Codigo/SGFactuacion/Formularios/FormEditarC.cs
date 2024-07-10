@@ -190,5 +190,10 @@ namespace SGFactuacion
             }
             e.Handled = true;
         }
+
+        private void txtcedulaC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
