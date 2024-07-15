@@ -104,7 +104,6 @@
             this.txtbUsuario.Name = "txtbUsuario";
             this.txtbUsuario.Size = new System.Drawing.Size(266, 20);
             this.txtbUsuario.TabIndex = 3;
-            this.txtbUsuario.Text = "jp";
             // 
             // lblcontra
             // 
@@ -123,7 +122,6 @@
             this.txtbContraseña.PasswordChar = '*';
             this.txtbContraseña.Size = new System.Drawing.Size(266, 20);
             this.txtbContraseña.TabIndex = 5;
-            this.txtbContraseña.Text = "root";
             // 
             // btnEntrar
             // 
