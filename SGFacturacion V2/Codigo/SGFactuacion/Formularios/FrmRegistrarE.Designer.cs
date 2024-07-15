@@ -41,6 +41,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtcedulaE = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lbl8 = new System.Windows.Forms.Label();
             this.PnDiseñoE.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,16 +76,17 @@
             this.BTNRegistrarE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BTNRegistrarE.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNRegistrarE.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BTNRegistrarE.Location = new System.Drawing.Point(453, 447);
+            this.BTNRegistrarE.Location = new System.Drawing.Point(488, 370);
             this.BTNRegistrarE.Name = "BTNRegistrarE";
             this.BTNRegistrarE.Size = new System.Drawing.Size(99, 33);
             this.BTNRegistrarE.TabIndex = 23;
             this.BTNRegistrarE.Text = "Registrar";
             this.BTNRegistrarE.UseVisualStyleBackColor = false;
+            this.BTNRegistrarE.Click += new System.EventHandler(this.BTNRegistrarE_Click);
             // 
             // dtFechaE
             // 
-            this.dtFechaE.Location = new System.Drawing.Point(274, 366);
+            this.dtFechaE.Location = new System.Drawing.Point(317, 180);
             this.dtFechaE.Name = "dtFechaE";
             this.dtFechaE.Size = new System.Drawing.Size(200, 20);
             this.dtFechaE.TabIndex = 22;
@@ -91,7 +96,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(122, 366);
+            this.label6.Location = new System.Drawing.Point(171, 180);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(139, 17);
             this.label6.TabIndex = 21;
@@ -99,7 +104,7 @@
             // 
             // txtEmailE
             // 
-            this.txtEmailE.Location = new System.Drawing.Point(275, 296);
+            this.txtEmailE.Location = new System.Drawing.Point(413, 81);
             this.txtEmailE.Name = "txtEmailE";
             this.txtEmailE.Size = new System.Drawing.Size(174, 20);
             this.txtEmailE.TabIndex = 20;
@@ -108,7 +113,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(187, 296);
+            this.label5.Location = new System.Drawing.Point(347, 81);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 17);
             this.label5.TabIndex = 19;
@@ -116,7 +121,7 @@
             // 
             // txtApellidoE
             // 
-            this.txtApellidoE.Location = new System.Drawing.Point(274, 229);
+            this.txtApellidoE.Location = new System.Drawing.Point(413, 130);
             this.txtApellidoE.Name = "txtApellidoE";
             this.txtApellidoE.Size = new System.Drawing.Size(174, 20);
             this.txtApellidoE.TabIndex = 18;
@@ -125,7 +130,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(186, 229);
+            this.label4.Location = new System.Drawing.Point(325, 130);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 17);
             this.label4.TabIndex = 17;
@@ -133,7 +138,7 @@
             // 
             // txtNombreE
             // 
-            this.txtNombreE.Location = new System.Drawing.Point(274, 165);
+            this.txtNombreE.Location = new System.Drawing.Point(114, 133);
             this.txtNombreE.Name = "txtNombreE";
             this.txtNombreE.Size = new System.Drawing.Size(174, 20);
             this.txtNombreE.TabIndex = 16;
@@ -142,7 +147,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(186, 165);
+            this.label3.Location = new System.Drawing.Point(26, 133);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 17);
             this.label3.TabIndex = 15;
@@ -150,7 +155,7 @@
             // 
             // txtcedulaE
             // 
-            this.txtcedulaE.Location = new System.Drawing.Point(274, 106);
+            this.txtcedulaE.Location = new System.Drawing.Point(114, 84);
             this.txtcedulaE.Name = "txtcedulaE";
             this.txtcedulaE.Size = new System.Drawing.Size(174, 20);
             this.txtcedulaE.TabIndex = 14;
@@ -160,17 +165,55 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(186, 106);
+            this.label2.Location = new System.Drawing.Point(40, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 17);
             this.label2.TabIndex = 13;
             this.label2.Text = "Cedula:";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(48, 242);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 17);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Usuario:";
+            // 
+            // txtUser
+            // 
+            this.txtUser.Location = new System.Drawing.Point(114, 242);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(174, 20);
+            this.txtUser.TabIndex = 26;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(413, 239);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(174, 20);
+            this.txtPassword.TabIndex = 28;
+            // 
+            // lbl8
+            // 
+            this.lbl8.AutoSize = true;
+            this.lbl8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl8.Location = new System.Drawing.Point(314, 239);
+            this.lbl8.Name = "lbl8";
+            this.lbl8.Size = new System.Drawing.Size(81, 17);
+            this.lbl8.TabIndex = 27;
+            this.lbl8.Text = "Contraseña:";
+            // 
             // FrmRegistrarE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 502);
+            this.ClientSize = new System.Drawing.Size(633, 437);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.lbl8);
+            this.Controls.Add(this.txtUser);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.PnDiseñoE);
             this.Controls.Add(this.BTNRegistrarE);
             this.Controls.Add(this.dtFechaE);
@@ -208,5 +251,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtcedulaE;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label lbl8;
     }
 }

@@ -98,6 +98,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDFacturaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDFacturaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clases\csCliente.cs" />
     <Compile Include="Clases\csConexion.cs" />
     <Compile Include="Clases\csEmpleados.cs" />
@@ -237,6 +242,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Reportes\RP_FacturaDetalle.rdlc" />
+    <None Include="BDFacturaDataSet.xsc">
+      <DependentUpon>BDFacturaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BDFacturaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDFacturaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDFacturaDataSet.xss">
+      <DependentUpon>BDFacturaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="ClassDiagramFacture.cd" />
     <None Include="DataSets\DSFacturadetalle.xsc">
       <DependentUpon>DSFacturadetalle.xsd</DependentUpon>
