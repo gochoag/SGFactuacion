@@ -253,6 +253,7 @@
     <None Include="BDFacturaDataSet.xss">
       <DependentUpon>BDFacturaDataSet.xsd</DependentUpon>
     </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagramFacture.cd" />
     <None Include="DataSets\DSFacturadetalle.xsc">
       <DependentUpon>DSFacturadetalle.xsd</DependentUpon>
