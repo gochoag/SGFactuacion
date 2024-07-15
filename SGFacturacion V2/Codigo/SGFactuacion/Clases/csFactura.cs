@@ -19,7 +19,7 @@ namespace SGFactuacion
             public long ID_DetalleFact { get; set; }
             public long ID_Produc { get; set; }
             public decimal Precio { get; set; }
-            public int Cantidad { get; set; }
+            public decimal Cantidad { get; set; }
             public decimal IVA { get; set; }
         }
         public static List<csFactura> FechaFacturaCliente(long id)
@@ -79,7 +79,7 @@ namespace SGFactuacion
                 return 0;
             }
         }
-        public bool RegistrarFactura(long idCliente, DateTime fecha, List<FacturaDetalle> detalles)
+        public bool RegistrarFactura(long idCliente, DateTime fecha, List<FacturaDetalle> detalles, long idEmpleado)
         {
             try
             {
@@ -88,12 +88,13 @@ namespace SGFactuacion
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@ID_Cliente", idCliente);
                     cmd.Parameters.AddWithValue("@Fecha", fecha);
+                    cmd.Parameters.AddWithValue("@Id_Empleado", idEmpleado);
 
                     // Crear una DataTable para almacenar los detalles de la factura
                     DataTable dtDetalles = new DataTable();
                     dtDetalles.Columns.Add("ID_Produc", typeof(long));
                     dtDetalles.Columns.Add("Precio", typeof(decimal));
-                    dtDetalles.Columns.Add("Cantidad", typeof(int));
+                    dtDetalles.Columns.Add("Cantidad", typeof(decimal));
                     dtDetalles.Columns.Add("IVA", typeof(decimal));
 
                     // Agregar los detalles de la factura a la DataTable

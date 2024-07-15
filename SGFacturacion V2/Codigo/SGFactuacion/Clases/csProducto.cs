@@ -14,11 +14,11 @@ namespace SGFactuacion
         public long IdProducto { get; set; }
         public string Nombre { get; set; }
         public decimal PrecioUnitario { get; set; }
-        public int Stock { get; set; }
+        public decimal Stock { get; set; }
 
         private csConexion conexion;
 
-        public csProducto(string nombre, decimal precioUnitario, int stock)
+        public csProducto(string nombre, decimal precioUnitario, decimal stock)
         {
             Nombre = nombre;
             PrecioUnitario = precioUnitario;
@@ -26,7 +26,7 @@ namespace SGFactuacion
             conexion = new csConexion();
         }
 
-        public csProducto(long idProducto, string nombre, decimal precioUnitario, int stock)
+        public csProducto(long idProducto, string nombre, decimal precioUnitario, decimal stock)
         {
             IdProducto = idProducto;
             Nombre = nombre;
@@ -103,7 +103,7 @@ namespace SGFactuacion
                                     long.Parse(reader["IDPRODUCTO"].ToString()),
                                     reader["PRODUCTO"].ToString(),
                                     decimal.Parse(reader["PRECIO_UNITARIO"].ToString(), System.Globalization.CultureInfo.InvariantCulture),
-                                    int.Parse(reader["STOCK"].ToString())
+                                    decimal.Parse(reader["STOCK"].ToString(), System.Globalization.CultureInfo.InvariantCulture)
                                 );
                                 productos.Add(producto);
                             }
@@ -126,10 +126,10 @@ namespace SGFactuacion
             try
             {
                 
-                    using (SqlCommand cmd = new SqlCommand("Sp_Buscar_ProductoPorNombre", conexion.GetConnection()))
+                    using (SqlCommand cmd = new SqlCommand("[sp_rep_Producto_By_Nombre]", conexion.GetConnection()))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@Buscador", patronNombre);
+                        cmd.Parameters.AddWithValue("@PatronNombre", patronNombre);
                         conexion.OpenOrCloseConnection();
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
@@ -139,7 +139,7 @@ namespace SGFactuacion
                                     long.Parse(reader["ID_Produc"].ToString()),
                                     reader["Nombre"].ToString(),
                                     decimal.Parse(reader["Precio_unitario"].ToString(), System.Globalization.CultureInfo.InvariantCulture),
-                                    int.Parse(reader["Stock"].ToString())
+                                    decimal.Parse(reader["Stock"].ToString(), System.Globalization.CultureInfo.InvariantCulture)
                                 );
                                 productos.Add(producto);
                             }
@@ -155,18 +155,5 @@ namespace SGFactuacion
             return productos;
         }
 
-        public static AutoCompleteStringCollection Autocompletado()
-        {
-            AutoCompleteStringCollection coleccion = new AutoCompleteStringCollection();
-            List<csProducto> productos = ListarProductos();
-
-            foreach (csProducto producto in productos)
-            {
-                coleccion.Add(producto.Nombre);
-                
-            }
-
-            return coleccion;
-        }
     }
 }

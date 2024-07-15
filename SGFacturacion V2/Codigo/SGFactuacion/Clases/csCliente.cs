@@ -18,10 +18,7 @@ namespace SGFactuacion
         public string Apellido { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public string Email { get; set; }
-        public string NombreCompleto
-        {
-            get { return $"{Nombre} {Apellido}"; }
-        }
+        
 
 
         private csConexion conexion;
@@ -185,18 +182,7 @@ namespace SGFactuacion
             return clientes;
         }
         
-        public static AutoCompleteStringCollection Autocompletado()
-        {
-            AutoCompleteStringCollection coleccion = new AutoCompleteStringCollection();
-            List<csCliente> clientes = ListarClientes();
-
-            foreach (csCliente cliente in clientes)
-            {
-                coleccion.Add(cliente.NombreCompleto);
-            }
-
-            return coleccion;
-        }
+        
         public static long GetFacturaIDByClienteIDAndFecha(long idCliente, DateTime fecha)
         {
             long idFactura = -1;

@@ -40,10 +40,6 @@ namespace SGFactuacion
                 cbData1.DisplayMember = "NombreCompleto";
                 cbData1.ValueMember = "IdCliente";
 
-                cbData1.AutoCompleteMode = AutoCompleteMode.Suggest;
-                cbData1.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                cbData1.AutoCompleteCustomSource = csCliente.Autocompletado();
-
                 cbData1.SelectedIndex = -1;
             }
             catch (Exception ex)

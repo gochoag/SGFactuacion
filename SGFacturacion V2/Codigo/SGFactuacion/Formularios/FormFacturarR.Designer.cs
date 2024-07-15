@@ -35,10 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbBuscarCliente = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbBuscarProducto = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvListaProductos = new System.Windows.Forms.DataGridView();
@@ -55,8 +53,15 @@
             this.PnDiseñoF = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.txtIVA = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvDatosBuscados = new System.Windows.Forms.DataGridView();
+            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
+            this.txtBuscarProducto = new System.Windows.Forms.TextBox();
+            this.btnCerrarDGV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProductos)).BeginInit();
             this.PnDiseñoF.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosBuscados)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -90,16 +95,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Buscar cliente:";
             // 
-            // cbBuscarCliente
-            // 
-            this.cbBuscarCliente.FormattingEnabled = true;
-            this.cbBuscarCliente.Location = new System.Drawing.Point(127, 60);
-            this.cbBuscarCliente.Name = "cbBuscarCliente";
-            this.cbBuscarCliente.Size = new System.Drawing.Size(197, 21);
-            this.cbBuscarCliente.TabIndex = 5;
-            this.cbBuscarCliente.SelectedIndexChanged += new System.EventHandler(this.cbBuscarCliente_SelectedIndexChanged);
-            this.cbBuscarCliente.TextChanged += new System.EventHandler(this.cbBuscarCliente_TextChanged);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -114,27 +109,17 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(9, 152);
+            this.label5.Location = new System.Drawing.Point(315, 60);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(112, 17);
             this.label5.TabIndex = 7;
             this.label5.Text = "Buscar producto:";
             // 
-            // cbBuscarProducto
-            // 
-            this.cbBuscarProducto.Enabled = false;
-            this.cbBuscarProducto.FormattingEnabled = true;
-            this.cbBuscarProducto.Location = new System.Drawing.Point(127, 152);
-            this.cbBuscarProducto.Name = "cbBuscarProducto";
-            this.cbBuscarProducto.Size = new System.Drawing.Size(197, 21);
-            this.cbBuscarProducto.TabIndex = 8;
-            this.cbBuscarProducto.SelectedIndexChanged += new System.EventHandler(this.cbBuscarProducto_SelectedIndexChanged);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 198);
+            this.label6.Location = new System.Drawing.Point(9, 149);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 17);
             this.label6.TabIndex = 9;
@@ -144,7 +129,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(341, 156);
+            this.label7.Location = new System.Drawing.Point(10, 190);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 17);
             this.label7.TabIndex = 10;
@@ -197,7 +182,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(319, 198);
+            this.label8.Location = new System.Drawing.Point(319, 149);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 17);
             this.label8.TabIndex = 12;
@@ -251,7 +236,7 @@
             // txtCantidad
             // 
             this.txtCantidad.Enabled = false;
-            this.txtCantidad.Location = new System.Drawing.Point(414, 153);
+            this.txtCantidad.Location = new System.Drawing.Point(95, 190);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(89, 20);
             this.txtCantidad.TabIndex = 16;
@@ -261,7 +246,7 @@
             // 
             this.lblNombreCliente.AutoSize = true;
             this.lblNombreCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreCliente.Location = new System.Drawing.Point(124, 106);
+            this.lblNombreCliente.Location = new System.Drawing.Point(92, 106);
             this.lblNombreCliente.Name = "lblNombreCliente";
             this.lblNombreCliente.Size = new System.Drawing.Size(0, 17);
             this.lblNombreCliente.TabIndex = 17;
@@ -271,7 +256,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(466, 198);
+            this.label9.Location = new System.Drawing.Point(466, 149);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 17);
             this.label9.TabIndex = 18;
@@ -281,7 +266,7 @@
             // 
             this.lblNombreProducto.AutoSize = true;
             this.lblNombreProducto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreProducto.Location = new System.Drawing.Point(92, 198);
+            this.lblNombreProducto.Location = new System.Drawing.Point(92, 149);
             this.lblNombreProducto.Name = "lblNombreProducto";
             this.lblNombreProducto.Size = new System.Drawing.Size(0, 17);
             this.lblNombreProducto.TabIndex = 19;
@@ -290,7 +275,7 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(375, 198);
+            this.lblPrecio.Location = new System.Drawing.Point(375, 149);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(0, 17);
             this.lblPrecio.TabIndex = 20;
@@ -299,7 +284,7 @@
             // 
             this.lblStock.AutoSize = true;
             this.lblStock.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.Location = new System.Drawing.Point(518, 198);
+            this.lblStock.Location = new System.Drawing.Point(518, 149);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(0, 17);
             this.lblStock.TabIndex = 21;
@@ -319,7 +304,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(518, 156);
+            this.label10.Location = new System.Drawing.Point(319, 193);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(33, 17);
             this.label10.TabIndex = 23;
@@ -328,7 +313,7 @@
             // txtIVA
             // 
             this.txtIVA.Enabled = false;
-            this.txtIVA.Location = new System.Drawing.Point(559, 153);
+            this.txtIVA.Location = new System.Drawing.Point(378, 190);
             this.txtIVA.MaxLength = 2;
             this.txtIVA.Name = "txtIVA";
             this.txtIVA.Size = new System.Drawing.Size(46, 20);
@@ -338,11 +323,76 @@
             this.txtIVA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIVA_KeyPress);
             this.txtIVA.Leave += new System.EventHandler(this.txtIVA_Leave);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvDatosBuscados);
+            this.panel1.Location = new System.Drawing.Point(12, 95);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(609, 132);
+            this.panel1.TabIndex = 25;
+            this.panel1.Visible = false;
+            // 
+            // dgvDatosBuscados
+            // 
+            this.dgvDatosBuscados.AllowUserToAddRows = false;
+            this.dgvDatosBuscados.AllowUserToDeleteRows = false;
+            this.dgvDatosBuscados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDatosBuscados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatosBuscados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDatosBuscados.Location = new System.Drawing.Point(0, 0);
+            this.dgvDatosBuscados.Name = "dgvDatosBuscados";
+            this.dgvDatosBuscados.ReadOnly = true;
+            this.dgvDatosBuscados.Size = new System.Drawing.Size(609, 132);
+            this.dgvDatosBuscados.TabIndex = 0;
+            this.dgvDatosBuscados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosBuscados_CellContentClick);
+            this.dgvDatosBuscados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosBuscados_CellDoubleClick);
+            // 
+            // txtBuscarCliente
+            // 
+            this.txtBuscarCliente.Location = new System.Drawing.Point(112, 57);
+            this.txtBuscarCliente.Name = "txtBuscarCliente";
+            this.txtBuscarCliente.Size = new System.Drawing.Size(197, 20);
+            this.txtBuscarCliente.TabIndex = 26;
+            this.txtBuscarCliente.TextChanged += new System.EventHandler(this.txtBuscarCliente_TextChanged);
+            this.txtBuscarCliente.Enter += new System.EventHandler(this.txtBuscarCliente_Enter);
+            this.txtBuscarCliente.Leave += new System.EventHandler(this.txtBuscarCliente_Leave);
+            // 
+            // txtBuscarProducto
+            // 
+            this.txtBuscarProducto.Enabled = false;
+            this.txtBuscarProducto.Location = new System.Drawing.Point(432, 60);
+            this.txtBuscarProducto.Name = "txtBuscarProducto";
+            this.txtBuscarProducto.Size = new System.Drawing.Size(141, 20);
+            this.txtBuscarProducto.TabIndex = 27;
+            this.txtBuscarProducto.TextChanged += new System.EventHandler(this.txtBuscaarProducto_TextChanged);
+            this.txtBuscarProducto.Enter += new System.EventHandler(this.txtBuscaarProducto_Enter);
+            this.txtBuscarProducto.Leave += new System.EventHandler(this.txtBuscaarProducto_Leave);
+            // 
+            // btnCerrarDGV
+            // 
+            this.btnCerrarDGV.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrarDGV.Enabled = false;
+            this.btnCerrarDGV.FlatAppearance.BorderSize = 0;
+            this.btnCerrarDGV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarDGV.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarDGV.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCerrarDGV.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarDGV.Image")));
+            this.btnCerrarDGV.Location = new System.Drawing.Point(586, 54);
+            this.btnCerrarDGV.Name = "btnCerrarDGV";
+            this.btnCerrarDGV.Size = new System.Drawing.Size(35, 35);
+            this.btnCerrarDGV.TabIndex = 28;
+            this.btnCerrarDGV.UseVisualStyleBackColor = false;
+            this.btnCerrarDGV.Click += new System.EventHandler(this.btnCerrarDGV_Click);
+            // 
             // FormFacturarR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 502);
+            this.Controls.Add(this.btnCerrarDGV);
+            this.Controls.Add(this.txtBuscarProducto);
+            this.Controls.Add(this.txtBuscarCliente);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtIVA);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.PnDiseñoF);
@@ -359,10 +409,8 @@
             this.Controls.Add(this.dgvListaProductos);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.cbBuscarProducto);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.cbBuscarCliente);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -373,6 +421,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProductos)).EndInit();
             this.PnDiseñoF.ResumeLayout(false);
             this.PnDiseñoF.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosBuscados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,10 +433,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbBuscarCliente;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cbBuscarProducto;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvListaProductos;
@@ -403,5 +451,10 @@
         private System.Windows.Forms.Panel PnDiseñoF;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtIVA;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dgvDatosBuscados;
+        private System.Windows.Forms.TextBox txtBuscarCliente;
+        private System.Windows.Forms.TextBox txtBuscarProducto;
+        private System.Windows.Forms.Button btnCerrarDGV;
     }
 }
