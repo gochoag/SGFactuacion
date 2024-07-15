@@ -18,8 +18,6 @@ namespace SGFactuacion.Formularios
         public FrmListarE()
         {
             InitializeComponent();
-            dgvListarEmpleado.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
             try
             {
                 CargarEmpleados();
@@ -38,6 +36,7 @@ namespace SGFactuacion.Formularios
                 bindingSource = new BindingSource();
                 bindingSource.DataSource = empleados;
                 dgvListarEmpleado.DataSource = bindingSource;
+                dgvListarEmpleado.Columns["Contraseña"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -67,5 +66,9 @@ namespace SGFactuacion.Formularios
 
         }
 
+        private void dgvListarEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

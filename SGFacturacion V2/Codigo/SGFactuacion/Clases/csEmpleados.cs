@@ -22,7 +22,8 @@ namespace SGFactuacion.Clases
 
         private csConexion conexion;
 
-        public csEmpleados(long idEmpleado, string cedula, string nombre, string apellido, DateTime fechaNacimiento, string email, string usuario, string contraseña)
+      
+        public csEmpleados(long idEmpleado, string cedula, string nombre, string apellido, DateTime fechaNacimiento, string email, string usuario)
         {
             IdEmpleado = idEmpleado;
             Cedula = cedula;
@@ -31,10 +32,19 @@ namespace SGFactuacion.Clases
             FechaNacimiento = fechaNacimiento.Date;
             Email = email;
             Usuario = usuario;
-            Contraseña = contraseña;
+          
             conexion = new csConexion();
         }
-
+        public csEmpleados(long idEmpleado, string cedula, string nombre, string apellido, DateTime fechaNacimiento, string email)
+        {
+            IdEmpleado = idEmpleado;
+            Cedula = cedula;
+            Nombre = nombre;
+            Apellido = apellido;
+            FechaNacimiento = fechaNacimiento.Date;
+            Email = email;
+            conexion = new csConexion();
+        }
         public class csCredenciales
         {
             public string Usuario { get; set; }
@@ -84,16 +94,7 @@ namespace SGFactuacion.Clases
             }
         }
 
-        public csEmpleados(long idEmpleado, string cedula, string nombre, string apellido, DateTime fechaNacimiento, string email)
-        {
-            IdEmpleado = idEmpleado;
-            Cedula = cedula;
-            Nombre = nombre;
-            Apellido = apellido;
-            FechaNacimiento = fechaNacimiento.Date;
-            Email = email;
-            conexion = new csConexion();
-        }
+       
 
         //registrar empleado
         public bool RegistrarEmpleado(csCredenciales credenciales)
@@ -165,7 +166,7 @@ namespace SGFactuacion.Clases
             csConexion conexion = new csConexion();
             try
             {
-                using (SqlCommand cmd = new SqlCommand("Sp_Listar_Empleados", conexion.GetConnection()))
+                using (SqlCommand cmd = new SqlCommand("[Sp_Mostrar_Empleados]", conexion.GetConnection()))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     conexion.OpenOrCloseConnection();
@@ -174,14 +175,13 @@ namespace SGFactuacion.Clases
                         while (reader.Read())
                         {
                             csEmpleados empleado = new csEmpleados(
-                                long.Parse(reader["ID"].ToString()),
+                                long.Parse(reader["ID_Empleado"].ToString()),
                                 reader["Cedula"].ToString().Trim(),
                                 reader["Nombre"].ToString().Trim(),
                                 reader["Apellido"].ToString().Trim(),
-                                Convert.ToDateTime(reader["Fecha Nacimiento"]).Date,
+                                Convert.ToDateTime(reader["Fecha_Nac"]).Date,
                                 reader["Correo"].ToString().Trim(),
-                                reader["Usuario"].ToString().Trim(),
-                                reader["Contraseña"].ToString().Trim()
+                                reader["Usuario"].ToString().Trim()
                             );
 
                             empleados.Add(empleado);
@@ -219,8 +219,7 @@ namespace SGFactuacion.Clases
                                 reader["Apellido"].ToString().Trim(),
                                 Convert.ToDateTime(reader["Fecha_Nac"]).Date,
                                 reader["Correo"].ToString().Trim(),
-                                reader["Usuario"].ToString().Trim(),
-                                reader["Contraseña"].ToString().Trim()
+                                reader["Usuario"].ToString().Trim()
                             );
 
                             empleados.Add(empleado);

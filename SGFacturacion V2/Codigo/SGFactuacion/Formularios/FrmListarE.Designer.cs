@@ -122,6 +122,7 @@
             this.dgvListarEmpleado.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvListarEmpleado.Size = new System.Drawing.Size(916, 299);
             this.dgvListarEmpleado.TabIndex = 27;
+            this.dgvListarEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarEmpleado_CellContentClick);
             // 
             // FrmListarE
             // 
