@@ -394,10 +394,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSFacturaDetails</DataSetName>
-        <Top>2.80141cm</Top>
+        <Top>4.07141cm</Top>
         <Left>0.02328cm</Left>
         <Height>1.2cm</Height>
-        <Width>16.16479cm</Width>
+        <Width>16.1648cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -440,7 +440,7 @@
         </Style>
       </Textbox>
       <Line Name="Line1">
-        <Top>2.69557cm</Top>
+        <Top>3.96557cm</Top>
         <Left>0.02328cm</Left>
         <Height>0cm</Height>
         <Width>16.16479cm</Width>
@@ -606,7 +606,7 @@
         </Style>
       </Textbox>
       <Line Name="Line2">
-        <Top>4.43487cm</Top>
+        <Top>5.70487cm</Top>
         <Left>0.01164cm</Left>
         <Height>0cm</Height>
         <Width>16.17644cm</Width>
@@ -637,7 +637,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>4.79633cm</Top>
+        <Top>6.06633cm</Top>
         <Left>10.23528cm</Left>
         <Height>0.6cm</Height>
         <Width>2.26188cm</Width>
@@ -670,7 +670,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>4.79633cm</Top>
+        <Top>6.06633cm</Top>
         <Left>12.64801cm</Left>
         <Height>0.6cm</Height>
         <Width>3.39106cm</Width>
@@ -685,11 +685,71 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Empleado</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>2.43741cm</Top>
+        <Left>0.36724cm</Left>
+        <Height>0.6cm</Height>
+        <Width>1.5475cm</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Empleado">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Empleado.Value, "DSFacturaDetails")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Empleado</rd:DefaultName>
+        <Top>2.43741cm</Top>
+        <Left>2.09113cm</Left>
+        <Height>0.6cm</Height>
+        <Width>7.91514cm</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>2.15869in</Height>
+    <Height>2.96702in</Height>
     <Style />
   </Body>
-  <Width>6.37326in</Width>
+  <Width>7.76493in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -761,10 +821,22 @@
           <DataField>Total</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
+        <Field Name="ID_Empleado">
+          <DataField>ID_Empleado</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="Empleado">
+          <DataField>Empleado</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Cantidad1">
+          <DataField>Cantidad</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DSFacturadetalle</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\SrJordy\Documents\GCS\SG Facturacion\SGFactuacion\SGFactuacion\DataSets\DSFacturadetalle.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Proyectos\C#\SGFactuacion\SGFacturacion V2\Codigo\SGFactuacion\DataSets\DSFacturadetalle.xsd</rd:SchemaPath>
         <rd:TableName>sp_GetFacturaDetalles</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

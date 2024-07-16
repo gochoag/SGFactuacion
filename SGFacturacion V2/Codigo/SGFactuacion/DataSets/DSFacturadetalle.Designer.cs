@@ -301,6 +301,12 @@ namespace SGFactuacion.DataSets {
             
             private global::System.Data.DataColumn columnTotal;
             
+            private global::System.Data.DataColumn columnID_Empleado;
+            
+            private global::System.Data.DataColumn columnEmpleado;
+            
+            private global::System.Data.DataColumn columnCantidad1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public sp_GetFacturaDetallesDataTable() {
@@ -424,6 +430,30 @@ namespace SGFactuacion.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ID_EmpleadoColumn {
+                get {
+                    return this.columnID_Empleado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EmpleadoColumn {
+                get {
+                    return this.columnEmpleado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Cantidad1Column {
+                get {
+                    return this.columnCantidad1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,7 +489,7 @@ namespace SGFactuacion.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_GetFacturaDetallesRow Addsp_GetFacturaDetallesRow(long ID_Cliente, string Cliente, System.DateTime Fecha, long ID_Produc, string Producto, decimal Precio, int Cantidad, decimal IVA, decimal Sub_Total, decimal Total) {
+            public sp_GetFacturaDetallesRow Addsp_GetFacturaDetallesRow(long ID_Cliente, string Cliente, System.DateTime Fecha, long ID_Produc, string Producto, decimal Precio, int Cantidad, decimal IVA, decimal Sub_Total, decimal Total, string Empleado, decimal Cantidad1) {
                 sp_GetFacturaDetallesRow rowsp_GetFacturaDetallesRow = ((sp_GetFacturaDetallesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -472,7 +502,10 @@ namespace SGFactuacion.DataSets {
                         Cantidad,
                         IVA,
                         Sub_Total,
-                        Total};
+                        Total,
+                        null,
+                        Empleado,
+                        Cantidad1};
                 rowsp_GetFacturaDetallesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsp_GetFacturaDetallesRow);
                 return rowsp_GetFacturaDetallesRow;
@@ -513,6 +546,9 @@ namespace SGFactuacion.DataSets {
                 this.columnIVA = base.Columns["IVA"];
                 this.columnSub_Total = base.Columns["Sub_Total"];
                 this.columnTotal = base.Columns["Total"];
+                this.columnID_Empleado = base.Columns["ID_Empleado"];
+                this.columnEmpleado = base.Columns["Empleado"];
+                this.columnCantidad1 = base.Columns["Cantidad1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -540,6 +576,12 @@ namespace SGFactuacion.DataSets {
                 base.Columns.Add(this.columnSub_Total);
                 this.columnTotal = new global::System.Data.DataColumn("Total", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal);
+                this.columnID_Empleado = new global::System.Data.DataColumn("ID_Empleado", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Empleado);
+                this.columnEmpleado = new global::System.Data.DataColumn("Empleado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmpleado);
+                this.columnCantidad1 = new global::System.Data.DataColumn("Cantidad1", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidad1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Factu}, true));
                 this.columnID_Factu.AutoIncrement = true;
@@ -557,6 +599,15 @@ namespace SGFactuacion.DataSets {
                 this.columnCantidad.AllowDBNull = false;
                 this.columnIVA.AllowDBNull = false;
                 this.columnTotal.ReadOnly = true;
+                this.columnID_Empleado.AutoIncrement = true;
+                this.columnID_Empleado.AutoIncrementSeed = -1;
+                this.columnID_Empleado.AutoIncrementStep = -1;
+                this.columnID_Empleado.AllowDBNull = false;
+                this.columnID_Empleado.ReadOnly = true;
+                this.columnEmpleado.ReadOnly = true;
+                this.columnEmpleado.MaxLength = 71;
+                this.columnCantidad1.AllowDBNull = false;
+                this.columnCantidad1.Caption = "Cantidad";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -836,6 +887,44 @@ namespace SGFactuacion.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public long ID_Empleado {
+                get {
+                    return ((long)(this[this.tablesp_GetFacturaDetalles.ID_EmpleadoColumn]));
+                }
+                set {
+                    this[this.tablesp_GetFacturaDetalles.ID_EmpleadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Empleado {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_GetFacturaDetalles.EmpleadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Empleado\' de la tabla \'sp_GetFacturaDetalles\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_GetFacturaDetalles.EmpleadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Cantidad1 {
+                get {
+                    return ((decimal)(this[this.tablesp_GetFacturaDetalles.Cantidad1Column]));
+                }
+                set {
+                    this[this.tablesp_GetFacturaDetalles.Cantidad1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsClienteNull() {
                 return this.IsNull(this.tablesp_GetFacturaDetalles.ClienteColumn);
             }
@@ -868,6 +957,18 @@ namespace SGFactuacion.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTotalNull() {
                 this[this.tablesp_GetFacturaDetalles.TotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsEmpleadoNull() {
+                return this.IsNull(this.tablesp_GetFacturaDetalles.EmpleadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetEmpleadoNull() {
+                this[this.tablesp_GetFacturaDetalles.EmpleadoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1037,10 +1138,12 @@ namespace SGFactuacion.DataSets.DSFacturadetalleTableAdapters {
             tableMapping.ColumnMappings.Add("ID_Produc", "ID_Produc");
             tableMapping.ColumnMappings.Add("Producto", "Producto");
             tableMapping.ColumnMappings.Add("Precio", "Precio");
-            tableMapping.ColumnMappings.Add("Cantidad", "Cantidad");
             tableMapping.ColumnMappings.Add("IVA", "IVA");
             tableMapping.ColumnMappings.Add("Sub_Total", "Sub_Total");
             tableMapping.ColumnMappings.Add("Total", "Total");
+            tableMapping.ColumnMappings.Add("ID_Empleado", "ID_Empleado");
+            tableMapping.ColumnMappings.Add("Empleado", "Empleado");
+            tableMapping.ColumnMappings.Add("Cantidad", "Cantidad1");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

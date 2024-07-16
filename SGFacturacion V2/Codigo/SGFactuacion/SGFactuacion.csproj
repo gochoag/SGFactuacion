@@ -108,6 +108,9 @@
     <Compile Include="Clases\csEmpleados.cs" />
     <Compile Include="Clases\csFactura.cs" />
     <Compile Include="Clases\csProducto.cs" />
+    <Compile Include="DataSets\DSFacturadetalle.cs">
+      <DependentUpon>DSFacturadetalle.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\DSFacturadetalle.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
