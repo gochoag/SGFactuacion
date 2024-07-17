@@ -47,7 +47,7 @@
             this.PnDiseñoE.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnDiseñoE.Location = new System.Drawing.Point(0, 0);
             this.PnDiseñoE.Name = "PnDiseñoE";
-            this.PnDiseñoE.Size = new System.Drawing.Size(916, 37);
+            this.PnDiseñoE.Size = new System.Drawing.Size(633, 37);
             this.PnDiseñoE.TabIndex = 30;
             // 
             // label1
@@ -92,8 +92,8 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(249)))), ((int)(((byte)(201)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListarEmpleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListarEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -105,10 +105,9 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvListarEmpleado.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvListarEmpleado.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvListarEmpleado.EnableHeadersVisualStyles = false;
             this.dgvListarEmpleado.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
-            this.dgvListarEmpleado.Location = new System.Drawing.Point(0, 203);
+            this.dgvListarEmpleado.Location = new System.Drawing.Point(28, 199);
             this.dgvListarEmpleado.Name = "dgvListarEmpleado";
             this.dgvListarEmpleado.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -119,8 +118,10 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListarEmpleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvListarEmpleado.RowHeadersVisible = false;
             this.dgvListarEmpleado.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvListarEmpleado.Size = new System.Drawing.Size(916, 299);
+            this.dgvListarEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListarEmpleado.Size = new System.Drawing.Size(567, 204);
             this.dgvListarEmpleado.TabIndex = 27;
             this.dgvListarEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarEmpleado_CellContentClick);
             // 
@@ -128,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 502);
+            this.ClientSize = new System.Drawing.Size(633, 466);
             this.Controls.Add(this.PnDiseñoE);
             this.Controls.Add(this.txtBuscarE);
             this.Controls.Add(this.label7);

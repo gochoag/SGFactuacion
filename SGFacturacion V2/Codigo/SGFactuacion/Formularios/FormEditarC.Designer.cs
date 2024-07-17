@@ -75,8 +75,8 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(249)))), ((int)(((byte)(201)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListadoCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListadoCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -101,6 +101,8 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListadoCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvListadoCliente.RowHeadersVisible = false;
+            this.dgvListadoCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListadoCliente.Size = new System.Drawing.Size(558, 150);
             this.dgvListadoCliente.TabIndex = 2;
             this.dgvListadoCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoCliente_CellClick);

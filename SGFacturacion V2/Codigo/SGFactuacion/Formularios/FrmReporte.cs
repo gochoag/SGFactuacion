@@ -267,5 +267,10 @@ namespace SGFactuacion
                 }
             }
         }
+
+        private void dgvDatosBuscados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
