@@ -36,8 +36,10 @@
             this.txtBuscarE = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvListarEmpleado = new System.Windows.Forms.DataGridView();
+            this.PnlDgvEmpleado = new System.Windows.Forms.Panel();
             this.PnDiseñoE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarEmpleado)).BeginInit();
+            this.PnlDgvEmpleado.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnDiseñoE
@@ -107,9 +109,10 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvListarEmpleado.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListarEmpleado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvListarEmpleado.EnableHeadersVisualStyles = false;
             this.dgvListarEmpleado.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
-            this.dgvListarEmpleado.Location = new System.Drawing.Point(28, 199);
+            this.dgvListarEmpleado.Location = new System.Drawing.Point(0, 0);
             this.dgvListarEmpleado.Name = "dgvListarEmpleado";
             this.dgvListarEmpleado.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -123,19 +126,27 @@
             this.dgvListarEmpleado.RowHeadersVisible = false;
             this.dgvListarEmpleado.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvListarEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListarEmpleado.Size = new System.Drawing.Size(567, 204);
+            this.dgvListarEmpleado.Size = new System.Drawing.Size(574, 224);
             this.dgvListarEmpleado.TabIndex = 27;
             this.dgvListarEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarEmpleado_CellContentClick);
+            // 
+            // PnlDgvEmpleado
+            // 
+            this.PnlDgvEmpleado.Controls.Add(this.dgvListarEmpleado);
+            this.PnlDgvEmpleado.Location = new System.Drawing.Point(28, 204);
+            this.PnlDgvEmpleado.Name = "PnlDgvEmpleado";
+            this.PnlDgvEmpleado.Size = new System.Drawing.Size(574, 224);
+            this.PnlDgvEmpleado.TabIndex = 31;
             // 
             // FrmListarE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 466);
+            this.Controls.Add(this.PnlDgvEmpleado);
             this.Controls.Add(this.PnDiseñoE);
             this.Controls.Add(this.txtBuscarE);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dgvListarEmpleado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmListarE";
             this.Text = "FrmListarE";
@@ -143,6 +154,7 @@
             this.PnDiseñoE.ResumeLayout(false);
             this.PnDiseñoE.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarEmpleado)).EndInit();
+            this.PnlDgvEmpleado.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,5 +167,6 @@
         private System.Windows.Forms.TextBox txtBuscarE;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvListarEmpleado;
+        private System.Windows.Forms.Panel PnlDgvEmpleado;
     }
 }

@@ -36,8 +36,10 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.PnDiseñoC = new System.Windows.Forms.Panel();
+            this.pnlDgvC = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarCliente)).BeginInit();
             this.PnDiseñoC.SuspendLayout();
+            this.pnlDgvC.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -67,8 +69,8 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(249)))), ((int)(((byte)(201)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListarCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListarCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -80,9 +82,10 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvListarCliente.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListarCliente.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvListarCliente.EnableHeadersVisualStyles = false;
             this.dgvListarCliente.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
-            this.dgvListarCliente.Location = new System.Drawing.Point(28, 147);
+            this.dgvListarCliente.Location = new System.Drawing.Point(0, 0);
             this.dgvListarCliente.Name = "dgvListarCliente";
             this.dgvListarCliente.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -93,7 +96,9 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListarCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvListarCliente.Size = new System.Drawing.Size(578, 274);
+            this.dgvListarCliente.RowHeadersVisible = false;
+            this.dgvListarCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListarCliente.Size = new System.Drawing.Size(578, 329);
             this.dgvListarCliente.TabIndex = 2;
             // 
             // txtBuscar
@@ -124,15 +129,23 @@
             this.PnDiseñoC.Size = new System.Drawing.Size(633, 37);
             this.PnDiseñoC.TabIndex = 26;
             // 
+            // pnlDgvC
+            // 
+            this.pnlDgvC.Controls.Add(this.dgvListarCliente);
+            this.pnlDgvC.Location = new System.Drawing.Point(28, 141);
+            this.pnlDgvC.Name = "pnlDgvC";
+            this.pnlDgvC.Size = new System.Drawing.Size(578, 329);
+            this.pnlDgvC.TabIndex = 27;
+            // 
             // FormListarC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 502);
+            this.Controls.Add(this.pnlDgvC);
             this.Controls.Add(this.PnDiseñoC);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dgvListarCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormListarC";
             this.Text = "FormListarC";
@@ -140,6 +153,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarCliente)).EndInit();
             this.PnDiseñoC.ResumeLayout(false);
             this.PnDiseñoC.PerformLayout();
+            this.pnlDgvC.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,5 +166,6 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel PnDiseñoC;
+        private System.Windows.Forms.Panel pnlDgvC;
     }
 }

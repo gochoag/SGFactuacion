@@ -36,8 +36,10 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.PnDiseñoP = new System.Windows.Forms.Panel();
+            this.pnlDgvlp = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListProductos)).BeginInit();
             this.PnDiseñoP.SuspendLayout();
+            this.pnlDgvlp.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -66,8 +68,8 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(249)))), ((int)(((byte)(201)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -79,9 +81,10 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvListProductos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvListProductos.EnableHeadersVisualStyles = false;
             this.dgvListProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
-            this.dgvListProductos.Location = new System.Drawing.Point(26, 160);
+            this.dgvListProductos.Location = new System.Drawing.Point(0, 0);
             this.dgvListProductos.Name = "dgvListProductos";
             this.dgvListProductos.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -92,7 +95,9 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvListProductos.Size = new System.Drawing.Size(580, 314);
+            this.dgvListProductos.RowHeadersVisible = false;
+            this.dgvListProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListProductos.Size = new System.Drawing.Size(580, 301);
             this.dgvListProductos.TabIndex = 3;
             // 
             // txtBuscar
@@ -124,15 +129,23 @@
             this.PnDiseñoP.Size = new System.Drawing.Size(633, 37);
             this.PnDiseñoP.TabIndex = 28;
             // 
+            // pnlDgvlp
+            // 
+            this.pnlDgvlp.Controls.Add(this.dgvListProductos);
+            this.pnlDgvlp.Location = new System.Drawing.Point(26, 158);
+            this.pnlDgvlp.Name = "pnlDgvlp";
+            this.pnlDgvlp.Size = new System.Drawing.Size(580, 301);
+            this.pnlDgvlp.TabIndex = 29;
+            // 
             // FormListarP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 502);
+            this.Controls.Add(this.pnlDgvlp);
             this.Controls.Add(this.PnDiseñoP);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dgvListProductos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormListarP";
             this.Text = "FormListarPcs";
@@ -140,6 +153,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvListProductos)).EndInit();
             this.PnDiseñoP.ResumeLayout(false);
             this.PnDiseñoP.PerformLayout();
+            this.pnlDgvlp.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,5 +166,6 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel PnDiseñoP;
+        private System.Windows.Forms.Panel pnlDgvlp;
     }
 }

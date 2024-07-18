@@ -43,8 +43,10 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlDgvP = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEditProdu)).BeginInit();
             this.panel1.SuspendLayout();
+            this.pnlDgvP.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -60,7 +62,7 @@
             // 
             // TBStockP
             // 
-            this.TBStockP.Location = new System.Drawing.Point(92, 138);
+            this.TBStockP.Location = new System.Drawing.Point(92, 148);
             this.TBStockP.Name = "TBStockP";
             this.TBStockP.Size = new System.Drawing.Size(184, 20);
             this.TBStockP.TabIndex = 13;
@@ -68,7 +70,7 @@
             // 
             // TBPrecioP
             // 
-            this.TBPrecioP.Location = new System.Drawing.Point(413, 87);
+            this.TBPrecioP.Location = new System.Drawing.Point(413, 100);
             this.TBPrecioP.Name = "TBPrecioP";
             this.TBPrecioP.Size = new System.Drawing.Size(184, 20);
             this.TBPrecioP.TabIndex = 12;
@@ -77,7 +79,7 @@
             // 
             // TBNombreP
             // 
-            this.TBNombreP.Location = new System.Drawing.Point(92, 87);
+            this.TBNombreP.Location = new System.Drawing.Point(92, 100);
             this.TBNombreP.Name = "TBNombreP";
             this.TBNombreP.Size = new System.Drawing.Size(184, 20);
             this.TBNombreP.TabIndex = 11;
@@ -86,7 +88,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 141);
+            this.label4.Location = new System.Drawing.Point(21, 151);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 17);
             this.label4.TabIndex = 10;
@@ -96,7 +98,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(304, 87);
+            this.label3.Location = new System.Drawing.Point(304, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 17);
             this.label3.TabIndex = 9;
@@ -106,7 +108,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 87);
+            this.label2.Location = new System.Drawing.Point(21, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 17);
             this.label2.TabIndex = 8;
@@ -127,7 +129,7 @@
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvEditProdu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEditProdu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -139,9 +141,10 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.MenuText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvEditProdu.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEditProdu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEditProdu.EnableHeadersVisualStyles = false;
             this.dgvEditProdu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
-            this.dgvEditProdu.Location = new System.Drawing.Point(92, 232);
+            this.dgvEditProdu.Location = new System.Drawing.Point(0, 0);
             this.dgvEditProdu.Name = "dgvEditProdu";
             this.dgvEditProdu.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -152,7 +155,9 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.MenuText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvEditProdu.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvEditProdu.Size = new System.Drawing.Size(462, 170);
+            this.dgvEditProdu.RowHeadersVisible = false;
+            this.dgvEditProdu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEditProdu.Size = new System.Drawing.Size(567, 204);
             this.dgvEditProdu.TabIndex = 14;
             this.dgvEditProdu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEditProdu_CellClick);
             // 
@@ -162,7 +167,7 @@
             this.BTEditarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BTEditarP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTEditarP.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BTEditarP.Location = new System.Drawing.Point(470, 422);
+            this.BTEditarP.Location = new System.Drawing.Point(492, 218);
             this.BTEditarP.Name = "BTEditarP";
             this.BTEditarP.Size = new System.Drawing.Size(99, 33);
             this.BTEditarP.TabIndex = 22;
@@ -172,7 +177,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(148, 202);
+            this.txtBuscar.Location = new System.Drawing.Point(80, 226);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(229, 20);
             this.txtBuscar.TabIndex = 25;
@@ -182,7 +187,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(89, 202);
+            this.label7.Location = new System.Drawing.Point(21, 226);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 17);
             this.label7.TabIndex = 24;
@@ -199,16 +204,24 @@
             this.panel1.Size = new System.Drawing.Size(633, 37);
             this.panel1.TabIndex = 26;
             // 
+            // pnlDgvP
+            // 
+            this.pnlDgvP.Controls.Add(this.dgvEditProdu);
+            this.pnlDgvP.Location = new System.Drawing.Point(24, 257);
+            this.pnlDgvP.Name = "pnlDgvP";
+            this.pnlDgvP.Size = new System.Drawing.Size(567, 204);
+            this.pnlDgvP.TabIndex = 27;
+            // 
             // FormEditarP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 502);
+            this.Controls.Add(this.pnlDgvP);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.BTEditarP);
-            this.Controls.Add(this.dgvEditProdu);
             this.Controls.Add(this.TBStockP);
             this.Controls.Add(this.TBPrecioP);
             this.Controls.Add(this.TBNombreP);
@@ -222,6 +235,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvEditProdu)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.pnlDgvP.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,5 +255,6 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlDgvP;
     }
 }

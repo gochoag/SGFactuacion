@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PnDiseñoE = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscarE = new System.Windows.Forms.TextBox();
@@ -51,8 +51,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.dgvListadoEmpleado = new System.Windows.Forms.DataGridView();
             this.BTEditarE = new System.Windows.Forms.Button();
+            this.pnlDgvE = new System.Windows.Forms.Panel();
             this.PnDiseñoE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoEmpleado)).BeginInit();
+            this.pnlDgvE.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnDiseñoE
@@ -226,39 +228,40 @@
             this.dgvListadoEmpleado.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvListadoEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListadoEmpleado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListadoEmpleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListadoEmpleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListadoEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(249)))), ((int)(((byte)(201)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListadoEmpleado.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(249)))), ((int)(((byte)(201)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListadoEmpleado.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListadoEmpleado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvListadoEmpleado.EnableHeadersVisualStyles = false;
             this.dgvListadoEmpleado.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
-            this.dgvListadoEmpleado.Location = new System.Drawing.Point(29, 286);
+            this.dgvListadoEmpleado.Location = new System.Drawing.Point(0, 0);
             this.dgvListadoEmpleado.Name = "dgvListadoEmpleado";
             this.dgvListadoEmpleado.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(249)))), ((int)(((byte)(201)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListadoEmpleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(249)))), ((int)(((byte)(201)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListadoEmpleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListadoEmpleado.RowHeadersVisible = false;
             this.dgvListadoEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListadoEmpleado.Size = new System.Drawing.Size(567, 192);
+            this.dgvListadoEmpleado.Size = new System.Drawing.Size(567, 203);
             this.dgvListadoEmpleado.TabIndex = 25;
             this.dgvListadoEmpleado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoEmpleado_CellClick);
             // 
@@ -276,13 +279,21 @@
             this.BTEditarE.UseVisualStyleBackColor = false;
             this.BTEditarE.Click += new System.EventHandler(this.BTEditarE_Click);
             // 
+            // pnlDgvE
+            // 
+            this.pnlDgvE.Controls.Add(this.dgvListadoEmpleado);
+            this.pnlDgvE.Location = new System.Drawing.Point(29, 287);
+            this.pnlDgvE.Name = "pnlDgvE";
+            this.pnlDgvE.Size = new System.Drawing.Size(567, 203);
+            this.pnlDgvE.TabIndex = 44;
+            // 
             // FrmEditarE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(633, 502);
-            this.Controls.Add(this.dgvListadoEmpleado);
+            this.Controls.Add(this.pnlDgvE);
             this.Controls.Add(this.BTEditarE);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label8);
@@ -308,6 +319,7 @@
             this.PnDiseñoE.ResumeLayout(false);
             this.PnDiseñoE.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoEmpleado)).EndInit();
+            this.pnlDgvE.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,5 +347,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgvListadoEmpleado;
         private System.Windows.Forms.Button BTEditarE;
+        private System.Windows.Forms.Panel pnlDgvE;
     }
 }
