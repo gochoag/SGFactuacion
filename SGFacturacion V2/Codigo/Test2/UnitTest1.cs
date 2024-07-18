@@ -13,7 +13,7 @@ namespace Test2
         public void RegistrarCliente_ShouldReturnTrue_WhenRegistrationIsSuccessful()
         {
             // Arrange
-            var cliente = new csCliente(1, "1234567890", "John", "Doe", DateTime.Now, "john@example.com");
+            var cliente = new csCliente(1, "2100562384", "John", "Doe", DateTime.Now, "john@example.com");
 
             // Act
             bool registrado = cliente.RegistrarCliente();
@@ -84,7 +84,7 @@ namespace Test2
             long idFactura = csCliente.GetFacturaIDByClienteIDAndFecha(idCliente, fecha);
 
             // Assert
-            Assert.IsTrue(idFactura > 0); // Se espera que el ID de factura sea válido
+            Assert.IsFalse(idFactura < 1); // Se espera que el ID de factura sea válido
         }
 
 
@@ -121,7 +121,7 @@ namespace Test2
         public void IniciarSesion_ShouldReturnTrue_WhenCredentialsAreCorrect()
         {
             // Arrange
-            var credenciales = new csEmpleados.csCredenciales("johndoe", "password");
+            var credenciales = new csEmpleados.csCredenciales("johndoe", "newpassword");
 
             // Act
             bool sesionIniciada = credenciales.IniciarSesion();
@@ -210,7 +210,7 @@ namespace Test2
         public void BuscarProductoPorNombre_ShouldReturnMatchingProducts()
         {
             // Arrange
-            string patronNombre = "Producto"; // Ejemplo de término de búsqueda
+            string patronNombre = "Banano"; // Ejemplo de término de búsqueda
 
             // Act
             List<csProducto> productos = csProducto.BuscarProductoPorNombre(patronNombre);
