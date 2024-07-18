@@ -141,6 +141,8 @@
             // 
             this.dgvListaProductos.AllowUserToAddRows = false;
             this.dgvListaProductos.AllowUserToDeleteRows = false;
+            this.dgvListaProductos.AllowUserToResizeColumns = false;
+            this.dgvListaProductos.AllowUserToResizeRows = false;
             this.dgvListaProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaProductos.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvListaProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -339,6 +341,8 @@
             // 
             this.dgvDatosBuscados.AllowUserToAddRows = false;
             this.dgvDatosBuscados.AllowUserToDeleteRows = false;
+            this.dgvDatosBuscados.AllowUserToResizeColumns = false;
+            this.dgvDatosBuscados.AllowUserToResizeRows = false;
             this.dgvDatosBuscados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDatosBuscados.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvDatosBuscados.BorderStyle = System.Windows.Forms.BorderStyle.None;

@@ -23,6 +23,7 @@ namespace SGFactuacion
                 bindingSource = new BindingSource();
                 bindingSource.DataSource = producto;
                 dgvListProductos.DataSource = bindingSource;
+               
             }
             catch (Exception ex)
             {
@@ -56,6 +57,7 @@ namespace SGFactuacion
                 if (string.IsNullOrWhiteSpace(filterText))
                 {
                     bindingSource.DataSource = producto;
+                    
                 }
                 else
                 {

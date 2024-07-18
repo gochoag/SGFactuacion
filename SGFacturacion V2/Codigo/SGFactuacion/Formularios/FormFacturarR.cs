@@ -123,7 +123,7 @@ namespace SGFactuacion
                 }
                
                 decimal cantidad;
-                if (!decimal.TryParse(txtCantidad.Text, out cantidad))
+                if (!decimal.TryParse(txtCantidad.Text.Replace('.', ','), out cantidad))
                 {
                     MessageBox.Show("La cantidad ingresada no es válida.", "Cantidad Inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -217,7 +217,7 @@ namespace SGFactuacion
                         ID_Produc = idProducto,
                         Precio = precio,
                         Cantidad = cantidad,
-                        IVA = decimal.Parse(txtIVA.Text)/100,
+                        IVA = decimal.Parse(txtIVA.Text) /100,
                     };
                     detallesFactura.Add(detalle);
                 }
@@ -263,6 +263,10 @@ namespace SGFactuacion
                 return;
             }
             if (char.IsDigit(e.KeyChar))
+            {
+                return;
+            }
+            if (e.KeyChar == '.' && !txtCantidad.Text.Contains("."))
             {
                 return;
             }

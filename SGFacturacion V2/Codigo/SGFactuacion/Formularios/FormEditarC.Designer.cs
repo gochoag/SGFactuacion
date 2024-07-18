@@ -67,6 +67,8 @@
             // 
             this.dgvListadoCliente.AllowUserToAddRows = false;
             this.dgvListadoCliente.AllowUserToDeleteRows = false;
+            this.dgvListadoCliente.AllowUserToResizeColumns = false;
+            this.dgvListadoCliente.AllowUserToResizeRows = false;
             this.dgvListadoCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListadoCliente.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvListadoCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;

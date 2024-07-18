@@ -17,7 +17,6 @@ namespace SGFactuacion
     {
         private List<csCliente> clientes;
         private BindingSource bindingSource;
-        private bool ProductoOCliente = true; //Si esta true entonces el dgv tiene datos de cliente
         private string nombres;
         private long idcliente;
 
@@ -27,9 +26,9 @@ namespace SGFactuacion
             InitializeComponent();
             //this.idEmpleado = csCredenciales.IdEmpleadoLogueado;
             textBox1.Visible = false;
-            dgvDatosBuscados.Visible = false;
+            paneldeDAtos.Visible = false;
             cbData2.Enabled = false;
-
+            btnGenerar.Enabled = false;
             try
             {
                 CargarCliente();
@@ -166,7 +165,11 @@ namespace SGFactuacion
 
         private void cbData2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(cbData2.SelectedIndex!=-1)
             btnGenerar.Enabled = true;
+            else
+            btnGenerar.Enabled = false;
+
         }
 
         private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
@@ -193,9 +196,9 @@ namespace SGFactuacion
         {
             txtBuscarCliente.Text = "";
             bindingSource.DataSource = clientes;
-            dgvDatosBuscados.Visible = true;
-            textBox1.Visible = false;
-            ProductoOCliente = true; btnCerrarDGV.Enabled = true;
+            paneldeDAtos.Visible = true;
+    
+            btnCerrarDGV.Enabled = true;
             cbData2.Enabled = false;
 
         }
@@ -204,8 +207,7 @@ namespace SGFactuacion
 
         private void dgvDatosBuscados_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (ProductoOCliente)
-            {
+            
                 //Jalo datos de clientes del dgv
                 // Asegúrate de que el índice de la fila sea válido
                 if (e.RowIndex >= 0)
@@ -224,7 +226,7 @@ namespace SGFactuacion
                         // Combina el nombre y el apellido
                         nombres = nombre + " " + apellido;
 
-                        dgvDatosBuscados.Visible = false;
+                         paneldeDAtos.Visible = false;
                         btnCerrarDGV.Enabled = false;
                         textBox1.Visible = true;
                         textBox1.Text = nombres;
@@ -234,43 +236,23 @@ namespace SGFactuacion
                     }
                     else
                     {
-                        panel1.Visible = false;
+                        paneldeDAtos.Visible = false;
                         btnCerrarDGV.Enabled = false;
                     }
                 }
 
-            }
-            else
-            {
-                //Jalo datos de productos del dgv
-                // Asegúrate de que el índice de la fila sea válido
-                if (e.RowIndex >= 0)
-                {
-                    // Pregunta al usuario si está seguro de elegir este cliente y verifica la respuesta
-                    if (MessageBox.Show("¿Está seguro de elegir este producto?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        // Obtén la fila seleccionada
-                        DataGridViewRow selectedRow = dgvDatosBuscados.Rows[e.RowIndex];
-
-                        // Obtén los datos de las columnas necesarias
-           
-                        panel1.Visible = false;
-                        btnCerrarDGV.Enabled = false;
-
-                    }
-                    else
-                    {
-                        panel1.Visible = false;
-                        btnCerrarDGV.Enabled = false;
-                    }
-
-                }
-            }
+            
         }
 
         private void dgvDatosBuscados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnCerrarDGV_Click(object sender, EventArgs e)
+        {
+            paneldeDAtos.Visible = false;
+            btnCerrarDGV.Enabled = false;
         }
     }
 }

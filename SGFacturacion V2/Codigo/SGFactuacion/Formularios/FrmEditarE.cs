@@ -29,6 +29,7 @@ namespace SGFactuacion.Formularios
                 bindingSource = new BindingSource();
                 bindingSource.DataSource = empleados;
                 dgvListadoEmpleado.DataSource = bindingSource;
+                dgvListadoEmpleado.Columns["Contraseña"].Visible = false;
                 txtcedulaE.KeyPress += txtcedulaE_KeyPress;
                 dgvListadoEmpleado.CellClick += dgvListadoEmpleado_CellClick;
             }
@@ -42,6 +43,7 @@ namespace SGFactuacion.Formularios
             try
             {
                 empleados = csEmpleados.ListarEmpleados();
+          
             }
             catch (Exception ex)
             {
@@ -137,7 +139,9 @@ namespace SGFactuacion.Formularios
                         MessageBox.Show("Empleado editado exitosamente.", "Edición exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiarControles();
                         CargarEmpleados();
+
                         bindingSource.DataSource = empleados;
+
                     }
                     else
                     {
@@ -180,6 +184,11 @@ namespace SGFactuacion.Formularios
             {
                 MessageBox.Show($"Ocurrió un error al buscar empleados: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FrmEditarE_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -70,5 +70,10 @@ namespace SGFactuacion.Formularios
         {
 
         }
+
+        private void FrmListarE_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

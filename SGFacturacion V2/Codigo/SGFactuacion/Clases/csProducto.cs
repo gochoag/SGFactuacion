@@ -99,13 +99,13 @@ namespace SGFactuacion
                         {
                             while (reader.Read())
                             {
-                                csProducto producto = new csProducto(
-                                    long.Parse(reader["IDPRODUCTO"].ToString()),
+                                   csProducto producto = new csProducto(
+                                      long.Parse(reader["IDPRODUCTO"].ToString()),
                                     reader["PRODUCTO"].ToString(),
                                     decimal.Parse(reader["PRECIO_UNITARIO"].ToString(), System.Globalization.CultureInfo.InvariantCulture),
                                     decimal.Parse(reader["STOCK"].ToString(), System.Globalization.CultureInfo.InvariantCulture)
-                                );
-                                productos.Add(producto);
+                                 );
+                            productos.Add(producto);
                             }
                         }
                         conexion.OpenOrCloseConnection();
@@ -135,13 +135,13 @@ namespace SGFactuacion
                         {
                             while (reader.Read())
                             {
-                                csProducto producto = new csProducto(
-                                    long.Parse(reader["ID_Produc"].ToString()),
-                                    reader["Nombre"].ToString(),
-                                    decimal.Parse(reader["Precio_unitario"].ToString(), System.Globalization.CultureInfo.InvariantCulture),
-                                    decimal.Parse(reader["Stock"].ToString(), System.Globalization.CultureInfo.InvariantCulture)
-                                );
-                                productos.Add(producto);
+                                 csProducto producto = new csProducto(
+                                     reader.GetInt64(reader.GetOrdinal("ID_Produc")),
+                                     reader.GetString(reader.GetOrdinal("Nombre")),
+                                     reader.GetDecimal(reader.GetOrdinal("Precio_unitario")),
+                                     reader.GetDecimal(reader.GetOrdinal("Stock"))
+                                 );
+                            productos.Add(producto);
                             }
                         }
                         conexion.OpenOrCloseConnection();

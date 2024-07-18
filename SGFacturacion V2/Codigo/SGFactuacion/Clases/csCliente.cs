@@ -124,12 +124,12 @@ namespace SGFactuacion
                         while (reader.Read())
                         {
                             csCliente cliente = new csCliente(
-                                long.Parse(reader["ID"].ToString()),
-                                reader["Cedula"].ToString(),
-                                reader["Nombre"].ToString(),
-                                reader["Apellido"].ToString(),
-                                Convert.ToDateTime(reader["Fecha Nacimiento"]).Date,
-                                reader["Correo"].ToString()
+                                reader.GetInt64(reader.GetOrdinal("ID")),
+                                reader.GetString(reader.GetOrdinal("Cedula")).Trim(),
+                                reader.GetString(reader.GetOrdinal("Nombre")).Trim(),
+                                reader.GetString(reader.GetOrdinal("Apellido")).Trim(),
+                                reader.GetDateTime(reader.GetOrdinal("Fecha Nacimiento")).Date,
+                                reader.GetString(reader.GetOrdinal("Correo")).Trim()
                             );
                             clientes.Add(cliente);
                         }
@@ -162,12 +162,12 @@ namespace SGFactuacion
                         while (reader.Read())
                         {
                             csCliente cliente = new csCliente(
-                                long.Parse(reader["ID"].ToString()),
-                                reader["Cedula"].ToString(),
-                                reader["Nombre"].ToString(),
-                                reader["Apellido"].ToString(),
-                                Convert.ToDateTime(reader["Fecha_nacimiento"]).Date,
-                                reader["Correo"].ToString()
+                                reader.GetInt64(reader.GetOrdinal("ID")),
+                                reader.GetString(reader.GetOrdinal("Cedula")).Trim(),
+                                reader.GetString(reader.GetOrdinal("Nombre")).Trim(),
+                                reader.GetString(reader.GetOrdinal("Apellido")).Trim(),
+                                reader.GetDateTime(reader.GetOrdinal("Fecha_nacimiento")).Date,
+                                reader.GetString(reader.GetOrdinal("Correo")).Trim()
                             );
                             clientes.Add(cliente);
                         }

@@ -56,6 +56,8 @@
             // 
             this.dgvListProductos.AllowUserToAddRows = false;
             this.dgvListProductos.AllowUserToDeleteRows = false;
+            this.dgvListProductos.AllowUserToResizeColumns = false;
+            this.dgvListProductos.AllowUserToResizeRows = false;
             this.dgvListProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListProductos.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvListProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;

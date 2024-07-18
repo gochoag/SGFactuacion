@@ -23,7 +23,7 @@ namespace SGFactuacion.Clases
         private csConexion conexion;
 
       
-        public csEmpleados(long idEmpleado, string cedula, string nombre, string apellido, DateTime fechaNacimiento, string email, string usuario)
+        public csEmpleados(long idEmpleado, string cedula, string nombre, string apellido, DateTime fechaNacimiento, string email, string usuario, string contraseña)
         {
             IdEmpleado = idEmpleado;
             Cedula = cedula;
@@ -32,7 +32,7 @@ namespace SGFactuacion.Clases
             FechaNacimiento = fechaNacimiento.Date;
             Email = email;
             Usuario = usuario;
-          
+            Contraseña = contraseña;
             conexion = new csConexion();
         }
         public csEmpleados(long idEmpleado, string cedula, string nombre, string apellido, DateTime fechaNacimiento, string email)
@@ -175,13 +175,15 @@ namespace SGFactuacion.Clases
                         while (reader.Read())
                         {
                             csEmpleados empleado = new csEmpleados(
-                                long.Parse(reader["ID_Empleado"].ToString()),
-                                reader["Cedula"].ToString().Trim(),
-                                reader["Nombre"].ToString().Trim(),
-                                reader["Apellido"].ToString().Trim(),
-                                Convert.ToDateTime(reader["Fecha_Nac"]).Date,
-                                reader["Correo"].ToString().Trim(),
-                                reader["Usuario"].ToString().Trim()
+                                reader.GetInt64(reader.GetOrdinal("ID_Empleado")),
+                                reader.GetString(reader.GetOrdinal("Cedula")).Trim(),
+                                reader.GetString(reader.GetOrdinal("Nombre")).Trim(),
+                                reader.GetString(reader.GetOrdinal("Apellido")).Trim(),
+                                reader.GetDateTime(reader.GetOrdinal("Fecha_Nac")).Date,
+                                reader.GetString(reader.GetOrdinal("Correo")).Trim(),
+                                reader.GetString(reader.GetOrdinal("Usuario")).Trim(),
+                                reader.GetString(reader.GetOrdinal("Contraseña")).Trim()
+
                             );
 
                             empleados.Add(empleado);
@@ -213,13 +215,14 @@ namespace SGFactuacion.Clases
                         while (reader.Read())
                         {
                             csEmpleados empleado = new csEmpleados(
-                                long.Parse(reader["ID_Empleado"].ToString()),
-                                reader["Cedula"].ToString().Trim(),
-                                reader["Nombre"].ToString().Trim(),
-                                reader["Apellido"].ToString().Trim(),
-                                Convert.ToDateTime(reader["Fecha_Nac"]).Date,
-                                reader["Correo"].ToString().Trim(),
-                                reader["Usuario"].ToString().Trim()
+                                reader.GetInt64(reader.GetOrdinal("ID_Empleado")),
+                                reader.GetString(reader.GetOrdinal("Cedula")).Trim(),
+                                reader.GetString(reader.GetOrdinal("Nombre")).Trim(),
+                                reader.GetString(reader.GetOrdinal("Apellido")).Trim(),
+                                reader.GetDateTime(reader.GetOrdinal("Fecha_Nac")).Date,
+                                reader.GetString(reader.GetOrdinal("Correo")).Trim(),
+                                reader.GetString(reader.GetOrdinal("Usuario")).Trim(),
+                                reader.GetString(reader.GetOrdinal("Contraseña")).Trim()
                             );
 
                             empleados.Add(empleado);

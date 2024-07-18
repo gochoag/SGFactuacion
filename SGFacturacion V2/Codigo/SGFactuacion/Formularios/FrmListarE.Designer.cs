@@ -84,6 +84,8 @@
             // 
             this.dgvListarEmpleado.AllowUserToAddRows = false;
             this.dgvListarEmpleado.AllowUserToDeleteRows = false;
+            this.dgvListarEmpleado.AllowUserToResizeColumns = false;
+            this.dgvListarEmpleado.AllowUserToResizeRows = false;
             this.dgvListarEmpleado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListarEmpleado.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvListarEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -137,6 +139,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmListarE";
             this.Text = "FrmListarE";
+            this.Load += new System.EventHandler(this.FrmListarE_Load);
             this.PnDiseñoE.ResumeLayout(false);
             this.PnDiseñoE.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarEmpleado)).EndInit();

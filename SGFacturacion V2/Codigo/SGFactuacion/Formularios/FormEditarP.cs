@@ -112,9 +112,9 @@ namespace SGFactuacion
                     return;
                 }
                 decimal preciouni;
-                int stock;
-                if (!decimal.TryParse(precioTexto, NumberStyles.Number, CultureInfo.InvariantCulture, out preciouni) ||
-                    !int.TryParse(stockTexto, out stock))
+                decimal stock;
+                if (!decimal.TryParse(precioTexto.Replace('.', ','), out preciouni) ||
+                    !decimal.TryParse(stockTexto.Replace('.', ','), out stock))
                 {
                     MessageBox.Show("Por favor, introduce valores válidos en los campos de precio y stock.", "Valores inválidos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
