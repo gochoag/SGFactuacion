@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace SGFactuacion
 {
-    internal class csFactura
+    public class csFactura
     {
        
         public DateTime FechaFactura { get; set; }
