@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SGFactuacion
 {
-    internal class csConexion
+    public class csConexion
     {
         private SqlConnection connection;
         private string connectionString;

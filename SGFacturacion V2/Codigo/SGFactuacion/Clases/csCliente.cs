@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SGFactuacion
 {
-    internal class csCliente
+    public class csCliente
     {
         public long IdCliente { get; set; }
         public string Cedula { get; set; }

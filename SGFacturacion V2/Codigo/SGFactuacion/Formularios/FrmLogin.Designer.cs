@@ -51,9 +51,10 @@
             this.panel1.Controls.Add(this.lblSGFacturacion);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(385, 0);
+            this.panel1.Location = new System.Drawing.Point(513, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(264, 288);
+            this.panel1.Size = new System.Drawing.Size(352, 354);
             this.panel1.TabIndex = 0;
             // 
             // lblSGFacturacion
@@ -61,18 +62,20 @@
             this.lblSGFacturacion.AutoSize = true;
             this.lblSGFacturacion.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSGFacturacion.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblSGFacturacion.Location = new System.Drawing.Point(39, 20);
+            this.lblSGFacturacion.Location = new System.Drawing.Point(52, 25);
+            this.lblSGFacturacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSGFacturacion.Name = "lblSGFacturacion";
-            this.lblSGFacturacion.Size = new System.Drawing.Size(199, 37);
+            this.lblSGFacturacion.Size = new System.Drawing.Size(248, 46);
             this.lblSGFacturacion.TabIndex = 1;
             this.lblSGFacturacion.Text = "SGFacturacion";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(22, 60);
+            this.pictureBox1.Location = new System.Drawing.Point(29, 74);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(230, 199);
+            this.pictureBox1.Size = new System.Drawing.Size(307, 245);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -82,9 +85,10 @@
             this.lblIniciar.AutoSize = true;
             this.lblIniciar.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIniciar.ForeColor = System.Drawing.Color.Green;
-            this.lblIniciar.Location = new System.Drawing.Point(102, 9);
+            this.lblIniciar.Location = new System.Drawing.Point(136, 11);
+            this.lblIniciar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIniciar.Name = "lblIniciar";
-            this.lblIniciar.Size = new System.Drawing.Size(167, 32);
+            this.lblIniciar.Size = new System.Drawing.Size(205, 41);
             this.lblIniciar.TabIndex = 1;
             this.lblIniciar.Text = "Iniciar Sesión";
             // 
@@ -92,35 +96,39 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(21, 60);
+            this.lblUsuario.Location = new System.Drawing.Point(28, 74);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(65, 21);
+            this.lblUsuario.Size = new System.Drawing.Size(81, 28);
             this.lblUsuario.TabIndex = 2;
             this.lblUsuario.Text = "Usuario";
             // 
             // txtbUsuario
             // 
-            this.txtbUsuario.Location = new System.Drawing.Point(21, 84);
+            this.txtbUsuario.Location = new System.Drawing.Point(28, 103);
+            this.txtbUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbUsuario.Name = "txtbUsuario";
-            this.txtbUsuario.Size = new System.Drawing.Size(266, 20);
+            this.txtbUsuario.Size = new System.Drawing.Size(353, 22);
             this.txtbUsuario.TabIndex = 3;
             // 
             // lblcontra
             // 
             this.lblcontra.AutoSize = true;
             this.lblcontra.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcontra.Location = new System.Drawing.Point(21, 144);
+            this.lblcontra.Location = new System.Drawing.Point(28, 177);
+            this.lblcontra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblcontra.Name = "lblcontra";
-            this.lblcontra.Size = new System.Drawing.Size(92, 21);
+            this.lblcontra.Size = new System.Drawing.Size(114, 28);
             this.lblcontra.TabIndex = 4;
             this.lblcontra.Text = "Contraseña";
             // 
             // txtbContraseña
             // 
-            this.txtbContraseña.Location = new System.Drawing.Point(21, 168);
+            this.txtbContraseña.Location = new System.Drawing.Point(28, 207);
+            this.txtbContraseña.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbContraseña.Name = "txtbContraseña";
             this.txtbContraseña.PasswordChar = '*';
-            this.txtbContraseña.Size = new System.Drawing.Size(266, 20);
+            this.txtbContraseña.Size = new System.Drawing.Size(353, 22);
             this.txtbContraseña.TabIndex = 5;
             // 
             // btnEntrar
@@ -129,9 +137,10 @@
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEntrar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEntrar.Location = new System.Drawing.Point(125, 221);
+            this.btnEntrar.Location = new System.Drawing.Point(167, 272);
+            this.btnEntrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(121, 38);
+            this.btnEntrar.Size = new System.Drawing.Size(161, 47);
             this.btnEntrar.TabIndex = 6;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = false;
@@ -148,19 +157,20 @@
             // 
             this.btnOjo.FlatAppearance.BorderSize = 0;
             this.btnOjo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOjo.Location = new System.Drawing.Point(293, 161);
+            this.btnOjo.Location = new System.Drawing.Point(391, 198);
+            this.btnOjo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOjo.Name = "btnOjo";
-            this.btnOjo.Size = new System.Drawing.Size(32, 32);
+            this.btnOjo.Size = new System.Drawing.Size(43, 39);
             this.btnOjo.TabIndex = 8;
             this.btnOjo.UseVisualStyleBackColor = true;
             this.btnOjo.Click += new System.EventHandler(this.btnOjo_Click);
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ClientSize = new System.Drawing.Size(649, 288);
+            this.ClientSize = new System.Drawing.Size(865, 354);
             this.Controls.Add(this.btnOjo);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtbContraseña);
@@ -170,6 +180,7 @@
             this.Controls.Add(this.lblIniciar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
@@ -192,8 +203,8 @@
         private System.Windows.Forms.TextBox txtbUsuario;
         private System.Windows.Forms.Label lblcontra;
         private System.Windows.Forms.TextBox txtbContraseña;
-        private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.ImageList imglistOjos;
         private System.Windows.Forms.Button btnOjo;
+        public System.Windows.Forms.Button btnEntrar;
     }
 }

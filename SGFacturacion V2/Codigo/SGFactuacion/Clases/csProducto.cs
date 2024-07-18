@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace SGFactuacion
 {
-    internal class csProducto
+    public class csProducto
     {
         public long IdProducto { get; set; }
         public string Nombre { get; set; }
@@ -154,6 +154,9 @@ namespace SGFactuacion
             }
             return productos;
         }
+
+
+
 
     }
 }

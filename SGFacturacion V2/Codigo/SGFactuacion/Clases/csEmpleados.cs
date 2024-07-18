@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace SGFactuacion.Clases
 {
-    internal class csEmpleados
+   public class csEmpleados
     {
         public long IdEmpleado { get; set; }
         public string Cedula { get; set; }
