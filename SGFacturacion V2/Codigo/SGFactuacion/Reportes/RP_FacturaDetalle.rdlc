@@ -805,10 +805,6 @@
           <DataField>Precio</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="Cantidad">
-          <DataField>Cantidad</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="IVA">
           <DataField>IVA</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
@@ -829,7 +825,7 @@
           <DataField>Empleado</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Cantidad1">
+        <Field Name="Cantidad">
           <DataField>Cantidad</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>

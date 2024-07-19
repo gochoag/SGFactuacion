@@ -4,6 +4,9 @@
 
     partial class DSFacturadetalle
     {
+        partial class sp_GetFacturaDetallesDataTable
+        {
+        }
     }
 }
 

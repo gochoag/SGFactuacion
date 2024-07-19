@@ -18,7 +18,7 @@ namespace SGFactuacion
 
         public csConexion()
         {
-            Server = "26.173.65.255";
+            Server = ".";
             DataBase = "BDFactura";
             Usuario = "sa";
             Contraseña = "123456";

@@ -293,8 +293,6 @@ namespace SGFactuacion.DataSets {
             
             private global::System.Data.DataColumn columnPrecio;
             
-            private global::System.Data.DataColumn columnCantidad;
-            
             private global::System.Data.DataColumn columnIVA;
             
             private global::System.Data.DataColumn columnSub_Total;
@@ -305,7 +303,7 @@ namespace SGFactuacion.DataSets {
             
             private global::System.Data.DataColumn columnEmpleado;
             
-            private global::System.Data.DataColumn columnCantidad1;
+            private global::System.Data.DataColumn columnCantidad;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -398,14 +396,6 @@ namespace SGFactuacion.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CantidadColumn {
-                get {
-                    return this.columnCantidad;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn IVAColumn {
                 get {
                     return this.columnIVA;
@@ -446,9 +436,9 @@ namespace SGFactuacion.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Cantidad1Column {
+            public global::System.Data.DataColumn CantidadColumn {
                 get {
-                    return this.columnCantidad1;
+                    return this.columnCantidad;
                 }
             }
             
@@ -489,7 +479,7 @@ namespace SGFactuacion.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_GetFacturaDetallesRow Addsp_GetFacturaDetallesRow(long ID_Cliente, string Cliente, System.DateTime Fecha, long ID_Produc, string Producto, decimal Precio, int Cantidad, decimal IVA, decimal Sub_Total, decimal Total, string Empleado, decimal Cantidad1) {
+            public sp_GetFacturaDetallesRow Addsp_GetFacturaDetallesRow(long ID_Cliente, string Cliente, System.DateTime Fecha, long ID_Produc, string Producto, decimal Precio, decimal IVA, decimal Sub_Total, decimal Total, string Empleado, decimal Cantidad) {
                 sp_GetFacturaDetallesRow rowsp_GetFacturaDetallesRow = ((sp_GetFacturaDetallesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -499,13 +489,12 @@ namespace SGFactuacion.DataSets {
                         ID_Produc,
                         Producto,
                         Precio,
-                        Cantidad,
                         IVA,
                         Sub_Total,
                         Total,
                         null,
                         Empleado,
-                        Cantidad1};
+                        Cantidad};
                 rowsp_GetFacturaDetallesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsp_GetFacturaDetallesRow);
                 return rowsp_GetFacturaDetallesRow;
@@ -542,13 +531,12 @@ namespace SGFactuacion.DataSets {
                 this.columnID_Produc = base.Columns["ID_Produc"];
                 this.columnProducto = base.Columns["Producto"];
                 this.columnPrecio = base.Columns["Precio"];
-                this.columnCantidad = base.Columns["Cantidad"];
                 this.columnIVA = base.Columns["IVA"];
                 this.columnSub_Total = base.Columns["Sub_Total"];
                 this.columnTotal = base.Columns["Total"];
                 this.columnID_Empleado = base.Columns["ID_Empleado"];
                 this.columnEmpleado = base.Columns["Empleado"];
-                this.columnCantidad1 = base.Columns["Cantidad1"];
+                this.columnCantidad = base.Columns["Cantidad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -568,8 +556,6 @@ namespace SGFactuacion.DataSets {
                 base.Columns.Add(this.columnProducto);
                 this.columnPrecio = new global::System.Data.DataColumn("Precio", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrecio);
-                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCantidad);
                 this.columnIVA = new global::System.Data.DataColumn("IVA", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIVA);
                 this.columnSub_Total = new global::System.Data.DataColumn("Sub_Total", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -580,8 +566,8 @@ namespace SGFactuacion.DataSets {
                 base.Columns.Add(this.columnID_Empleado);
                 this.columnEmpleado = new global::System.Data.DataColumn("Empleado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmpleado);
-                this.columnCantidad1 = new global::System.Data.DataColumn("Cantidad1", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCantidad1);
+                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidad);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Factu}, true));
                 this.columnID_Factu.AutoIncrement = true;
@@ -596,7 +582,6 @@ namespace SGFactuacion.DataSets {
                 this.columnProducto.AllowDBNull = false;
                 this.columnProducto.MaxLength = 35;
                 this.columnPrecio.AllowDBNull = false;
-                this.columnCantidad.AllowDBNull = false;
                 this.columnIVA.AllowDBNull = false;
                 this.columnTotal.ReadOnly = true;
                 this.columnID_Empleado.AutoIncrement = true;
@@ -606,8 +591,7 @@ namespace SGFactuacion.DataSets {
                 this.columnID_Empleado.ReadOnly = true;
                 this.columnEmpleado.ReadOnly = true;
                 this.columnEmpleado.MaxLength = 71;
-                this.columnCantidad1.AllowDBNull = false;
-                this.columnCantidad1.Caption = "Cantidad";
+                this.columnCantidad.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -832,17 +816,6 @@ namespace SGFactuacion.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Cantidad {
-                get {
-                    return ((int)(this[this.tablesp_GetFacturaDetalles.CantidadColumn]));
-                }
-                set {
-                    this[this.tablesp_GetFacturaDetalles.CantidadColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public decimal IVA {
                 get {
                     return ((decimal)(this[this.tablesp_GetFacturaDetalles.IVAColumn]));
@@ -914,12 +887,12 @@ namespace SGFactuacion.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal Cantidad1 {
+            public decimal Cantidad {
                 get {
-                    return ((decimal)(this[this.tablesp_GetFacturaDetalles.Cantidad1Column]));
+                    return ((decimal)(this[this.tablesp_GetFacturaDetalles.CantidadColumn]));
                 }
                 set {
-                    this[this.tablesp_GetFacturaDetalles.Cantidad1Column] = value;
+                    this[this.tablesp_GetFacturaDetalles.CantidadColumn] = value;
                 }
             }
             
@@ -1143,7 +1116,7 @@ namespace SGFactuacion.DataSets.DSFacturadetalleTableAdapters {
             tableMapping.ColumnMappings.Add("Total", "Total");
             tableMapping.ColumnMappings.Add("ID_Empleado", "ID_Empleado");
             tableMapping.ColumnMappings.Add("Empleado", "Empleado");
-            tableMapping.ColumnMappings.Add("Cantidad", "Cantidad1");
+            tableMapping.ColumnMappings.Add("Cantidad", "Cantidad");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
