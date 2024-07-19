@@ -4,8 +4,9 @@
     "\\SGFacturacion V2",
     "\\SGFacturacion V2\\Codigo",
     "\\SGFacturacion V2\\Codigo\\SGFactuacion",
-    "\\SGFacturacion V2\\Codigo\\SGFactuacion\\Formularios"
+    "\\SGFacturacion V2\\Codigo\\SGFactuacion\\Formularios",
+    "\\SGFacturacion V2\\Codigo\\Test2"
   ],
-  "SelectedNode": "\\SGFacturacion V2\\Codigo\\SGFactuacion\\Formularios\\FrmReporte.cs",
+  "SelectedNode": "\\SGFacturacion V2\\Codigo\\Test2\\UnitTest1.cs",
   "PreviewInSolutionExplorer": false
 }
