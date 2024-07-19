@@ -531,7 +531,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>1.23127cm</Top>
-        <Left>13.9262cm</Left>
+        <Left>14.06731cm</Left>
         <Height>0.6cm</Height>
         <Width>2.07667cm</Width>
         <ZIndex>5</ZIndex>
@@ -560,8 +560,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>1.66102cm</Top>
-        <Left>0.36724cm</Left>
+        <Top>1.81391cm</Top>
+        <Left>0.33196cm</Left>
         <Height>0.6cm</Height>
         <Width>1.5475cm</Width>
         <ZIndex>6</ZIndex>
@@ -590,8 +590,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>1.66102cm</Top>
-        <Left>1.95002cm</Left>
+        <Top>1.81391cm</Top>
+        <Left>2.09113cm</Left>
         <Height>0.6cm</Height>
         <Width>8.05625cm</Width>
         <ZIndex>7</ZIndex>
@@ -692,7 +692,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Empleado</Value>
+                <Value>Empleado:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -700,10 +700,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.43741cm</Top>
-        <Left>0.36724cm</Left>
+        <Top>2.89602cm</Top>
+        <Left>0.33196cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.5475cm</Width>
+        <Width>1.97083cm</Width>
         <ZIndex>11</ZIndex>
         <Style>
           <Border>
@@ -730,8 +730,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Empleado</rd:DefaultName>
-        <Top>2.43741cm</Top>
-        <Left>2.09113cm</Left>
+        <Top>2.89602cm</Top>
+        <Left>2.44391cm</Left>
         <Height>0.6cm</Height>
         <Width>7.91514cm</Width>
         <ZIndex>12</ZIndex>

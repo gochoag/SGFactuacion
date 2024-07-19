@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\SGFacturacion V2",
-    "\\SGFacturacion V2\\Codigo"
+    "\\SGFacturacion V2\\Codigo",
+    "\\SGFacturacion V2\\Codigo\\SGFactuacion",
+    "\\SGFacturacion V2\\Codigo\\SGFactuacion\\Formularios"
   ],
-  "SelectedNode": "\\SGFacturacion V2\\Codigo\\SGFactuacion.sln",
+  "SelectedNode": "\\SGFacturacion V2\\Codigo\\SGFactuacion\\Formularios\\FrmReporte.cs",
   "PreviewInSolutionExplorer": false
 }
