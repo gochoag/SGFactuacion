@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReporte));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.sp_GetFacturaDetallesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSFacturadetalle = new SGFactuacion.DataSets.DSFacturadetalle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtBuscarEmpleado = new System.Windows.Forms.TextBox();
             this.paneldeDAtos = new System.Windows.Forms.Panel();
             this.dgvDatosBuscados = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -52,6 +53,7 @@
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.spGetFacturaDetallesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sp_GetFacturaDetallesTableAdapter = new SGFactuacion.DataSets.DSFacturadetalleTableAdapters.sp_GetFacturaDetallesTableAdapter();
+            this.pnlreportes = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.sp_GetFacturaDetallesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSFacturadetalle)).BeginInit();
             this.panel1.SuspendLayout();
@@ -75,6 +77,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.txtBuscarEmpleado);
             this.panel1.Controls.Add(this.paneldeDAtos);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
@@ -93,10 +96,19 @@
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // txtBuscarEmpleado
+            // 
+            this.txtBuscarEmpleado.Location = new System.Drawing.Point(384, 20);
+            this.txtBuscarEmpleado.Name = "txtBuscarEmpleado";
+            this.txtBuscarEmpleado.Size = new System.Drawing.Size(171, 20);
+            this.txtBuscarEmpleado.TabIndex = 32;
+            this.txtBuscarEmpleado.TextChanged += new System.EventHandler(this.txtBuscarEmpleado_TextChanged);
+            this.txtBuscarEmpleado.Enter += new System.EventHandler(this.txtBuscarEmpleado_Enter);
+            // 
             // paneldeDAtos
             // 
             this.paneldeDAtos.Controls.Add(this.dgvDatosBuscados);
-            this.paneldeDAtos.Location = new System.Drawing.Point(12, 46);
+            this.paneldeDAtos.Location = new System.Drawing.Point(12, 47);
             this.paneldeDAtos.Name = "paneldeDAtos";
             this.paneldeDAtos.Size = new System.Drawing.Size(543, 100);
             this.paneldeDAtos.TabIndex = 31;
@@ -111,23 +123,23 @@
             this.dgvDatosBuscados.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvDatosBuscados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDatosBuscados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDatosBuscados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDatosBuscados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvDatosBuscados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(249)))), ((int)(((byte)(201)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatosBuscados.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(249)))), ((int)(((byte)(201)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatosBuscados.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvDatosBuscados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDatosBuscados.EnableHeadersVisualStyles = false;
             this.dgvDatosBuscados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
@@ -246,7 +258,11 @@
             this.cbTipoReporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoReporte.FormattingEnabled = true;
             this.cbTipoReporte.Items.AddRange(new object[] {
-            "Detalle de factura"});
+            "Detalle de factura",
+            "Total de venta de empleados",
+            "Top 5 de produtos vendidos",
+            "Top 5 de factura con mas listado",
+            "Top 5 de Clientes"});
             this.cbTipoReporte.Location = new System.Drawing.Point(77, 19);
             this.cbTipoReporte.Name = "cbTipoReporte";
             this.cbTipoReporte.Size = new System.Drawing.Size(158, 21);
@@ -256,6 +272,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.reportViewer1);
+            this.panel2.Controls.Add(this.pnlreportes);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 153);
             this.panel2.Name = "panel2";
@@ -266,16 +283,15 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DSFacturaDetails";
-            reportDataSource1.Value = this.sp_GetFacturaDetallesBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource6.Name = "DSFacturaDetails";
+            reportDataSource6.Value = this.sp_GetFacturaDetallesBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource6);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "SGFactuacion.Reportes.RP_FacturaDetalle.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(633, 349);
             this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // spGetFacturaDetallesBindingSource
             // 
@@ -286,6 +302,13 @@
             // 
             this.sp_GetFacturaDetallesTableAdapter.ClearBeforeFill = true;
             // 
+            // pnlreportes
+            // 
+            this.pnlreportes.Location = new System.Drawing.Point(3, 0);
+            this.pnlreportes.Name = "pnlreportes";
+            this.pnlreportes.Size = new System.Drawing.Size(630, 346);
+            this.pnlreportes.TabIndex = 1;
+            // 
             // FrmReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,7 +318,6 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmReporte";
-            this.Load += new System.EventHandler(this.FrmReporte_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sp_GetFacturaDetallesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSFacturadetalle)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -328,5 +350,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel paneldeDAtos;
+        private System.Windows.Forms.TextBox txtBuscarEmpleado;
+        private System.Windows.Forms.Panel pnlreportes;
     }
 }

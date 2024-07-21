@@ -121,19 +121,52 @@
     <Compile Include="Clases\csEmpleados.cs" />
     <Compile Include="Clases\csFactura.cs" />
     <Compile Include="Clases\csProducto.cs" />
+    <Compile Include="DataSets\DSFacturalistado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSFacturalistado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DSProductomas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSProductomas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\DSFacturadetalle.cs">
       <DependentUpon>DSFacturadetalle.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="DataSets\DSFacturadetalle.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSFacturadetalle.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="DataSets\DSTop5cliente.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSTop5cliente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DSVentaempleado.cs">
+      <DependentUpon>DSVentaempleado.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="DataSets\DSVentaempleado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSVentaempleado.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Formularios\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmReporteEmpelado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmReporteEmpelado.Designer.cs">
+      <DependentUpon>FrmReporteEmpelado.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmEditarE.cs">
       <SubType>Form</SubType>
@@ -207,10 +240,31 @@
     <Compile Include="Formularios\FormResgistrarP.Designer.cs">
       <DependentUpon>FormResgistrarP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmReporteFacturalistado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmReporteFacturalistado.Designer.cs">
+      <DependentUpon>FrmReporteFacturalistado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmReporteproducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmReporteproducto.Designer.cs">
+      <DependentUpon>FrmReporteproducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmReportetopcliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmReportetopcliente.Designer.cs">
+      <DependentUpon>FrmReportetopcliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmReporteEmpelado.resx">
+      <DependentUpon>FrmReporteEmpelado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormEditarC.resx">
       <DependentUpon>FormEditarC.cs</DependentUpon>
@@ -248,6 +302,16 @@
     <EmbeddedResource Include="Formularios\FrmReporte.resx">
       <DependentUpon>FrmReporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmReporteFacturalistado.resx">
+      <DependentUpon>FrmReporteFacturalistado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmReporteproducto.resx">
+      <DependentUpon>FrmReporteproducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmReportetopcliente.resx">
+      <DependentUpon>FrmReportetopcliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RP_Top5cliente.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -257,7 +321,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Reportes\RP_FacturaDetalle.rdlc" />
+    <EmbeddedResource Include="Reportes\RP_FacturaDetalle.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RP_Productovendidordlc.rdlc" />
+    <EmbeddedResource Include="Reportes\Rp_Top5factura.rdlc" />
+    <EmbeddedResource Include="Reportes\RP_VentaEmpleado.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="BDFacturaDataSet.xsc">
       <DependentUpon>BDFacturaDataSet.xsd</DependentUpon>
     </None>
@@ -271,16 +342,66 @@
     </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagramFacture.cd" />
+    <None Include="DataSets\DSFacturalistado.xsc">
+      <DependentUpon>DSFacturalistado.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSFacturalistado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSFacturalistado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DSFacturalistado.xss">
+      <DependentUpon>DSFacturalistado.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSProductomas.xsc">
+      <DependentUpon>DSProductomas.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSProductomas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSProductomas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DSProductomas.xss">
+      <DependentUpon>DSProductomas.xsd</DependentUpon>
+    </None>
     <None Include="DataSets\DSFacturadetalle.xsc">
       <DependentUpon>DSFacturadetalle.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="DataSets\DSFacturadetalle.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DSFacturadetalle.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="DataSets\DSFacturadetalle.xss">
       <DependentUpon>DSFacturadetalle.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSets\DSTop5cliente.xsc">
+      <DependentUpon>DSTop5cliente.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSTop5cliente.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSTop5cliente.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DSTop5cliente.xss">
+      <DependentUpon>DSTop5cliente.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DSVentaempleado.xsc">
+      <DependentUpon>DSVentaempleado.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSets\DSVentaempleado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSVentaempleado.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSets\DSVentaempleado.xss">
+      <DependentUpon>DSVentaempleado.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
@@ -308,6 +429,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

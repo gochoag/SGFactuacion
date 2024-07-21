@@ -237,7 +237,5 @@ namespace SGFactuacion.Clases
             }
             return empleados;
         }
-
-
     }
 }

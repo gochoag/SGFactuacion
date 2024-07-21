@@ -186,12 +186,13 @@ namespace SGFactuacion
         {
             try
             {
+             
                 FrmReporte rp = new FrmReporte();
                 rp.panel1.Visible = false;
                 rp.FormBorderStyle=FormBorderStyle.SizableToolWindow;
                 rp.StartPosition = FormStartPosition.CenterScreen;
                 rp.Width = 630;
-                rp.GenerarReporte(idFactura);
+                rp.GenerarReporte1(idFactura);
 
                 rp.ShowDialog();
             }
