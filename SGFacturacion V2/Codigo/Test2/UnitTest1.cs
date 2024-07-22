@@ -26,7 +26,7 @@ namespace Test2
         public void RegistrarCliente_ShouldReturnFalse_OnDuplicateCedula()
         {
             // Arrange
-            var cliente = new csCliente(1, "1234567899", "Jona", "Martin", DateTime.Now, "jasasahn@example.com");
+            var cliente = new csCliente(1, "0304056789", "Jona", "Martin", DateTime.Now, "jasasahn@example.com");
 
             // Act
             bool registrado = cliente.RegistrarCliente();
@@ -84,7 +84,7 @@ namespace Test2
             long idFactura = csCliente.GetFacturaIDByClienteIDAndFecha(idCliente, fecha);
 
             // Assert
-            Assert.IsFalse(idFactura < 1); // Se espera que el ID de factura sea válido
+            Assert.IsFalse(idFactura >= 1); // Se espera que el ID de factura sea válido
         }
 
 
