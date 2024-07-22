@@ -13,7 +13,7 @@ namespace Test2
         public void RegistrarCliente_ShouldReturnTrue_WhenRegistrationIsSuccessful()
         {
             // Arrange
-            var cliente = new csCliente(1, "2100562384", "John", "Doe", DateTime.Now, "john@example.com");
+            var cliente = new csCliente(1, "2100562321", "Maria", "Elizabe", DateTime.Now, "asss22@example.com");
 
             // Act
             bool registrado = cliente.RegistrarCliente();
@@ -26,7 +26,7 @@ namespace Test2
         public void RegistrarCliente_ShouldReturnFalse_OnDuplicateCedula()
         {
             // Arrange
-            var cliente = new csCliente(1, "1234567890", "John", "Doe", DateTime.Now, "john@example.com");
+            var cliente = new csCliente(1, "1234567899", "Jona", "Martin", DateTime.Now, "jasasahn@example.com");
 
             // Act
             bool registrado = cliente.RegistrarCliente();
@@ -78,7 +78,7 @@ namespace Test2
         {
             // Arrange
             long idCliente = 1; // ID de cliente válido
-            DateTime fecha = DateTime.Now.Date; // Fecha válida
+            DateTime fecha = Convert.ToDateTime("2024-07-18 00:53:52.380"); // Fecha válida
 
             // Act
             long idFactura = csCliente.GetFacturaIDByClienteIDAndFecha(idCliente, fecha);
@@ -107,7 +107,7 @@ namespace Test2
         public void EditarEmpleado_ShouldReturnTrue_WhenEditIsSuccessful()
         {
             // Arrange
-            var credenciales = new csEmpleados.csCredenciales("johndoe", "newpassword");
+            var credenciales = new csEmpleados.csCredenciales("jp", "root");
             var empleado = new csEmpleados(1, "1234567890", "John", "Doe", DateTime.Now, "john@example.com");
 
             // Act
@@ -121,7 +121,7 @@ namespace Test2
         public void IniciarSesion_ShouldReturnTrue_WhenCredentialsAreCorrect()
         {
             // Arrange
-            var credenciales = new csEmpleados.csCredenciales("johndoe", "newpassword");
+            var credenciales = new csEmpleados.csCredenciales("jp", "root");
 
             // Act
             bool sesionIniciada = credenciales.IniciarSesion();
@@ -134,7 +134,7 @@ namespace Test2
         public void IniciarSesion_ShouldReturnFalse_WhenIncorrectCredentials()
         {
             // Arrange
-            var credenciales = new csEmpleados.csCredenciales("johndoe", "wrongpassword");
+            var credenciales = new csEmpleados.csCredenciales("ad1", "rootaa");
 
             // Act
             bool sesionIniciada = credenciales.IniciarSesion();
