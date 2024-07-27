@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SGFactuacion.csCliente" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAEACAAAAIEAAAAgAAAEAIAAAAAAgAABAIAAAE=</HashCode>
+      <FileName>Clases\csCliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SGFactuacion.csConexion" Collapsed="true">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAoABAARAAAAAAAAAAAAAAAEAhAAAAA=</HashCode>
+      <FileName>Clases\csConexion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SGFactuacion.csFactura" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAQCE=</HashCode>
+      <FileName>Clases\csFactura.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SGFactuacion.csProducto" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABQACBAAAAgAAAAAAAAgAAAgAAAAAAAEAAAAAAAAAE=</HashCode>
+      <FileName>Clases\csProducto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SGFactuacion.Clases.csEmpleados">
+    <Position X="6.25" Y="0.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="SGFactuacion.Clases.csEmpleados.csCredenciales">
+        <TypeIdentifier>
+          <NewMemberFileName>Clases\csEmpleados.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>EAAAEAAAACAgAAIEAAYAgAAAAAAAAAAABAAEAAAAAAE=</HashCode>
+      <FileName>Clases\csEmpleados.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
