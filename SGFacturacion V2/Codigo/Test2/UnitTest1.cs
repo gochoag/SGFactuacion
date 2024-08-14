@@ -13,7 +13,7 @@ namespace Test2
         public void RegistrarCliente_ShouldReturnTrue_WhenRegistrationIsSuccessful()
         {
             // Arrange
-            var cliente = new csCliente(1, "2120572321", "Maria", "Elizabe", DateTime.Now, "asss22@example.com");
+            var cliente = new csCliente("2120572321", "Maria", "Elizabe", DateTime.Now, "asss22@example.com");
 
             // Act
             bool registrado = cliente.RegistrarCliente();
