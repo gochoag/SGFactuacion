@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGFactuacion.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +17,7 @@ namespace SGFactuacion
 {
     public partial class FormFacturarR : Form
     {
-        private List<csCliente> clientes;
+        private List<csPersona> clientes;
         private List<csProducto> productos;
         private List<FacturaDetalle> detallesFactura;
         private long idEmpleado;
@@ -24,7 +25,7 @@ namespace SGFactuacion
         private bool ProductoOCliente = true; //Si esta true entonces el dgv tiene datos de cliente
 
         //Ides
-        private long idCliente;
+        private long idPersona;
         private long idProducto;
         
         public FormFacturarR()
@@ -52,7 +53,7 @@ namespace SGFactuacion
         {
             try
             {
-                clientes = csCliente.ListarClientes();
+                clientes = csPersona.ListarPersona();
 
             }
             catch (Exception ex)
@@ -230,7 +231,7 @@ namespace SGFactuacion
 
                 if (result == DialogResult.Yes)
                 {
-                    if (facturaManager.RegistrarFactura(idCliente, fechaActual, detallesFactura,idEmpleado))
+                    if (facturaManager.RegistrarFactura(idPersona, fechaActual, detallesFactura,idEmpleado))
                     {
                         MessageBox.Show("La factura se ha registrado correctamente.", "Factura Registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dgvListaProductos.Rows.Clear();
@@ -337,7 +338,7 @@ namespace SGFactuacion
                 }
                 else
                 {
-                    bindingSource.DataSource = csCliente.BuscarClientes(filterText);
+                    bindingSource.DataSource = csPersona.BuscarPersona(filterText);
                 }
             }
             catch (Exception ex)
@@ -409,7 +410,7 @@ namespace SGFactuacion
                         DataGridViewRow selectedRow = dgvDatosBuscados.Rows[e.RowIndex];
 
                         // Obtén los datos de las columnas necesarias
-                        idCliente = Convert.ToInt64(selectedRow.Cells["IdCliente"].Value);
+                        idPersona = Convert.ToInt64(selectedRow.Cells["IdPersona"].Value);
                         string nombre = selectedRow.Cells["Nombre"].Value.ToString();
                         string apellido = selectedRow.Cells["Apellido"].Value.ToString();
 

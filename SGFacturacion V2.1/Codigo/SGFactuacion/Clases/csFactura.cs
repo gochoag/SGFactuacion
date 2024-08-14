@@ -79,14 +79,14 @@ namespace SGFactuacion
                 return 0;
             }
         }
-        public bool RegistrarFactura(long idCliente, DateTime fecha, List<FacturaDetalle> detalles, long idEmpleado)
+        public bool RegistrarFactura(long idPersona, DateTime fecha, List<FacturaDetalle> detalles, long idEmpleado)
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("[dbo].[Sp_Insert_Factura]", conexion.GetConnection()))
+                using (SqlCommand cmd = new SqlCommand("Sp_Insert_Factura", conexion.GetConnection()))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@ID_Cliente", idCliente);
+                    cmd.Parameters.AddWithValue("@ID_Persona", idPersona);
                     cmd.Parameters.AddWithValue("@Fecha", fecha);
                     cmd.Parameters.AddWithValue("@Id_Empleado", idEmpleado);
 

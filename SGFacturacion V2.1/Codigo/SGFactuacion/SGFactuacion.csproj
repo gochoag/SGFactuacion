@@ -120,6 +120,7 @@
     <Compile Include="Clases\csConexion.cs" />
     <Compile Include="Clases\csEmpleados.cs" />
     <Compile Include="Clases\csFactura.cs" />
+    <Compile Include="Clases\csPersona.cs" />
     <Compile Include="Clases\csProducto.cs" />
     <Compile Include="DataSets\DSFacturalistado.Designer.cs">
       <AutoGen>True</AutoGen>

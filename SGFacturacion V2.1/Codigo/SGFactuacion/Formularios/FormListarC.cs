@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGFactuacion.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace SGFactuacion
 {
     public partial class FormListarC : Form
     {
-        private List<csCliente> clientes;
+        private List<csPersona> clientes;
         private BindingSource bindingSource;
         public FormListarC()
         {
@@ -33,7 +34,7 @@ namespace SGFactuacion
         {
             try
             {
-                clientes = csCliente.ListarClientes();
+                clientes = csPersona.ListarPersona();
             }
             catch (Exception ex)
             {
@@ -56,7 +57,7 @@ namespace SGFactuacion
                 }
                 else
                 {
-                    bindingSource.DataSource = csCliente.BuscarClientes(filterText);
+                    bindingSource.DataSource = csPersona.BuscarPersona(filterText);
                 }
             }
             catch (Exception ex)

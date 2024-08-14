@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Text.RegularExpressions;
+using SGFactuacion.Clases;
 namespace SGFactuacion
 {
     public partial class FormRegistrarC : Form
@@ -53,8 +54,8 @@ namespace SGFactuacion
 
                     if (resultado == DialogResult.Yes)
                     {
-                        csCliente clienteRegistrar = new csCliente(txtcedulaC.Text, txtNombreC.Text, txtApellidoC.Text, dtFechaC.Value, txtEmailC.Text);
-                        if (clienteRegistrar.RegistrarCliente())
+                        csPersona clienteRegistrar = new csPersona(txtcedulaC.Text, txtNombreC.Text, txtApellidoC.Text, dtFechaC.Value, txtEmailC.Text);
+                        if (clienteRegistrar.RegistrarPersona())
                         {
                             MessageBox.Show("Cliente registrado con éxito", "Registro de cliente", MessageBoxButtons.OK);
                             LimpiarControles();

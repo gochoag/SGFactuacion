@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGFactuacion.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,7 @@ namespace SGFactuacion
 {
     public partial class FormEditarC : Form
     {
-        private List<csCliente> clientes;
+        private List<csPersona> clientes;
         private BindingSource bindingSource;
         public FormEditarC()
         {
@@ -36,7 +37,7 @@ namespace SGFactuacion
         {
             try
             {
-                clientes = csCliente.ListarClientes();
+                clientes = csPersona.ListarPersona();
             }
             catch (Exception ex)
             {
@@ -60,7 +61,7 @@ namespace SGFactuacion
                 }
                 else
                 {
-                    bindingSource.DataSource = csCliente.BuscarClientes(filterText);
+                    bindingSource.DataSource = csPersona.BuscarPersona(filterText);
                 }
             }
             catch (Exception ex)
@@ -69,7 +70,7 @@ namespace SGFactuacion
             }
 
         }
-        long idCLIENTE;
+        long idPERSONA;
         private void dgvListadoCliente_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -77,7 +78,7 @@ namespace SGFactuacion
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow row = dgvListadoCliente.Rows[e.RowIndex];
-                    idCLIENTE = long.Parse(row.Cells["IdCliente"].Value.ToString());
+                    idPERSONA = long.Parse(row.Cells["IdPersona"].Value.ToString());
                     txtcedulaC.Text = row.Cells["Cedula"].Value.ToString();
                     txtNombreC.Text = row.Cells["Nombre"].Value.ToString();
                     txtApellidoC.Text = row.Cells["Apellido"].Value.ToString();
@@ -137,9 +138,9 @@ namespace SGFactuacion
 
                 if (resultado == DialogResult.Yes)
                 {
-                    csCliente cliente = new csCliente(idCLIENTE, cedula, nombre, apellido, fechaNacimiento, email);
+                    csPersona cliente = new csPersona(idPERSONA, cedula, nombre, apellido, fechaNacimiento, email);
 
-                    if (cliente.EditarCliente())
+                    if (cliente.EditarPersona())
                     {
                         MessageBox.Show("Cliente editado exitosamente.", "Edición exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiarControles();

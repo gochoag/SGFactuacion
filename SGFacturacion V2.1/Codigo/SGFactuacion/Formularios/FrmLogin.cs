@@ -78,5 +78,40 @@ namespace SGFactuacion.Formularios
         {
 
         }
+
+        private void txtbContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar==Convert.ToChar(Keys.Enter))
+            {
+                string usuario = txtbUsuario.Text.Trim();
+                string contraseña = txtbContraseña.Text.Trim();
+
+                // Asegúrate de que los campos de usuario y contraseña no estén vacíos
+                if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contraseña))
+                {
+                    MessageBox.Show("Por favor, ingrese el usuario y la contraseña.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Crea una instancia de csCredenciales con los valores ingresados
+                csCredenciales credenciales = new csCredenciales(usuario, contraseña);
+
+                // Verifica si el inicio de sesión es exitoso
+                bool sesionIniciada = credenciales.IniciarSesion();
+
+                if (sesionIniciada)
+                {
+                    Form frm = new Principal();
+                    frm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Credenciales de inicio de sesión inválidas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+            }
+        }
     }
 }

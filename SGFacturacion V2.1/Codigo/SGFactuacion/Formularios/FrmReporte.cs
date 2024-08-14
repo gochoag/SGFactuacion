@@ -17,11 +17,11 @@ namespace SGFactuacion
 {
     public partial class FrmReporte : Form
     {
-        private List<csCliente> clientes;
+        private List<csPersona> clientes;
         private List<csEmpleados> empleados;
         private BindingSource bindingSource;
         private string nombres;
-        private long idcliente;
+        private long idpersona;
         private long idEmpleado;
         private bool EmpleadoOCliente = true;
         private Form activeForm = null;
@@ -67,7 +67,7 @@ namespace SGFactuacion
         {
             try
             {
-                clientes = csCliente.ListarClientes();
+                clientes = csPersona.ListarPersona();
 
             }
             catch (Exception ex)
@@ -239,7 +239,7 @@ namespace SGFactuacion
                 {
                    
                     DateTime selectedDate = (DateTime)cbData2.SelectedValue;
-                    long facturaId = csCliente.GetFacturaIDByClienteIDAndFecha(idcliente, selectedDate);
+                    long facturaId = csPersona.GetFacturaIDByClienteIDAndFecha(idpersona, selectedDate);
                     GenerarReporte1( facturaId);
                 }
                 else if (!string.IsNullOrEmpty(textBox1.Text)&& !EmpleadoOCliente)
@@ -290,7 +290,7 @@ namespace SGFactuacion
                 }
                 else
                 {
-                    bindingSource.DataSource = csCliente.BuscarClientes(filterText);
+                    bindingSource.DataSource = csPersona.BuscarPersona(filterText);
                 }
             }
             catch (Exception ex)
@@ -327,7 +327,7 @@ namespace SGFactuacion
                         DataGridViewRow selectedRow = dgvDatosBuscados.Rows[e.RowIndex];
 
                         // Obtén los datos de las columnas necesarias
-                        idcliente = Convert.ToInt64(selectedRow.Cells["IdCliente"].Value);
+                        idpersona = Convert.ToInt64(selectedRow.Cells["IdPersona"].Value);
                         string nombre = selectedRow.Cells["Nombre"].Value.ToString();
                         string apellido = selectedRow.Cells["Apellido"].Value.ToString();
 
@@ -340,7 +340,7 @@ namespace SGFactuacion
                         textBox1.Text = nombres;
                         lblDatos2.Visible = true;
                         //Se desbloquea el cbdata2
-                        GenerarFechasFacturasCliente(idcliente);
+                        GenerarFechasFacturasCliente(idpersona);
                         cbData2.Visible = true;
                         cbData2.Enabled = true;
                     }

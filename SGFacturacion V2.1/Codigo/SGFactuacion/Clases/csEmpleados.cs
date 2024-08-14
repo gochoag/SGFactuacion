@@ -2,49 +2,34 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SGFactuacion.Clases
 {
-   public class csEmpleados
+    public class csEmpleados : csPersona
     {
         public long IdEmpleado { get; set; }
-        public string Cedula { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public DateTime FechaNacimiento { get; set; }
-        public string Email { get; set; }
         public string Usuario { get; set; }
         public string Contraseña { get; set; }
 
         private csConexion conexion;
 
-      
         public csEmpleados(long idEmpleado, string cedula, string nombre, string apellido, DateTime fechaNacimiento, string email, string usuario, string contraseña)
+            : base( cedula, nombre, apellido, fechaNacimiento, email)
         {
             IdEmpleado = idEmpleado;
-            Cedula = cedula;
-            Nombre = nombre;
-            Apellido = apellido;
-            FechaNacimiento = fechaNacimiento.Date;
-            Email = email;
             Usuario = usuario;
             Contraseña = contraseña;
             conexion = new csConexion();
         }
+
         public csEmpleados(long idEmpleado, string cedula, string nombre, string apellido, DateTime fechaNacimiento, string email)
+            : base( cedula, nombre, apellido, fechaNacimiento, email)
         {
             IdEmpleado = idEmpleado;
-            Cedula = cedula;
-            Nombre = nombre;
-            Apellido = apellido;
-            FechaNacimiento = fechaNacimiento.Date;
-            Email = email;
             conexion = new csConexion();
         }
+
         public class csCredenciales
         {
             public string Usuario { get; set; }
@@ -94,8 +79,6 @@ namespace SGFactuacion.Clases
             }
         }
 
-       
-
         //registrar empleado
         public bool RegistrarEmpleado(csCredenciales credenciales)
         {
@@ -108,7 +91,7 @@ namespace SGFactuacion.Clases
                     cmd.Parameters.AddWithValue("@Cedula", Cedula);
                     cmd.Parameters.AddWithValue("@Nombre", Nombre);
                     cmd.Parameters.AddWithValue("@Apellido", Apellido);
-                    cmd.Parameters.AddWithValue("@Fecha_Nac", FechaNacimiento.Date);
+                    cmd.Parameters.AddWithValue("@FechaNacimiento", FechaNacimiento.Date);
                     cmd.Parameters.AddWithValue("@Correo", Email);
                     cmd.Parameters.AddWithValue("@Usuario", credenciales.Usuario);
                     cmd.Parameters.AddWithValue("@Contraseña", credenciales.Contraseña);
@@ -120,7 +103,7 @@ namespace SGFactuacion.Clases
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Error cliente: " + ex.Message, "Error de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error empleados: " + ex.Message, "Error de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 registrado = false;
             }
             finally
@@ -135,14 +118,14 @@ namespace SGFactuacion.Clases
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("[Sp_Modificar_Empleado_&_Credenciales]", conexion.GetConnection()))
+                using (SqlCommand cmd = new SqlCommand("Sp_Update_Empleado", conexion.GetConnection()))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@ID_Empleado", IdEmpleado);
+                    cmd.Parameters.AddWithValue("@IDEmpleado", IdEmpleado); // IdEmpleado agregado a la actualización
                     cmd.Parameters.AddWithValue("@Cedula", Cedula);
                     cmd.Parameters.AddWithValue("@Nombre", Nombre);
                     cmd.Parameters.AddWithValue("@Apellido", Apellido);
-                    cmd.Parameters.AddWithValue("@Fecha_Nac", FechaNacimiento.Date);
+                    cmd.Parameters.AddWithValue("@FechaNacimiento", FechaNacimiento.Date);
                     cmd.Parameters.AddWithValue("@Correo", Email);
                     cmd.Parameters.AddWithValue("@Usuario", credenciales.Usuario);
                     cmd.Parameters.AddWithValue("@Contraseña", credenciales.Contraseña);
@@ -155,12 +138,12 @@ namespace SGFactuacion.Clases
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("Error al editar el cliente: " + ex.Message);
+                Console.WriteLine("Error al editar el empleados: " + ex.Message);
                 return false;
             }
         }
 
-        public static List<csEmpleados> ListarEmpleados()
+        public static  List<csEmpleados> ListarEmpleados()
         {
             List<csEmpleados> empleados = new List<csEmpleados>();
             csConexion conexion = new csConexion();
@@ -179,11 +162,10 @@ namespace SGFactuacion.Clases
                                 reader.GetString(reader.GetOrdinal("Cedula")).Trim(),
                                 reader.GetString(reader.GetOrdinal("Nombre")).Trim(),
                                 reader.GetString(reader.GetOrdinal("Apellido")).Trim(),
-                                reader.GetDateTime(reader.GetOrdinal("Fecha_Nac")).Date,
+                                reader.GetDateTime(reader.GetOrdinal("Fecha_nacimiento")).Date,
                                 reader.GetString(reader.GetOrdinal("Correo")).Trim(),
                                 reader.GetString(reader.GetOrdinal("Usuario")).Trim(),
                                 reader.GetString(reader.GetOrdinal("Contraseña")).Trim()
-
                             );
 
                             empleados.Add(empleado);
@@ -199,7 +181,7 @@ namespace SGFactuacion.Clases
             return empleados;
         }
 
-        public static List<csEmpleados> BuscarEmpleados(string busqueda)
+        public static  List<csEmpleados> BuscarEmpleados(string busqueda)
         {
             List<csEmpleados> empleados = new List<csEmpleados>();
             csConexion conexion = new csConexion();
@@ -219,7 +201,7 @@ namespace SGFactuacion.Clases
                                 reader.GetString(reader.GetOrdinal("Cedula")).Trim(),
                                 reader.GetString(reader.GetOrdinal("Nombre")).Trim(),
                                 reader.GetString(reader.GetOrdinal("Apellido")).Trim(),
-                                reader.GetDateTime(reader.GetOrdinal("Fecha_Nac")).Date,
+                                reader.GetDateTime(reader.GetOrdinal("Fecha_nacimiento")).Date,
                                 reader.GetString(reader.GetOrdinal("Correo")).Trim(),
                                 reader.GetString(reader.GetOrdinal("Usuario")).Trim(),
                                 reader.GetString(reader.GetOrdinal("Contraseña")).Trim()
