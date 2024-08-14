@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,13 @@ using System.Threading.Tasks;
 
 namespace SGFactuacion
 {
-    public class csConexion
+    public interface IConexion
+    {
+        SqlConnection GetConnection();
+        void OpenOrCloseConnection();
+    }
+
+    public class csConexion   : IConexion
     {
         private SqlConnection connection;
         private string connectionString;
@@ -50,6 +57,19 @@ namespace SGFactuacion
             {
                 Console.WriteLine("Error al cambiar el estado de la conexión: " + ex.Message);
             }
+        }
+
+
+        public void OpenConnection()
+        {
+            if (connection.State != ConnectionState.Open)
+                connection.Open();
+        }
+
+        public void CloseConnection()
+        {
+            if (connection.State != ConnectionState.Closed)
+                connection.Close();
         }
     }
 }

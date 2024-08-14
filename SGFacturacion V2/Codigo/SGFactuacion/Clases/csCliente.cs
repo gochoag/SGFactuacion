@@ -18,11 +18,17 @@ namespace SGFactuacion
         public string Apellido { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public string Email { get; set; }
-        
 
 
-        private csConexion conexion;
-        
+        private IConexion conexion;
+
+        // private csConexion conexion;
+        public csCliente(IConexion conexion)
+        {
+            this.conexion = conexion;
+        }
+
+
         public csCliente(long idcliente, string cedula, string nombre, string apellido, DateTime fechaNacimiento, string email)
         {
             IdCliente = idcliente;
@@ -43,6 +49,18 @@ namespace SGFactuacion
             Email=email;
             conexion = new csConexion();
         }
+
+
+        public csCliente(string cedula, string nombre, string apellido, DateTime fechaNacimiento, string email, IConexion conn)
+        {
+            Cedula = cedula;
+            Nombre = nombre;
+            Apellido = apellido;
+            FechaNacimiento = fechaNacimiento.Date;
+            Email = email;
+            conexion = conn; // Inyección de la dependencia
+        }
+
         public bool RegistrarCliente()
         {
             bool registrado = false;
@@ -78,6 +96,7 @@ namespace SGFactuacion
 
             return registrado;
         }
+
 
 
         public bool EditarCliente()
