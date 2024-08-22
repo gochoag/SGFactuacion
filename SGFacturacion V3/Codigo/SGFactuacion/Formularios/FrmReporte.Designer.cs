@@ -1,0 +1,355 @@
+﻿namespace SGFactuacion
+{
+    partial class FrmReporte
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReporte));
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.sp_GetFacturaDetallesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSFacturadetalle = new SGFactuacion.DataSets.DSFacturadetalle();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtBuscarEmpleado = new System.Windows.Forms.TextBox();
+            this.paneldeDAtos = new System.Windows.Forms.Panel();
+            this.dgvDatosBuscados = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnCerrarDGV = new System.Windows.Forms.Button();
+            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
+            this.btnGenerar = new System.Windows.Forms.Button();
+            this.cbData2 = new System.Windows.Forms.ComboBox();
+            this.lblDatos2 = new System.Windows.Forms.Label();
+            this.lblDatos = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbTipoReporte = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.pnlreportes = new System.Windows.Forms.Panel();
+            this.spGetFacturaDetallesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sp_GetFacturaDetallesTableAdapter = new SGFactuacion.DataSets.DSFacturadetalleTableAdapters.sp_GetFacturaDetallesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_GetFacturaDetallesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSFacturadetalle)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.paneldeDAtos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosBuscados)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spGetFacturaDetallesBindingSource)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // sp_GetFacturaDetallesBindingSource
+            // 
+            this.sp_GetFacturaDetallesBindingSource.DataMember = "sp_GetFacturaDetalles";
+            this.sp_GetFacturaDetallesBindingSource.DataSource = this.dSFacturadetalle;
+            // 
+            // dSFacturadetalle
+            // 
+            this.dSFacturadetalle.DataSetName = "DSFacturadetalle";
+            this.dSFacturadetalle.EnforceConstraints = false;
+            this.dSFacturadetalle.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.txtBuscarEmpleado);
+            this.panel1.Controls.Add(this.paneldeDAtos);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnCerrarDGV);
+            this.panel1.Controls.Add(this.txtBuscarCliente);
+            this.panel1.Controls.Add(this.btnGenerar);
+            this.panel1.Controls.Add(this.cbData2);
+            this.panel1.Controls.Add(this.lblDatos2);
+            this.panel1.Controls.Add(this.lblDatos);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.cbTipoReporte);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(633, 153);
+            this.panel1.TabIndex = 3;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // txtBuscarEmpleado
+            // 
+            this.txtBuscarEmpleado.Location = new System.Drawing.Point(384, 20);
+            this.txtBuscarEmpleado.Name = "txtBuscarEmpleado";
+            this.txtBuscarEmpleado.Size = new System.Drawing.Size(171, 20);
+            this.txtBuscarEmpleado.TabIndex = 32;
+            this.txtBuscarEmpleado.TextChanged += new System.EventHandler(this.txtBuscarEmpleado_TextChanged);
+            this.txtBuscarEmpleado.Enter += new System.EventHandler(this.txtBuscarEmpleado_Enter);
+            // 
+            // paneldeDAtos
+            // 
+            this.paneldeDAtos.Controls.Add(this.dgvDatosBuscados);
+            this.paneldeDAtos.Location = new System.Drawing.Point(12, 47);
+            this.paneldeDAtos.Name = "paneldeDAtos";
+            this.paneldeDAtos.Size = new System.Drawing.Size(543, 100);
+            this.paneldeDAtos.TabIndex = 31;
+            // 
+            // dgvDatosBuscados
+            // 
+            this.dgvDatosBuscados.AllowUserToAddRows = false;
+            this.dgvDatosBuscados.AllowUserToDeleteRows = false;
+            this.dgvDatosBuscados.AllowUserToResizeColumns = false;
+            this.dgvDatosBuscados.AllowUserToResizeRows = false;
+            this.dgvDatosBuscados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDatosBuscados.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvDatosBuscados.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDatosBuscados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDatosBuscados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDatosBuscados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(249)))), ((int)(((byte)(201)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatosBuscados.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDatosBuscados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDatosBuscados.EnableHeadersVisualStyles = false;
+            this.dgvDatosBuscados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            this.dgvDatosBuscados.Location = new System.Drawing.Point(0, 0);
+            this.dgvDatosBuscados.Name = "dgvDatosBuscados";
+            this.dgvDatosBuscados.ReadOnly = true;
+            this.dgvDatosBuscados.RowHeadersVisible = false;
+            this.dgvDatosBuscados.RowHeadersWidth = 51;
+            this.dgvDatosBuscados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDatosBuscados.Size = new System.Drawing.Size(543, 100);
+            this.dgvDatosBuscados.TabIndex = 18;
+            this.dgvDatosBuscados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosBuscados_CellContentClick);
+            this.dgvDatosBuscados.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosBuscados_CellContentDoubleClick);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(77, 54);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(275, 20);
+            this.textBox1.TabIndex = 30;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label1.Location = new System.Drawing.Point(253, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 17);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Buscar Cliente:";
+            // 
+            // btnCerrarDGV
+            // 
+            this.btnCerrarDGV.Enabled = false;
+            this.btnCerrarDGV.FlatAppearance.BorderSize = 0;
+            this.btnCerrarDGV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarDGV.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarDGV.Image")));
+            this.btnCerrarDGV.Location = new System.Drawing.Point(576, 54);
+            this.btnCerrarDGV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrarDGV.Name = "btnCerrarDGV";
+            this.btnCerrarDGV.Size = new System.Drawing.Size(41, 37);
+            this.btnCerrarDGV.TabIndex = 28;
+            this.btnCerrarDGV.UseVisualStyleBackColor = true;
+            this.btnCerrarDGV.Click += new System.EventHandler(this.btnCerrarDGV_Click);
+            // 
+            // txtBuscarCliente
+            // 
+            this.txtBuscarCliente.Location = new System.Drawing.Point(358, 20);
+            this.txtBuscarCliente.Name = "txtBuscarCliente";
+            this.txtBuscarCliente.Size = new System.Drawing.Size(197, 20);
+            this.txtBuscarCliente.TabIndex = 27;
+            this.txtBuscarCliente.TextChanged += new System.EventHandler(this.txtBuscarCliente_TextChanged);
+            this.txtBuscarCliente.Enter += new System.EventHandler(this.txtBuscarCliente_Enter);
+            // 
+            // btnGenerar
+            // 
+            this.btnGenerar.Enabled = false;
+            this.btnGenerar.FlatAppearance.BorderSize = 0;
+            this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerar.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerar.Image")));
+            this.btnGenerar.Location = new System.Drawing.Point(576, 12);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(41, 37);
+            this.btnGenerar.TabIndex = 17;
+            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+            // 
+            // cbData2
+            // 
+            this.cbData2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbData2.Enabled = false;
+            this.cbData2.FormattingEnabled = true;
+            this.cbData2.Location = new System.Drawing.Point(77, 84);
+            this.cbData2.Name = "cbData2";
+            this.cbData2.Size = new System.Drawing.Size(158, 21);
+            this.cbData2.TabIndex = 16;
+            this.cbData2.SelectedIndexChanged += new System.EventHandler(this.cbData2_SelectedIndexChanged);
+            // 
+            // lblDatos2
+            // 
+            this.lblDatos2.AutoSize = true;
+            this.lblDatos2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatos2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.lblDatos2.Location = new System.Drawing.Point(12, 84);
+            this.lblDatos2.Name = "lblDatos2";
+            this.lblDatos2.Size = new System.Drawing.Size(47, 17);
+            this.lblDatos2.TabIndex = 15;
+            this.lblDatos2.Text = "Fecha:";
+            // 
+            // lblDatos
+            // 
+            this.lblDatos.AutoSize = true;
+            this.lblDatos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatos.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.lblDatos.Location = new System.Drawing.Point(11, 54);
+            this.lblDatos.Name = "lblDatos";
+            this.lblDatos.Size = new System.Drawing.Size(55, 17);
+            this.lblDatos.TabIndex = 13;
+            this.lblDatos.Text = "Cliente:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label7.Location = new System.Drawing.Point(11, 19);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 17);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Reporte:";
+            // 
+            // cbTipoReporte
+            // 
+            this.cbTipoReporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoReporte.FormattingEnabled = true;
+            this.cbTipoReporte.Items.AddRange(new object[] {
+            "Detalle de factura",
+            "Total de venta de empleados",
+            "Top 5 de produtos vendidos",
+            "Top 5 de Clientes"});
+            this.cbTipoReporte.Location = new System.Drawing.Point(77, 19);
+            this.cbTipoReporte.Name = "cbTipoReporte";
+            this.cbTipoReporte.Size = new System.Drawing.Size(158, 21);
+            this.cbTipoReporte.TabIndex = 0;
+            this.cbTipoReporte.SelectedIndexChanged += new System.EventHandler(this.cbTipoReporte_SelectedIndexChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.reportViewer1);
+            this.panel2.Controls.Add(this.pnlreportes);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 153);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(633, 349);
+            this.panel2.TabIndex = 4;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DSFacturaDetails";
+            reportDataSource1.Value = this.sp_GetFacturaDetallesBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SGFactuacion.Reportes.RP_FacturaDetalle.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(633, 349);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // pnlreportes
+            // 
+            this.pnlreportes.Location = new System.Drawing.Point(3, 0);
+            this.pnlreportes.Name = "pnlreportes";
+            this.pnlreportes.Size = new System.Drawing.Size(630, 346);
+            this.pnlreportes.TabIndex = 1;
+            // 
+            // spGetFacturaDetallesBindingSource
+            // 
+            this.spGetFacturaDetallesBindingSource.DataMember = "sp_GetFacturaDetalles";
+            this.spGetFacturaDetallesBindingSource.DataSource = this.dSFacturadetalle;
+            // 
+            // sp_GetFacturaDetallesTableAdapter
+            // 
+            this.sp_GetFacturaDetallesTableAdapter.ClearBeforeFill = true;
+            // 
+            // FrmReporte
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(633, 502);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FrmReporte";
+            ((System.ComponentModel.ISupportInitialize)(this.sp_GetFacturaDetallesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSFacturadetalle)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.paneldeDAtos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosBuscados)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.spGetFacturaDetallesBindingSource)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+        private System.Windows.Forms.ComboBox cbTipoReporte;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblDatos;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource sp_GetFacturaDetallesBindingSource;
+        private DataSets.DSFacturadetalle dSFacturadetalle;
+        private System.Windows.Forms.BindingSource spGetFacturaDetallesBindingSource;
+        private DataSets.DSFacturadetalleTableAdapters.sp_GetFacturaDetallesTableAdapter sp_GetFacturaDetallesTableAdapter;
+        public System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnGenerar;
+        private System.Windows.Forms.ComboBox cbData2;
+        private System.Windows.Forms.Label lblDatos2;
+        private System.Windows.Forms.DataGridView dgvDatosBuscados;
+        private System.Windows.Forms.TextBox txtBuscarCliente;
+        private System.Windows.Forms.Button btnCerrarDGV;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel paneldeDAtos;
+        private System.Windows.Forms.TextBox txtBuscarEmpleado;
+        private System.Windows.Forms.Panel pnlreportes;
+    }
+}
