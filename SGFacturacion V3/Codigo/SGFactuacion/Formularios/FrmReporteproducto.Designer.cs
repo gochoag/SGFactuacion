@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dSProductoVendido = new SGFactuacion.BDFacturaDataSet();
             this.sprepProductosVendidosTop5BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSProductoVendido = new SGFactuacion.BDFacturaDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.sp_rep_Productos_Vendidos_Top5TableAdapter = new SGFactuacion.BDFacturaDataSetTableAdapters.sp_rep_Productos_Vendidos_Top5TableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dSProductoVendido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sprepProductosVendidosTop5BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSProductoVendido)).BeginInit();
             this.SuspendLayout();
+            // 
+            // sprepProductosVendidosTop5BindingSource
+            // 
+            this.sprepProductosVendidosTop5BindingSource.DataMember = "sp_rep_Productos_Vendidos_Top5";
+            this.sprepProductosVendidosTop5BindingSource.DataSource = this.dSProductoVendido;
+            // 
+            // dSProductoVendido
+            // 
+            this.dSProductoVendido.DataSetName = "dSProductoVendido";
+            this.dSProductoVendido.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -46,20 +56,12 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "SGFactuacion.Reportes.RP_Productovendidordlc.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(633, 349);
+            this.reportViewer1.Size = new System.Drawing.Size(844, 430);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dSProductoVendido
-            // 
-            this.dSProductoVendido.DataSetName = "dSProductoVendido";
-            this.dSProductoVendido.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sprepProductosVendidosTop5BindingSource
-            // 
-            this.sprepProductosVendidosTop5BindingSource.DataMember = "sp_rep_Productos_Vendidos_Top5";
-            this.sprepProductosVendidosTop5BindingSource.DataSource = this.dSProductoVendido;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // sp_rep_Productos_Vendidos_Top5TableAdapter
             // 
@@ -67,16 +69,17 @@
             // 
             // FrmReporteproducto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 349);
+            this.ClientSize = new System.Drawing.Size(844, 430);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmReporteproducto";
             this.Text = "FrmReporteproducto";
             this.Load += new System.EventHandler(this.FrmReporteproducto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dSProductoVendido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sprepProductosVendidosTop5BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSProductoVendido)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -116,7 +116,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDFacturaDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Clases\csCliente.cs" />
     <Compile Include="Clases\csConexion.cs" />
     <Compile Include="Clases\csEmpleados.cs" />
     <Compile Include="Clases\csFactura.cs" />

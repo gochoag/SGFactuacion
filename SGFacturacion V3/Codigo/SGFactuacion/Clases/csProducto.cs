@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace SGFactuacion
 {
@@ -23,6 +24,11 @@ namespace SGFactuacion
         public decimal Stock { get; set; }
 
         private csConexion conexion;
+
+        public csProducto()
+        {
+            conexion = new csConexion();
+        }
 
         public csProducto(string nombre, decimal precioUnitario, decimal stock)
         {
@@ -178,6 +184,38 @@ namespace SGFactuacion
             return productos;
         }
 
+
+
+
+        //Para reportes
+        public void CargarReporteListarProductos(ReportViewer rp1)
+        {
+            csConexion conexion = new csConexion();
+
+            using (SqlConnection conn = conexion.GetConnection())
+            {
+                SqlCommand cmd = new SqlCommand("sp_rep_Listado_Producto", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+
+                try
+                {
+                    conn.Open();
+                    da.Fill(dt);
+                    rp1.LocalReport.DataSources.Clear();
+                    rp1.LocalReport.DataSources.Add(new ReportDataSource(rp1.Name, dt));
+                    rp1.LocalReport.Refresh();
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de la excepción
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
+            rp1.RefreshReport();
+        }
 
 
 
