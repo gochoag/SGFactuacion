@@ -12,6 +12,12 @@ namespace SGFactuacion
     public class csProducto
     {
         public long IdProducto { get; set; }
+
+        public long ID_Proveedor { get; set; }
+
+        public string RazonComercial { get; set; }
+
+
         public string Nombre { get; set; }
         public decimal PrecioUnitario { get; set; }
         public decimal Stock { get; set; }
@@ -26,9 +32,21 @@ namespace SGFactuacion
             conexion = new csConexion();
         }
 
-        public csProducto(long idProducto, string nombre, decimal precioUnitario, decimal stock)
+
+        public csProducto(long idProveedor, string nombre, decimal precioUnitario, decimal stock)
+        {
+            ID_Proveedor = idProveedor;
+            Nombre = nombre;
+            PrecioUnitario = precioUnitario;
+            Stock = stock;
+            conexion = new csConexion();
+        }
+
+        public csProducto(long idProducto, long idProveedor, string razonComercial,string nombre, decimal precioUnitario, decimal stock)
         {
             IdProducto = idProducto;
+            ID_Proveedor = idProveedor;
+            RazonComercial = razonComercial;
             Nombre = nombre;
             PrecioUnitario = precioUnitario;
             Stock = stock;
@@ -45,6 +63,7 @@ namespace SGFactuacion
                     cmd.Parameters.AddWithValue("@Nombre", Nombre);
                     cmd.Parameters.AddWithValue("@precio_unitario", PrecioUnitario);
                     cmd.Parameters.AddWithValue("@stock", Stock);
+                    cmd.Parameters.AddWithValue("@ID_Proveedor", ID_Proveedor);
 
                     conexion.OpenOrCloseConnection();
                     cmd.ExecuteNonQuery();
@@ -100,10 +119,12 @@ namespace SGFactuacion
                             while (reader.Read())
                             {
                                    csProducto producto = new csProducto(
-                                      long.Parse(reader["IDPRODUCTO"].ToString()),
-                                    reader["PRODUCTO"].ToString(),
-                                    decimal.Parse(reader["PRECIO_UNITARIO"].ToString(), System.Globalization.CultureInfo.InvariantCulture),
-                                    decimal.Parse(reader["STOCK"].ToString(), System.Globalization.CultureInfo.InvariantCulture)
+                                       long.Parse(reader["IDPRODUCTO"].ToString()),
+                                       long.Parse(reader["IDPROVEEDOR"].ToString()),
+                                       reader["RAZONCOMERCIAL"].ToString(),
+                                       reader["PRODUCTO"].ToString(),
+                                       decimal.Parse(reader["PRECIO_UNITARIO"].ToString(), System.Globalization.CultureInfo.InvariantCulture),
+                                       decimal.Parse(reader["STOCK"].ToString(), System.Globalization.CultureInfo.InvariantCulture)
                                  );
                             productos.Add(producto);
                             }
@@ -136,10 +157,12 @@ namespace SGFactuacion
                             while (reader.Read())
                             {
                                  csProducto producto = new csProducto(
-                                     reader.GetInt64(reader.GetOrdinal("ID_Produc")),
-                                     reader.GetString(reader.GetOrdinal("Nombre")),
-                                     reader.GetDecimal(reader.GetOrdinal("Precio_unitario")),
-                                     reader.GetDecimal(reader.GetOrdinal("Stock"))
+                                     long.Parse(reader["IDPRODUCTO"].ToString()),
+                                     long.Parse(reader["IDPROVEEDOR"].ToString()),
+                                     reader["RAZONCOMERCIAL"].ToString(),
+                                     reader["PRODUCTO"].ToString(),
+                                     decimal.Parse(reader["PRECIO_UNITARIO"].ToString(), System.Globalization.CultureInfo.InvariantCulture),
+                                     decimal.Parse(reader["STOCK"].ToString(), System.Globalization.CultureInfo.InvariantCulture)
                                  );
                             productos.Add(producto);
                             }

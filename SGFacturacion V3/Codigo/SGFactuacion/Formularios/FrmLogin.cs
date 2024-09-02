@@ -27,8 +27,13 @@ namespace SGFactuacion.Formularios
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            string usuario = txtbUsuario.Text.Trim();
-            string contraseña = txtbContraseña.Text.Trim();
+            //string usuario = txtbUsuario.Text.Trim();
+           // string contraseña = txtbContraseña.Text.Trim();
+
+            string usuario = "jp";
+            string contraseña = "root";
+
+
 
             // Asegúrate de que los campos de usuario y contraseña no estén vacíos
             if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contraseña))

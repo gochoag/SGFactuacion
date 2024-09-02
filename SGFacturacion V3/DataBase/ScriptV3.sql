@@ -275,17 +275,29 @@ Go
 Create Procedure sp_rep_Listado_Producto
 AS
 BEGIN
-	select RTRIM(ID_Produc) AS IDPRODUCTO, RTRIM(Nombre) AS PRODUCTO, RTRIM(Precio_unitario) AS PRECIO_UNITARIO,
-		RTRIM(Stock) AS STOCK from Producto
+	select RTRIM(p.ID_Produc) AS IDPRODUCTO, 
+	RTRIM(pr.ID_Proveedor) as IDPROVEEDOR, 
+	RTRIM(pr.RazonComercial) as RAZONCOMERCIAL,
+	RTRIM(p.Nombre) AS PRODUCTO, RTRIM(p.Precio_unitario) 
+	AS PRECIO_UNITARIO,
+		RTRIM(p.Stock) AS STOCK 
+		from Producto p, Proveedor pr
+		where p.ID_Proveedor=pr.ID_Proveedor
 END
 Go
 Create Procedure sp_rep_Producto_By_Nombre
     @PatronNombre nvarchar(35)
 AS
 BEGIN
-    SELECT * 
-    FROM Producto 
-    WHERE Nombre LIKE '%' + @PatronNombre + '%'
+    	select RTRIM(p.ID_Produc) AS IDPRODUCTO, 
+	RTRIM(pr.ID_Proveedor) as IDPROVEEDOR, 
+	RTRIM(pr.RazonComercial) as RAZONCOMERCIAL,
+	RTRIM(p.Nombre) AS PRODUCTO, RTRIM(p.Precio_unitario) 
+	AS PRECIO_UNITARIO,
+		RTRIM(p.Stock) AS STOCK 
+		from Producto p, Proveedor pr
+		where p.ID_Proveedor=pr.ID_Proveedor and 
+		p.Nombre LIKE '%' + @PatronNombre + '%'
 END
 Go
 ---------CRUD Persona

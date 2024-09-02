@@ -122,6 +122,7 @@
     <Compile Include="Clases\csFactura.cs" />
     <Compile Include="Clases\csPersona.cs" />
     <Compile Include="Clases\csProducto.cs" />
+    <Compile Include="Clases\CsProveedor.cs" />
     <Compile Include="DataSets\DSFacturalistado.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
