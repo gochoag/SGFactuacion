@@ -1,6 +1,5 @@
 ﻿using Microsoft.Reporting.WinForms;
 using SGFactuacion.Clases;
-using SGFactuacion.DataSets;
 using SGFactuacion.Formularios;
 using System;
 using System.Collections.Generic;
@@ -193,10 +192,11 @@ namespace SGFactuacion
 
         public void GenerarReporte1( long id)
         {
+            csFactura f=new csFactura();
             try
             {
-                this.sp_GetFacturaDetallesTableAdapter.Fill(this.dSFacturadetalle.sp_GetFacturaDetalles, id);
-
+                //this.sp_GetFacturaDetallesTableAdapter.Fill(this.dSFacturadetalle.sp_GetFacturaDetalles, id);
+                f.CargarReportesp_GetFacturaDetalles(this.reportViewer1,id);
                 this.reportViewer1.RefreshReport();
             }
             catch (Exception ex)

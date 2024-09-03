@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace SGFactuacion
 {
@@ -122,6 +123,73 @@ namespace SGFactuacion
                 return false;
             }
         }
+
+
+
+        //Para reportes
+        public void CargarReportesp_GetFacturaDetalles(ReportViewer reportViewer1, long id)
+        {
+            csConexion conexion = new csConexion();
+            using (SqlConnection conn = conexion.GetConnection())
+            {
+                SqlCommand cmd = new SqlCommand("sp_GetFacturaDetalles", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ID_Factu", id);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+
+                try
+                {
+                    conn.Open();
+                    da.Fill(ds);
+                    MessageBox.Show("Número de filas cargadas: " + ds.Tables[0].Rows.Count);
+
+                    reportViewer1.LocalReport.DataSources.Clear();
+                    reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DSFacturaDetails", ds.Tables[0]));
+                    reportViewer1.LocalReport.Refresh();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
+            reportViewer1.RefreshReport();
+            reportViewer1.RefreshReport();
+        }
+
+        public void CargarReportesp_sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5(ReportViewer reportViewer1)
+        {
+            csConexion conexion = new csConexion();
+            using (SqlConnection conn = conexion.GetConnection())
+            {
+                SqlCommand cmd = new SqlCommand("[sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+
+                try
+                {
+                    conn.Open();
+                    da.Fill(ds);
+                    MessageBox.Show("Número de filas cargadas: " + ds.Tables[0].Rows.Count);
+
+                    reportViewer1.LocalReport.DataSources.Clear();
+                    reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", ds.Tables[0]));
+                    reportViewer1.LocalReport.Refresh();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
+            reportViewer1.RefreshReport();
+            reportViewer1.RefreshReport();
+        }
+
+
+
     }
 
 

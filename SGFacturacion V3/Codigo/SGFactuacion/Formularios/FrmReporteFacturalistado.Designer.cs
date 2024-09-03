@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dSTop5Factura = new SGFactuacion.BDFacturaDataSet();
             this.sprepListadoFacturaMayorCantidadProductosTop5BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSTop5Factura = new SGFactuacion.BDFacturaDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5TableAdapter = new SGFactuacion.BDFacturaDataSetTableAdapters.sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5TableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dSTop5Factura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sprepListadoFacturaMayorCantidadProductosTop5BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSTop5Factura)).BeginInit();
             this.SuspendLayout();
+            // 
+            // sprepListadoFacturaMayorCantidadProductosTop5BindingSource
+            // 
+            this.sprepListadoFacturaMayorCantidadProductosTop5BindingSource.DataMember = "sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5";
+            this.sprepListadoFacturaMayorCantidadProductosTop5BindingSource.DataSource = this.dSTop5Factura;
+            // 
+            // dSTop5Factura
+            // 
+            this.dSTop5Factura.DataSetName = "dSTop5Factura";
+            this.dSTop5Factura.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -46,20 +56,12 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "SGFactuacion.Reportes.Rp_Top5factura.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(633, 349);
+            this.reportViewer1.Size = new System.Drawing.Size(844, 430);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dSTop5Factura
-            // 
-            this.dSTop5Factura.DataSetName = "dSTop5Factura";
-            this.dSTop5Factura.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sprepListadoFacturaMayorCantidadProductosTop5BindingSource
-            // 
-            this.sprepListadoFacturaMayorCantidadProductosTop5BindingSource.DataMember = "sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5";
-            this.sprepListadoFacturaMayorCantidadProductosTop5BindingSource.DataSource = this.dSTop5Factura;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5TableAdapter
             // 
@@ -67,16 +69,17 @@
             // 
             // FrmReporteFacturalistado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 349);
+            this.ClientSize = new System.Drawing.Size(844, 430);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmReporteFacturalistado";
             this.Text = "FrmReporteFacturalistado";
             this.Load += new System.EventHandler(this.FrmReporteFacturalistado_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dSTop5Factura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sprepListadoFacturaMayorCantidadProductosTop5BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSTop5Factura)).EndInit();
             this.ResumeLayout(false);
 
         }

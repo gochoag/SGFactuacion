@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SGFactuacion.Clases;
 
 namespace SGFactuacion.Formularios
 {
@@ -24,13 +25,16 @@ namespace SGFactuacion.Formularios
 
         public void GenerarReporte(long id)
         {
+            csEmpleados emp = new csEmpleados();
             try
             {
+               
+                emp.CargarReportesp_Sp_Venta_Empleado(this.reportViewer1,id);
                 // Asume que tienes un TableAdapter configurado para el dataset correspondiente
-                this.sp_Venta_EmpleadoTableAdapter.Fill(this.dSVentaempleado.Sp_Venta_Empleado, id);
+                //this.sp_Venta_EmpleadoTableAdapter.Fill(this.dSVentaempleado.Sp_Venta_Empleado, id);
 
                
-                reportViewer1.RefreshReport();
+               // reportViewer1.RefreshReport();
             }
             catch (Exception ex)
             {
@@ -42,6 +46,11 @@ namespace SGFactuacion.Formularios
         {
 
             this.reportViewer1.RefreshReport();
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

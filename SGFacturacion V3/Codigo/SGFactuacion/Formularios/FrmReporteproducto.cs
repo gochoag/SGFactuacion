@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,18 +24,17 @@ namespace SGFactuacion.Formularios
         private void FrmReporteproducto_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'bDFacturaDataSet.sp_rep_Productos_Vendidos_Top5' Puede moverla o quitarla según sea necesario.
-            producto = new csProducto();
-
-            
-            //this.sp_rep_Productos_Vendidos_Top5TableAdapter.Fill(this.dSProductoVendido.sp_rep_Productos_Vendidos_Top5);
-            //this.sp_rep_Productos_Vendidos_Top5TableAdapter.Fill(csProducto.ListarProductos());
-
-            //this.reportViewer1.LocalReport.DataSources = csProducto.ListarProductos();
+            producto = new csProducto();    
             producto.CargarReporteListarProductos(this.reportViewer1);
-            this.reportViewer1.RefreshReport();
+
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reportViewer2_Load(object sender, EventArgs e)
         {
 
         }

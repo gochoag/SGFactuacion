@@ -379,38 +379,45 @@
       </ConnectionProperties>
       <rd:DataSourceID>879fa654-15ff-41b4-b1c8-b529140191b1</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="DataSetreporte">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>8c9849fd-59ed-4242-a80b-62ad96dbee06</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>DSFacturalistado</DataSourceName>
+        <DataSourceName>DataSetreporte</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
         <Field Name="ID_Factu">
           <DataField>ID_Factu</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ID_Cliente">
-          <DataField>ID_Cliente</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
+        <Field Name="ID_Persona">
+          <DataField>ID_Persona</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Fecha">
           <DataField>Fecha</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="CantidadProductos">
           <DataField>CantidadProductos</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DSFacturalistado</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\kdrag\OneDrive\Documentos\GitHub\SGFactuacion\SGFacturacion V2\Codigo\SGFactuacion\DataSets\DSFacturalistado.xsd</rd:SchemaPath>
-        <rd:TableName>sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5TableAdapter</rd:TableAdapterName>
+        <rd:DataSetName>DataSetreporte</rd:DataSetName>
+        <rd:SchemaPath>C:\Proyectos\C#\SGFactuacion\SGFacturacion V3\Codigo\SGFactuacion\DataSets\DataSetreporte.xsd</rd:SchemaPath>
+        <rd:TableName>DataTable4</rd:TableName>
+        <rd:TableAdapterFillMethod />
+        <rd:TableAdapterGetDataMethod />
+        <rd:TableAdapterName />
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

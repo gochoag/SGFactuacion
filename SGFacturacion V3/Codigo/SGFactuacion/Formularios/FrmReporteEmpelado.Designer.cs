@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dSVentaempleado = new SGFactuacion.BDFacturaDataSet();
             this.spVentaEmpleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSVentaempleado = new SGFactuacion.BDFacturaDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.sp_Venta_EmpleadoTableAdapter = new SGFactuacion.BDFacturaDataSetTableAdapters.Sp_Venta_EmpleadoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dSVentaempleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spVentaEmpleadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSVentaempleado)).BeginInit();
             this.SuspendLayout();
+            // 
+            // spVentaEmpleadoBindingSource
+            // 
+            this.spVentaEmpleadoBindingSource.DataMember = "Sp_Venta_Empleado";
+            this.spVentaEmpleadoBindingSource.DataSource = this.dSVentaempleado;
+            // 
+            // dSVentaempleado
+            // 
+            this.dSVentaempleado.DataSetName = "dSVentaempleado";
+            this.dSVentaempleado.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -46,20 +56,12 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "SGFactuacion.Reportes.RP_VentaEmpleado.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(633, 349);
+            this.reportViewer1.Size = new System.Drawing.Size(844, 430);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dSVentaempleado
-            // 
-            this.dSVentaempleado.DataSetName = "dSVentaempleado";
-            this.dSVentaempleado.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // spVentaEmpleadoBindingSource
-            // 
-            this.spVentaEmpleadoBindingSource.DataMember = "Sp_Venta_Empleado";
-            this.spVentaEmpleadoBindingSource.DataSource = this.dSVentaempleado;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // sp_Venta_EmpleadoTableAdapter
             // 
@@ -67,15 +69,16 @@
             // 
             // FrmReporteEmpelado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 349);
+            this.ClientSize = new System.Drawing.Size(844, 430);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmReporteEmpelado";
             this.Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)(this.dSVentaempleado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spVentaEmpleadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSVentaempleado)).EndInit();
             this.ResumeLayout(false);
 
         }

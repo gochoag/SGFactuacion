@@ -188,33 +188,34 @@ namespace SGFactuacion
 
 
         //Para reportes
-        public void CargarReporteListarProductos(ReportViewer rp1)
+        public void CargarReporteListarProductos(ReportViewer reportViewer1)
         {
             csConexion conexion = new csConexion();
-
             using (SqlConnection conn = conexion.GetConnection())
             {
-                SqlCommand cmd = new SqlCommand("sp_rep_Listado_Producto", conn);
+                SqlCommand cmd = new SqlCommand("[sp_rep_Productos_Vendidos_Top5]", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
+                DataSet ds = new DataSet();
 
                 try
                 {
                     conn.Open();
-                    da.Fill(dt);
-                    rp1.LocalReport.DataSources.Clear();
-                    rp1.LocalReport.DataSources.Add(new ReportDataSource(rp1.Name, dt));
-                    rp1.LocalReport.Refresh();
+                    da.Fill(ds);
+                    MessageBox.Show("Número de filas cargadas: " + ds.Tables[0].Rows.Count);
+
+                    reportViewer1.LocalReport.DataSources.Clear();
+                    reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", ds.Tables[0]));
+                    reportViewer1.LocalReport.Refresh();
                 }
                 catch (Exception ex)
                 {
-                    // Manejo de la excepción
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
 
-            rp1.RefreshReport();
+            reportViewer1.RefreshReport();
+            reportViewer1.RefreshReport();
         }
 
 

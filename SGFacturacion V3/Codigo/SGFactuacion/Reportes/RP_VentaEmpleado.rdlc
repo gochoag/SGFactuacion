@@ -24,7 +24,7 @@
         <Top>0.28787cm</Top>
         <Left>0.31432cm</Left>
         <Height>1.32292cm</Height>
-        <Width>7.32896cm</Width>
+        <Width>7.60413cm</Width>
         <Style>
           <Border />
           <BackgroundColor>DarkGreen</BackgroundColor>
@@ -377,17 +377,24 @@
       </ConnectionProperties>
       <rd:DataSourceID>3242b9a6-0f5a-4d20-b7f6-abb4c72a9182</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="DataSetreporte">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>906c272c-0c88-4766-b4c4-63a0cfc38c23</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DSVentaempleado">
       <Query>
-        <DataSourceName>DSVentaempleado</DataSourceName>
+        <DataSourceName>DataSetreporte</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
         <Field Name="ID_Empleado">
           <DataField>ID_Empleado</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Nombre">
           <DataField>Nombre</DataField>
@@ -399,16 +406,16 @@
         </Field>
         <Field Name="total">
           <DataField>total</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DSVentaempleado</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\kdrag\OneDrive\Documentos\GitHub\SGFactuacion\SGFacturacion V2\Codigo\SGFactuacion\DataSets\DSVentaempleado.xsd</rd:SchemaPath>
-        <rd:TableName>Sp_Venta_Empleado</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>Sp_Venta_EmpleadoTableAdapter</rd:TableAdapterName>
+        <rd:DataSetName>DataSetreporte</rd:DataSetName>
+        <rd:SchemaPath>C:\Proyectos\C#\SGFactuacion\SGFacturacion V3\Codigo\SGFactuacion\DataSets\DataSetreporte.xsd</rd:SchemaPath>
+        <rd:TableName>DataTable3</rd:TableName>
+        <rd:TableAdapterFillMethod />
+        <rd:TableAdapterGetDataMethod />
+        <rd:TableAdapterName />
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

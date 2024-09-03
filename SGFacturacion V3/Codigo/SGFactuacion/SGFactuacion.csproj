@@ -122,40 +122,13 @@
     <Compile Include="Clases\csPersona.cs" />
     <Compile Include="Clases\csProducto.cs" />
     <Compile Include="Clases\CsProveedor.cs" />
-    <Compile Include="DataSets\DSFacturalistado.Designer.cs">
+    <Compile Include="DataSets\DataSetreporte.cs">
+      <DependentUpon>DataSetreporte.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetreporte.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DSFacturalistado.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSets\DSProductomas.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSProductomas.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSets\DSFacturadetalle.cs">
-      <DependentUpon>DSFacturadetalle.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="DataSets\DSFacturadetalle.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSFacturadetalle.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="DataSets\DSTop5cliente.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSTop5cliente.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSets\DSVentaempleado.cs">
-      <DependentUpon>DSVentaempleado.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="DataSets\DSVentaempleado.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSVentaempleado.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DataSetreporte.xsd</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Form1.cs">
       <SubType>Form</SubType>
@@ -343,69 +316,196 @@
     </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagramFacture.cd" />
-    <None Include="DataSets\DSFacturalistado.xsc">
-      <DependentUpon>DSFacturalistado.xsd</DependentUpon>
+    <None Include="DataSets\DataSetreporte.xsc">
+      <DependentUpon>DataSetreporte.xsd</DependentUpon>
     </None>
-    <None Include="DataSets\DSFacturalistado.xsd">
+    <None Include="DataSets\DataSetreporte.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSFacturalistado.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetreporte.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSets\DSFacturalistado.xss">
-      <DependentUpon>DSFacturalistado.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\DSProductomas.xsc">
-      <DependentUpon>DSProductomas.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\DSProductomas.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSProductomas.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSets\DSProductomas.xss">
-      <DependentUpon>DSProductomas.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\DSFacturadetalle.xsc">
-      <DependentUpon>DSFacturadetalle.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSets\DSFacturadetalle.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSFacturadetalle.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSets\DSFacturadetalle.xss">
-      <DependentUpon>DSFacturadetalle.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSets\DSTop5cliente.xsc">
-      <DependentUpon>DSTop5cliente.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\DSTop5cliente.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSTop5cliente.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSets\DSTop5cliente.xss">
-      <DependentUpon>DSTop5cliente.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\DSVentaempleado.xsc">
-      <DependentUpon>DSVentaempleado.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSets\DSVentaempleado.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSVentaempleado.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSets\DSVentaempleado.xss">
-      <DependentUpon>DSVentaempleado.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Include="DataSets\DataSetreporte.xss">
+      <DependentUpon>DataSetreporte.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.ClienteDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.ClienteRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.ClienteRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.ClienteRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.CredencialesDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.CredencialesRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.CredencialesRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.CredencialesRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.EmpleadoDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.EmpleadoRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.EmpleadoRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.EmpleadoRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.FacturaDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.FacturaRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.FacturaRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.FacturaRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Factura_detalleDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Factura_detalleRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Factura_detalleRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Factura_detalleRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.ProductoDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.ProductoRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.ProductoRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.ProductoRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Buscar_ClienteDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Buscar_ClienteRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Buscar_ClienteRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Buscar_ClienteRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Buscar_EmpleadosDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Buscar_EmpleadosRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Buscar_EmpleadosRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Buscar_EmpleadosRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_GetFacturaDetallesDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_GetFacturaDetallesRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_GetFacturaDetallesRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_GetFacturaDetallesRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_GetMaxFacturaIDDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_GetMaxFacturaIDRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_GetMaxFacturaIDRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_GetMaxFacturaIDRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Get_Facturas_By_ClienteIDDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Get_Facturas_By_ClienteIDRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Get_Facturas_By_ClienteIDRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Get_Facturas_By_ClienteIDRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Get_Factura_By_Cedula_And_FechaDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Get_Factura_By_Cedula_And_FechaRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Get_Factura_By_Cedula_And_FechaRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Get_Factura_By_Cedula_And_FechaRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Get_Venta_EmpleadoDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Get_Venta_EmpleadoRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Get_Venta_EmpleadoRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Get_Venta_EmpleadoRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Listado_Cliente_Top5DataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Listado_Cliente_Top5Row.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Listado_Cliente_Top5RowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Listado_Cliente_Top5RowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Login_EmpleadoDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Login_EmpleadoRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Login_EmpleadoRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Login_EmpleadoRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Mostrar_EmpleadosDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Mostrar_EmpleadosRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Mostrar_EmpleadosRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Mostrar_EmpleadosRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Cliente_By_ApellidoDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Cliente_By_ApellidoRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Cliente_By_ApellidoRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Cliente_By_ApellidoRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Cliente_By_CedulaDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Cliente_By_CedulaRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Cliente_By_CedulaRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Cliente_By_CedulaRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Cliente_By_NombreDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Cliente_By_NombreRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Cliente_By_NombreRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Cliente_By_NombreRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_ClienteDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_ClienteRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_ClienteRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_ClienteRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_FacturaDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_FacturaRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_FacturaRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_FacturaRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_Factura_ClienteDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_Factura_ClienteRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_Factura_ClienteRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_Factura_ClienteRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5DataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5Row.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5RowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5RowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5_anioDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5_anioRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5_anioRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5_anioRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_ProductoDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_ProductoRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_ProductoRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Listado_ProductoRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Productos_Vendidos_Top5DataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Productos_Vendidos_Top5Row.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Productos_Vendidos_Top5RowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Productos_Vendidos_Top5RowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Productos_Vendidos_Top5_anioDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Productos_Vendidos_Top5_anioRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Productos_Vendidos_Top5_anioRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Productos_Vendidos_Top5_anioRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Producto_By_NombreDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Producto_By_NombreRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Producto_By_NombreRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.sp_rep_Producto_By_NombreRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Venta_EmpleadoDataTable.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Venta_EmpleadoRow.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Venta_EmpleadoRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\BDFacturaDataSet.Sp_Venta_EmpleadoRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\csConexion.datasource" />
+    <None Include="Properties\DataSources\csFactura.datasource" />
+    <None Include="Properties\DataSources\csFactura.FacturaDetalle.datasource" />
+    <None Include="Properties\DataSources\csProducto.datasource" />
+    <None Include="Properties\DataSources\FormEditarC.datasource" />
+    <None Include="Properties\DataSources\FormEditarP.datasource" />
+    <None Include="Properties\DataSources\FormFacturarR.datasource" />
+    <None Include="Properties\DataSources\FormListarC.datasource" />
+    <None Include="Properties\DataSources\FormListarP.datasource" />
+    <None Include="Properties\DataSources\FormRegistrarC.datasource" />
+    <None Include="Properties\DataSources\FormResgistrarP.datasource" />
+    <None Include="Properties\DataSources\FrmReporte.datasource" />
+    <None Include="Properties\DataSources\Principal.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.ClienteTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.CredencialesTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.EmpleadoTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.FacturaTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.Factura_detalleTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.ProductoTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.QueriesTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.Sp_Buscar_ClienteTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.Sp_Buscar_EmpleadosTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.sp_GetFacturaDetallesTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.sp_GetMaxFacturaIDTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.Sp_Get_Facturas_By_ClienteIDTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.Sp_Get_Factura_By_Cedula_And_FechaTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.Sp_Get_Venta_EmpleadoTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.Sp_Listado_Cliente_Top5TableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.Sp_Login_EmpleadoTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.Sp_Mostrar_EmpleadosTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.sp_rep_Cliente_By_ApellidoTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.sp_rep_Cliente_By_CedulaTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.sp_rep_Cliente_By_NombreTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.sp_rep_Listado_ClienteTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.sp_rep_Listado_FacturaTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.sp_rep_Listado_Factura_ClienteTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5TableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.sp_rep_Listado_Factura_Mayor_Cantidad_Productos_Top5_anioTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.sp_rep_Listado_ProductoTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.sp_rep_Productos_Vendidos_Top5TableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.sp_rep_Productos_Vendidos_Top5_anioTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.sp_rep_Producto_By_NombreTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.Sp_Venta_EmpleadoTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.BDFacturaDataSetTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.Clases.csEmpleados+csCredenciales.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.Clases.csEmpleados.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.Clases.csPersona.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.Clases.CsProveedor.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.Formularios.FrmEditarE.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.Formularios.FrmListarE.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.Formularios.FrmLogin.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.Formularios.FrmRegistrarE.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.Formularios.FrmReporteEmpelado.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.Formularios.FrmReporteFacturalistado.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.Formularios.FrmReporteproducto.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.Formularios.FrmReportetopcliente.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\SGFactuacion.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -434,5 +534,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

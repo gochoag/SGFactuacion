@@ -769,21 +769,36 @@
       </ConnectionProperties>
       <rd:DataSourceID>d5c57822-51e3-444f-b6bd-c95948b2246e</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="DataSetreporte">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>312126fb-3fe0-4bc3-87f1-1062ed3f6394</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DSFacturaDetails">
       <Query>
-        <DataSourceName>DSFacturadetalle</DataSourceName>
+        <DataSourceName>DataSetreporte</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
         <Field Name="ID_Factu">
           <DataField>ID_Factu</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ID_Cliente">
-          <DataField>ID_Cliente</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
+        <Field Name="ID_Empleado">
+          <DataField>ID_Empleado</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Empleado">
+          <DataField>Empleado</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ID_Persona">
+          <DataField>ID_Persona</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Cliente">
           <DataField>Cliente</DataField>
@@ -791,11 +806,11 @@
         </Field>
         <Field Name="Fecha">
           <DataField>Fecha</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="ID_Produc">
           <DataField>ID_Produc</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Producto">
           <DataField>Producto</DataField>
@@ -803,40 +818,32 @@
         </Field>
         <Field Name="Precio">
           <DataField>Precio</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="IVA">
-          <DataField>IVA</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Sub_Total">
-          <DataField>Sub_Total</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Total">
-          <DataField>Total</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="ID_Empleado">
-          <DataField>ID_Empleado</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
-        </Field>
-        <Field Name="Empleado">
-          <DataField>Empleado</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Cantidad">
           <DataField>Cantidad</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IVA">
+          <DataField>IVA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Sub_Total">
+          <DataField>Sub_Total</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DSFacturadetalle</rd:DataSetName>
-        <rd:SchemaPath>C:\Proyectos\C#\SGFactuacion\SGFacturacion V2\Codigo\SGFactuacion\DataSets\DSFacturadetalle.xsd</rd:SchemaPath>
-        <rd:TableName>sp_GetFacturaDetalles</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>sp_GetFacturaDetallesTableAdapter</rd:TableAdapterName>
+        <rd:DataSetName>DataSetreporte</rd:DataSetName>
+        <rd:SchemaPath>C:\Proyectos\C#\SGFactuacion\SGFacturacion V3\Codigo\SGFactuacion\DataSets\DataSetreporte.xsd</rd:SchemaPath>
+        <rd:TableName>DataTable2</rd:TableName>
+        <rd:TableAdapterFillMethod />
+        <rd:TableAdapterGetDataMethod />
+        <rd:TableAdapterName />
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

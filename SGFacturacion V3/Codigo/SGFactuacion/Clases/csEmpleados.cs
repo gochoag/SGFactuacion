@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -13,6 +14,12 @@ namespace SGFactuacion.Clases
         public string Contraseña { get; set; }
 
         private csConexion conexion;
+
+
+        public csEmpleados()
+        {
+             conexion=new csConexion();
+        }
 
         public csEmpleados(long idEmpleado, string cedula, string nombre, string apellido, DateTime fechaNacimiento, string email, string usuario, string contraseña)
             : base( cedula, nombre, apellido, fechaNacimiento, email)
@@ -219,5 +226,40 @@ namespace SGFactuacion.Clases
             }
             return empleados;
         }
+
+
+        //Para reportes
+        public void CargarReportesp_Sp_Venta_Empleado(ReportViewer reportViewer1, long id)
+        {
+            csConexion conexion = new csConexion();
+            using (SqlConnection conn = conexion.GetConnection())
+            {
+                SqlCommand cmd = new SqlCommand("Sp_Venta_Empleado", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idempleado", id);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+
+                try
+                {
+                    conn.Open();
+                    da.Fill(ds);
+                    MessageBox.Show("Número de filas cargadas: " + ds.Tables[0].Rows.Count);
+
+                    reportViewer1.LocalReport.DataSources.Clear();
+                    reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DSVentaempleado", ds.Tables[0]));
+                    reportViewer1.LocalReport.Refresh();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
+            reportViewer1.RefreshReport();
+            reportViewer1.RefreshReport();
+        }
+
+
     }
 }

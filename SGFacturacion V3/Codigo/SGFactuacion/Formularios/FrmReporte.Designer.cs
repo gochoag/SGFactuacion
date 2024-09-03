@@ -34,7 +34,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReporte));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.sp_GetFacturaDetallesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSFacturadetalle = new SGFactuacion.DataSets.DSFacturadetalle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtBuscarEmpleado = new System.Windows.Forms.TextBox();
             this.paneldeDAtos = new System.Windows.Forms.Panel();
@@ -53,9 +52,7 @@
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.pnlreportes = new System.Windows.Forms.Panel();
             this.spGetFacturaDetallesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sp_GetFacturaDetallesTableAdapter = new SGFactuacion.DataSets.DSFacturadetalleTableAdapters.sp_GetFacturaDetallesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.sp_GetFacturaDetallesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSFacturadetalle)).BeginInit();
+
             this.panel1.SuspendLayout();
             this.paneldeDAtos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosBuscados)).BeginInit();
@@ -66,13 +63,10 @@
             // sp_GetFacturaDetallesBindingSource
             // 
             this.sp_GetFacturaDetallesBindingSource.DataMember = "sp_GetFacturaDetalles";
-            this.sp_GetFacturaDetallesBindingSource.DataSource = this.dSFacturadetalle;
             // 
             // dSFacturadetalle
             // 
-            this.dSFacturadetalle.DataSetName = "DSFacturadetalle";
-            this.dSFacturadetalle.EnforceConstraints = false;
-            this.dSFacturadetalle.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+
             // 
             // panel1
             // 
@@ -302,11 +296,9 @@
             // spGetFacturaDetallesBindingSource
             // 
             this.spGetFacturaDetallesBindingSource.DataMember = "sp_GetFacturaDetalles";
-            this.spGetFacturaDetallesBindingSource.DataSource = this.dSFacturadetalle;
             // 
             // sp_GetFacturaDetallesTableAdapter
             // 
-            this.sp_GetFacturaDetallesTableAdapter.ClearBeforeFill = true;
             // 
             // FrmReporte
             // 
@@ -318,7 +310,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmReporte";
             ((System.ComponentModel.ISupportInitialize)(this.sp_GetFacturaDetallesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSFacturadetalle)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.paneldeDAtos.ResumeLayout(false);
@@ -336,9 +327,7 @@
         private System.Windows.Forms.Label lblDatos;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource sp_GetFacturaDetallesBindingSource;
-        private DataSets.DSFacturadetalle dSFacturadetalle;
         private System.Windows.Forms.BindingSource spGetFacturaDetallesBindingSource;
-        private DataSets.DSFacturadetalleTableAdapters.sp_GetFacturaDetallesTableAdapter sp_GetFacturaDetallesTableAdapter;
         public System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.ComboBox cbData2;

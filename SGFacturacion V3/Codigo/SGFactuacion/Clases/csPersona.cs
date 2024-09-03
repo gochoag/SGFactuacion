@@ -20,6 +20,11 @@ namespace SGFactuacion.Clases
 
         private csConexion conexion;
 
+        public csPersona()
+        {
+            conexion=new csConexion();
+        }
+
         public csPersona(long idPersona, string cedula, string nombre, string apellido, DateTime fechaNacimiento, string email)
         {
             IdPersona = idPersona;
