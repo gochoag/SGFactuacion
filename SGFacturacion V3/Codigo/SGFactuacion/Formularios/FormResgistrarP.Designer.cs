@@ -145,9 +145,9 @@
             this.LblRazon.Location = new System.Drawing.Point(122, 277);
             this.LblRazon.Name = "LblRazon";
             this.LblRazon.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LblRazon.Size = new System.Drawing.Size(114, 17);
+            this.LblRazon.Size = new System.Drawing.Size(125, 17);
             this.LblRazon.TabIndex = 15;
-            this.LblRazon.Text = "Razon Comercial:";
+            this.LblRazon.Text = "Nombre comercial:";
             this.LblRazon.Click += new System.EventHandler(this.label5_Click);
             // 
             // FormResgistrarP
