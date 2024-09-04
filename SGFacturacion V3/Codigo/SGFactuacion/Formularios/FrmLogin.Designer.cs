@@ -41,6 +41,7 @@
             this.btnEntrar = new System.Windows.Forms.Button();
             this.imglistOjos = new System.Windows.Forms.ImageList(this.components);
             this.btnOjo = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -48,6 +49,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(165)))), ((int)(((byte)(93)))));
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.lblSGFacturacion);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -61,7 +63,7 @@
             this.lblSGFacturacion.AutoSize = true;
             this.lblSGFacturacion.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSGFacturacion.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblSGFacturacion.Location = new System.Drawing.Point(39, 20);
+            this.lblSGFacturacion.Location = new System.Drawing.Point(41, 37);
             this.lblSGFacturacion.Name = "lblSGFacturacion";
             this.lblSGFacturacion.Size = new System.Drawing.Size(199, 37);
             this.lblSGFacturacion.TabIndex = 1;
@@ -70,7 +72,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(22, 60);
+            this.pictureBox1.Location = new System.Drawing.Point(22, 77);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(230, 199);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -156,6 +158,14 @@
             this.btnOjo.UseVisualStyleBackColor = true;
             this.btnOjo.Click += new System.EventHandler(this.btnOjo_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(224, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 28);
+            this.button1.TabIndex = 2;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,5 +206,6 @@
         private System.Windows.Forms.ImageList imglistOjos;
         private System.Windows.Forms.Button btnOjo;
         public System.Windows.Forms.Button btnEntrar;
+        private System.Windows.Forms.Button button1;
     }
 }

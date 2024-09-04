@@ -207,7 +207,7 @@
             // pnlDgvP
             // 
             this.pnlDgvP.Controls.Add(this.dgvEditProdu);
-            this.pnlDgvP.Location = new System.Drawing.Point(24, 257);
+            this.pnlDgvP.Location = new System.Drawing.Point(24, 267);
             this.pnlDgvP.Name = "pnlDgvP";
             this.pnlDgvP.Size = new System.Drawing.Size(567, 204);
             this.pnlDgvP.TabIndex = 27;

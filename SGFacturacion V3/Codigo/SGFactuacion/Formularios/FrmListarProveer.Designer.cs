@@ -45,9 +45,9 @@
             // PnlDgvEmpleado
             // 
             this.PnlDgvEmpleado.Controls.Add(this.dgvListarProveedores);
-            this.PnlDgvEmpleado.Location = new System.Drawing.Point(28, 241);
+            this.PnlDgvEmpleado.Location = new System.Drawing.Point(28, 131);
             this.PnlDgvEmpleado.Name = "PnlDgvEmpleado";
-            this.PnlDgvEmpleado.Size = new System.Drawing.Size(574, 224);
+            this.PnlDgvEmpleado.Size = new System.Drawing.Size(574, 334);
             this.PnlDgvEmpleado.TabIndex = 35;
             // 
             // dgvListarProveedores
@@ -94,7 +94,7 @@
             this.dgvListarProveedores.RowHeadersVisible = false;
             this.dgvListarProveedores.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvListarProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListarProveedores.Size = new System.Drawing.Size(574, 224);
+            this.dgvListarProveedores.Size = new System.Drawing.Size(574, 334);
             this.dgvListarProveedores.TabIndex = 27;
             // 
             // PnDiseñoE
@@ -121,16 +121,17 @@
             // 
             // txtBuscarP
             // 
-            this.txtBuscarP.Location = new System.Drawing.Point(84, 182);
+            this.txtBuscarP.Location = new System.Drawing.Point(84, 84);
             this.txtBuscarP.Name = "txtBuscarP";
             this.txtBuscarP.Size = new System.Drawing.Size(229, 20);
             this.txtBuscarP.TabIndex = 33;
+            this.txtBuscarP.TextChanged += new System.EventHandler(this.txtBuscarP_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(25, 182);
+            this.label7.Location = new System.Drawing.Point(25, 84);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 17);
             this.label7.TabIndex = 32;

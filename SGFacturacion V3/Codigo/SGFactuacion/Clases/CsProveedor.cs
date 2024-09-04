@@ -22,6 +22,11 @@ namespace SGFactuacion.Clases
 
         private csConexion conexion;
 
+        public CsProveedor()
+        {
+
+        }
+        //Editar un proveedor yo instancio este constructor
         public CsProveedor(long iD_Proveedor, string ruc, string razonComercial, string telefono, string direccion, string email)
         {
             ID_Proveedor = iD_Proveedor;
@@ -32,16 +37,15 @@ namespace SGFactuacion.Clases
             Email = email;
             conexion = new csConexion();
         }
-
-        public CsProveedor(long iD_Proveedor, string ruc, string razonComercial, string telefono, string direccion, string email, csConexion conexion)
+        //Insertar un proveedor yo isntancio este constructor
+        public CsProveedor(string ruc, string razonComercial, string telefono, string direccion, string email)
         {
-            ID_Proveedor = iD_Proveedor;
             Ruc = ruc;
             RazonComercial = razonComercial;
             Telefono = telefono;
             Direccion = direccion;
             Email = email;
-            this.conexion = conexion;
+            conexion = new csConexion();
         }
 
         //registrar Proveedor
@@ -91,7 +95,8 @@ namespace SGFactuacion.Clases
                     cmd.Parameters.AddWithValue("@Direccion", Direccion);
                     cmd.Parameters.AddWithValue("@Correo", Email);
                     conexion.OpenOrCloseConnection();
-                    cmd.ExecuteNonQuery();
+                     cmd.ExecuteNonQuery();
+                    conexion.OpenOrCloseConnection();
                     registrado = true;
                 }
             }
@@ -100,40 +105,11 @@ namespace SGFactuacion.Clases
                 MessageBox.Show("Error proveedor: " + ex.Message, "Error de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 registrado = false;
             }
-            finally
-            {
-                conexion.OpenOrCloseConnection();
-            }
+           
 
             return registrado;
         }
 
-        public bool EliminarProveedor()
-        {
-            bool registrado = false;
-            try
-            {
-                using (SqlCommand cmd = new SqlCommand("[Sp_Delete_Proveedor]", conexion.GetConnection()))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@ID_Proveedor", ID_Proveedor);
-                    conexion.OpenOrCloseConnection();
-                    cmd.ExecuteNonQuery();
-                    registrado = true;
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Error proveedor: " + ex.Message, "Error de Eliminacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                registrado = false;
-            }
-            finally
-            {
-                conexion.OpenOrCloseConnection();
-            }
-
-            return registrado;
-        }
 
         public static List<CsProveedor> ListarProveedores()
         {
@@ -150,12 +126,12 @@ namespace SGFactuacion.Clases
                         while (reader.Read())
                         {
                             CsProveedor proveedor = new CsProveedor(
-                                reader.GetInt64(reader.GetOrdinal("ID")),        //si no es ID es ID_Proveedor
-                                reader.GetString(reader.GetOrdinal("Ruc")).Trim(),
-                                reader.GetString(reader.GetOrdinal("RazonComercial")).Trim(),
-                                reader.GetString(reader.GetOrdinal("Telefono")).Trim(),
-                                reader.GetString(reader.GetOrdinal("Direccion")).Trim(),
-                                reader.GetString(reader.GetOrdinal("Correo")).Trim()      
+                                long.Parse(reader["ID"].ToString()),
+                                reader["Ruc"].ToString().Trim(),
+                                reader["RazonComercial"].ToString().Trim(),
+                                reader["Telefono"].ToString().Trim(),
+                                reader["Direccion"].ToString().Trim(),
+                                reader["Correo"].ToString().Trim()
                             );
 
                             proveedores.Add(proveedor);
@@ -187,13 +163,13 @@ namespace SGFactuacion.Clases
                         while (reader.Read())
                         {
                             CsProveedor proveedor = new CsProveedor(
+                                long.Parse(reader["ID"].ToString()),
+                                reader["Ruc"].ToString().Trim(),
+                                reader["RazonComercial"].ToString().Trim(),
+                                reader["Telefono"].ToString().Trim(),
+                                reader["Direccion"].ToString().Trim(),
+                                reader["Correo"].ToString().Trim()
 
-                                reader.GetInt64(reader.GetOrdinal("ID")),        //si no es ID es ID_Proveedor
-                                reader.GetString(reader.GetOrdinal("Ruc")).Trim(),
-                                reader.GetString(reader.GetOrdinal("RazonComercial")).Trim(),
-                                reader.GetString(reader.GetOrdinal("Telefono")).Trim(),
-                                reader.GetString(reader.GetOrdinal("Direccion")).Trim(),
-                                reader.GetString(reader.GetOrdinal("Correo")).Trim()
                             );
 
                             proveedores.Add(proveedor);

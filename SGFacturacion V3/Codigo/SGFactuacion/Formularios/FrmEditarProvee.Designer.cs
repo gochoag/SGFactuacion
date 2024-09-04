@@ -75,6 +75,7 @@
             // 
             // txtRazonE
             // 
+            this.txtRazonE.Enabled = false;
             this.txtRazonE.Location = new System.Drawing.Point(292, 171);
             this.txtRazonE.Name = "txtRazonE";
             this.txtRazonE.Size = new System.Drawing.Size(174, 20);
@@ -82,6 +83,7 @@
             // 
             // txtDireccionE
             // 
+            this.txtDireccionE.Enabled = false;
             this.txtDireccionE.Location = new System.Drawing.Point(422, 113);
             this.txtDireccionE.Name = "txtDireccionE";
             this.txtDireccionE.Size = new System.Drawing.Size(174, 20);
@@ -89,6 +91,7 @@
             // 
             // txtCorreoE
             // 
+            this.txtCorreoE.Enabled = false;
             this.txtCorreoE.Location = new System.Drawing.Point(100, 110);
             this.txtCorreoE.Name = "txtCorreoE";
             this.txtCorreoE.Size = new System.Drawing.Size(174, 20);
@@ -96,6 +99,7 @@
             // 
             // txtTelfE
             // 
+            this.txtTelfE.Enabled = false;
             this.txtTelfE.Location = new System.Drawing.Point(422, 61);
             this.txtTelfE.Name = "txtTelfE";
             this.txtTelfE.Size = new System.Drawing.Size(174, 20);
@@ -104,6 +108,7 @@
             // 
             // txtRUCE
             // 
+            this.txtRUCE.Enabled = false;
             this.txtRUCE.Location = new System.Drawing.Point(100, 61);
             this.txtRUCE.Name = "txtRUCE";
             this.txtRUCE.Size = new System.Drawing.Size(174, 20);
@@ -172,19 +177,21 @@
             this.BtnEditarE.TabIndex = 61;
             this.BtnEditarE.Text = "Editar";
             this.BtnEditarE.UseVisualStyleBackColor = false;
+            this.BtnEditarE.Click += new System.EventHandler(this.BtnEditarE_Click);
             // 
             // txtBuscarE
             // 
-            this.txtBuscarE.Location = new System.Drawing.Point(76, 229);
+            this.txtBuscarE.Location = new System.Drawing.Point(87, 252);
             this.txtBuscarE.Name = "txtBuscarE";
             this.txtBuscarE.Size = new System.Drawing.Size(229, 20);
             this.txtBuscarE.TabIndex = 63;
+            this.txtBuscarE.TextChanged += new System.EventHandler(this.txtBuscarE_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(17, 229);
+            this.label7.Location = new System.Drawing.Point(28, 252);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 17);
             this.label7.TabIndex = 62;
@@ -234,6 +241,7 @@
             this.dgvListadoProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListadoProveedor.Size = new System.Drawing.Size(567, 203);
             this.dgvListadoProveedor.TabIndex = 64;
+            this.dgvListadoProveedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoProveedor_CellClick);
             // 
             // FrmEditarProvee
             // 
@@ -258,6 +266,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmEditarProvee";
             this.Text = "FrmEditarProvee";
+            this.Load += new System.EventHandler(this.FrmEditarProvee_Load);
             this.PnDiseñoE.ResumeLayout(false);
             this.PnDiseñoE.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoProveedor)).EndInit();

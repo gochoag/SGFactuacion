@@ -64,6 +64,7 @@
             // txtTelf
             // 
             this.txtTelf.Location = new System.Drawing.Point(399, 135);
+            this.txtTelf.MaxLength = 10;
             this.txtTelf.Name = "txtTelf";
             this.txtTelf.Size = new System.Drawing.Size(174, 20);
             this.txtTelf.TabIndex = 33;
@@ -99,6 +100,7 @@
             // txtRuc
             // 
             this.txtRuc.Location = new System.Drawing.Point(118, 140);
+            this.txtRuc.MaxLength = 13;
             this.txtRuc.Name = "txtRuc";
             this.txtRuc.Size = new System.Drawing.Size(174, 20);
             this.txtRuc.TabIndex = 29;
@@ -143,6 +145,7 @@
             this.BtnProveeRegistrar.TabIndex = 38;
             this.BtnProveeRegistrar.Text = "Registrar";
             this.BtnProveeRegistrar.UseVisualStyleBackColor = false;
+            this.BtnProveeRegistrar.Click += new System.EventHandler(this.BtnProveeRegistrar_Click);
             // 
             // PnDiseñoPE
             // 
