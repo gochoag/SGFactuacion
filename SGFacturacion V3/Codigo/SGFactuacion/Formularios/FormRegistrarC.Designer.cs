@@ -64,7 +64,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Cedula:";
+            this.label2.Text = "Cédula:";
             // 
             // txtcedulaC
             // 

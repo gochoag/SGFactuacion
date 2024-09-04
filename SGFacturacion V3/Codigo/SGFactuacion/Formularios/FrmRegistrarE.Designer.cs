@@ -169,7 +169,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 17);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Cedula:";
+            this.label2.Text = "Cédula:";
             // 
             // label7
             // 
@@ -229,6 +229,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmRegistrarE";
             this.Text = "FrmRegistrarE";
+            this.Load += new System.EventHandler(this.FrmRegistrarE_Load);
             this.PnDiseñoE.ResumeLayout(false);
             this.PnDiseñoE.PerformLayout();
             this.ResumeLayout(false);

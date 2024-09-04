@@ -83,6 +83,7 @@ namespace SGFactuacion.Formularios
                     txtEmailE.Text = row.Cells["Email"].Value.ToString();
                     txtUser.Text = row.Cells["Usuario"].Value.ToString();
                     txtPassword.Text = row.Cells["Contraseña"].Value.ToString();
+                    Apagar_Prender(true);
                 }
             }
             catch (Exception ex)
@@ -104,11 +105,28 @@ namespace SGFactuacion.Formularios
                 return false;
             }
         }
-
+        private void Apagar_Prender(bool habilitar)
+        {
+            txtNombreE.Enabled = habilitar;
+            txtApellidoE.Enabled = habilitar;
+            txtcedulaE.Enabled = habilitar;
+            dtFechaE.Enabled = habilitar;
+            txtEmailE.Enabled = habilitar;
+            txtUser.Enabled = habilitar;
+            txtPassword.Enabled = habilitar;
+        }
         private void BTEditarE_Click(object sender, EventArgs e)
         {
             try
             {
+                // Validar si se ha seleccionado un empleado
+                if (idEmpleadoSeleccionado == 0) // o cualquier valor que represente "ningún empleado seleccionado"
+                {
+                    MessageBox.Show("No has seleccionado ningún empleado. Por favor, selecciona un empleado antes de editar.",
+                                    "Empleado no seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 string cedula = txtcedulaE.Text;
                 string nombre = txtNombreE.Text;
                 string apellido = txtApellidoE.Text;
@@ -117,31 +135,38 @@ namespace SGFactuacion.Formularios
                 string usuario = txtUser.Text;
                 string contraseña = txtPassword.Text;
 
-                if (string.IsNullOrEmpty(cedula) || string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellido) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contraseña))
+               
+                if (string.IsNullOrEmpty(cedula) || string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellido) ||
+                    string.IsNullOrEmpty(email) || string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contraseña))
                 {
                     MessageBox.Show("Por favor, completa todos los campos.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+               
                 if (!EsCorreoValido(txtEmailE.Text))
                 {
                     MessageBox.Show("El correo electrónico ingresado no es válido.", "Correo Electrónico Inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+                
                 DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas editar este empleado?", "Confirmar edición", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultado == DialogResult.Yes)
                 {
+                   
                     csCredenciales credenciales = new csCredenciales(usuario, contraseña);
                     csEmpleados empleado = new csEmpleados(idEmpleadoSeleccionado, cedula, nombre, apellido, fechaNacimiento, email);
 
+                   
                     if (empleado.EditarEmpleado(credenciales))
                     {
                         MessageBox.Show("Empleado editado exitosamente.", "Edición exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiarControles();
                         CargarEmpleados();
-
+                        Apagar_Prender(false);
                         bindingSource.DataSource = empleados;
-
                     }
                     else
                     {
@@ -153,14 +178,14 @@ namespace SGFactuacion.Formularios
             {
                 MessageBox.Show($"Ocurrió un error al editar el empleado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
+
         private void LimpiarControles()
         {
             txtcedulaE.Text = string.Empty;
             txtNombreE.Text = string.Empty;
             txtApellidoE.Text = string.Empty;
-            dtFechaE.Value = DateTime.Now;
+            dtFechaE.Value = new DateTime(2000, 9, 1);
             txtEmailE.Text = string.Empty;
             txtUser.Text = string.Empty;
             txtPassword.Text = string.Empty;
@@ -188,7 +213,8 @@ namespace SGFactuacion.Formularios
 
         private void FrmEditarE_Load(object sender, EventArgs e)
         {
-
+            DateTime fechaLimite = DateTime.Now.AddYears(-18);
+            dtFechaE.MaxDate = fechaLimite;
         }
     }
 }

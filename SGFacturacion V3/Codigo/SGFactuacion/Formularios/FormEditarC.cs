@@ -47,7 +47,8 @@ namespace SGFactuacion
         }
         private void FormEditarC_Load(object sender, EventArgs e)
         {
-
+            DateTime fechaLimite = DateTime.Now.AddYears(-18);
+            dtFechaC.MaxDate = fechaLimite;
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -84,6 +85,7 @@ namespace SGFactuacion
                     txtApellidoC.Text = row.Cells["Apellido"].Value.ToString();
                     dtFechaC.Value = Convert.ToDateTime(row.Cells["FechaNacimiento"].Value);
                     txtEmailC.Text = row.Cells["Email"].Value.ToString();
+                    Apagar_Prender(true);
                 }
             }
             catch (Exception ex)
@@ -91,6 +93,14 @@ namespace SGFactuacion
                 MessageBox.Show($"Ocurrió un error al seleccionar un cliente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+        private void Apagar_Prender(bool habilitar)
+        {
+            txtNombreC.Enabled = habilitar;
+            txtApellidoC.Enabled = habilitar;
+            txtcedulaC.Enabled = habilitar;
+            dtFechaC.Enabled = habilitar;
+            txtEmailC.Enabled = habilitar;
         }
         public void LimpiarControles()
         {
@@ -109,6 +119,7 @@ namespace SGFactuacion
                 MessageBox.Show($"Ocurrió un error al limpiar los controles: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private bool EsCorreoValido(string email)
         {
             string patron = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
@@ -118,22 +129,35 @@ namespace SGFactuacion
         {
             try
             {
+                
+                if (idPERSONA == 0) 
+                {
+                    MessageBox.Show("No has seleccionado ningún cliente. Por favor, selecciona un cliente antes de editar.",
+                                    "Cliente no seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 string cedula = txtcedulaC.Text;
                 string nombre = txtNombreC.Text;
                 string apellido = txtApellidoC.Text;
                 DateTime fechaNacimiento = dtFechaC.Value;
                 string email = txtEmailC.Text;
 
+                // Validar que los campos no estén vacíos
                 if (string.IsNullOrEmpty(cedula) || string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellido) || string.IsNullOrEmpty(email))
                 {
                     MessageBox.Show("Por favor, completa todos los campos.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+                
                 if (!EsCorreoValido(txtEmailC.Text))
                 {
                     MessageBox.Show("El correo electrónico ingresado no es válido.", "Correo Electrónico Inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+                
                 DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas editar este cliente?", "Confirmar edición", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultado == DialogResult.Yes)
@@ -145,6 +169,7 @@ namespace SGFactuacion
                         MessageBox.Show("Cliente editado exitosamente.", "Edición exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiarControles();
                         CargarClientes();
+                        Apagar_Prender(false);
                         bindingSource.DataSource = clientes;
                     }
                     else
@@ -157,8 +182,8 @@ namespace SGFactuacion
             {
                 MessageBox.Show($"Ocurrió un error al editar el cliente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
+
 
         private void dgvListadoCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
