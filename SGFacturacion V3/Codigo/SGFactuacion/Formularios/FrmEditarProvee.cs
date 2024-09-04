@@ -114,52 +114,41 @@ namespace SGFactuacion.Formularios
         {
             try
             {
-               
-                if (idProveedorSeleccionado == 0) 
+                if (string.IsNullOrEmpty(txtRUCE.Text) || string.IsNullOrEmpty(txtRazonE.Text) || string.IsNullOrEmpty(txtTelfE.Text) || string.IsNullOrEmpty(txtDireccionE.Text) || string.IsNullOrEmpty(txtCorreoE.Text))
                 {
-                    MessageBox.Show("No has seleccionado ningún proveedor. Por favor, selecciona un proveedor antes de editar.",
-                                    "Proveedor no seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Ingrese todos los campos", "Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
-                if (string.IsNullOrEmpty(txtRUCE.Text) || string.IsNullOrEmpty(txtRazonE.Text) ||
-                    string.IsNullOrEmpty(txtTelfE.Text) || string.IsNullOrEmpty(txtDireccionE.Text) ||
-                    string.IsNullOrEmpty(txtCorreoE.Text))
-                {
-                    MessageBox.Show("Por favor, completa todos los campos.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
                 if (!EsCorreoValido(txtCorreoE.Text))
                 {
                     MessageBox.Show("El correo electrónico ingresado no es válido.", "Correo Electrónico Inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-               
-                DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas editar a este proveedor?", "Confirmar edición", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas editar a este proveedor?", "Confirmar registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultado == DialogResult.Yes)
                 {
-                    CsProveedor proveedor = new CsProveedor(idProveedorSeleccionado, txtRUCE.Text, txtRazonE.Text, txtTelfE.Text, txtDireccionE.Text, txtCorreoE.Text);
+                    CsProveedor proveedor = new CsProveedor(idProveedorSeleccionado,txtRUCE.Text,txtRazonE.Text,txtTelfE.Text,txtDireccionE.Text,txtCorreoE.Text);
                     if (proveedor.EditarProveedor())
                     {
-                        MessageBox.Show("Proveedor editado con éxito", "Edición exitosa", MessageBoxButtons.OK);
+                        MessageBox.Show("Proveedor editado con éxito", "Editar de proveedor", MessageBoxButtons.OK);
                         LimpiarControles();
-                        Apagar_Prender();
+                        Apagar_Prender(); 
+        
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo realizar la edición", "Error de edición", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("No se pudo lograr la edición", "Editar de proveedor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocurrió un error al editar el proveedor: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                MessageBox.Show(ex.Message);
             }
         }
-
 
         private void txtBuscarE_TextChanged(object sender, EventArgs e)
         {

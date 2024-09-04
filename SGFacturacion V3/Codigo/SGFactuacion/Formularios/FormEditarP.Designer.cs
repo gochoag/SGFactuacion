@@ -62,7 +62,6 @@
             // 
             // TBStockP
             // 
-            this.TBStockP.Enabled = false;
             this.TBStockP.Location = new System.Drawing.Point(92, 148);
             this.TBStockP.Name = "TBStockP";
             this.TBStockP.Size = new System.Drawing.Size(184, 20);
@@ -71,7 +70,6 @@
             // 
             // TBPrecioP
             // 
-            this.TBPrecioP.Enabled = false;
             this.TBPrecioP.Location = new System.Drawing.Point(413, 100);
             this.TBPrecioP.Name = "TBPrecioP";
             this.TBPrecioP.Size = new System.Drawing.Size(184, 20);
@@ -81,7 +79,6 @@
             // 
             // TBNombreP
             // 
-            this.TBNombreP.Enabled = false;
             this.TBNombreP.Location = new System.Drawing.Point(92, 100);
             this.TBNombreP.Name = "TBNombreP";
             this.TBNombreP.Size = new System.Drawing.Size(184, 20);

@@ -118,11 +118,5 @@ namespace SGFactuacion.Formularios
             }
 
         }
-
-        private void FrmRegistrarE_Load(object sender, EventArgs e)
-        {
-            DateTime fechaLimite = DateTime.Now.AddYears(-18);
-            dtFechaE.MaxDate = fechaLimite;
-        }
     }
 }

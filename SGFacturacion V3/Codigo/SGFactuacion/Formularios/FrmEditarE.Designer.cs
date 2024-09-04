@@ -117,7 +117,6 @@
             // 
             // txtEmailE
             // 
-            this.txtEmailE.Enabled = false;
             this.txtEmailE.Location = new System.Drawing.Point(422, 107);
             this.txtEmailE.Name = "txtEmailE";
             this.txtEmailE.Size = new System.Drawing.Size(174, 20);
@@ -135,7 +134,6 @@
             // 
             // txtApellidoE
             // 
-            this.txtApellidoE.Enabled = false;
             this.txtApellidoE.Location = new System.Drawing.Point(100, 104);
             this.txtApellidoE.Name = "txtApellidoE";
             this.txtApellidoE.Size = new System.Drawing.Size(174, 20);
@@ -153,7 +151,6 @@
             // 
             // txtNombreE
             // 
-            this.txtNombreE.Enabled = false;
             this.txtNombreE.Location = new System.Drawing.Point(422, 62);
             this.txtNombreE.Name = "txtNombreE";
             this.txtNombreE.Size = new System.Drawing.Size(174, 20);
@@ -171,7 +168,6 @@
             // 
             // txtcedulaE
             // 
-            this.txtcedulaE.Enabled = false;
             this.txtcedulaE.Location = new System.Drawing.Point(100, 62);
             this.txtcedulaE.Name = "txtcedulaE";
             this.txtcedulaE.Size = new System.Drawing.Size(174, 20);
@@ -190,7 +186,6 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Enabled = false;
             this.txtPassword.Location = new System.Drawing.Point(422, 157);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(174, 20);
@@ -208,7 +203,6 @@
             // 
             // txtUser
             // 
-            this.txtUser.Enabled = false;
             this.txtUser.Location = new System.Drawing.Point(100, 154);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(174, 20);
