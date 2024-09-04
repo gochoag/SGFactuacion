@@ -133,6 +133,7 @@
             // 
             // txtEmailC
             // 
+            this.txtEmailC.Enabled = false;
             this.txtEmailC.Location = new System.Drawing.Point(422, 122);
             this.txtEmailC.Name = "txtEmailC";
             this.txtEmailC.Size = new System.Drawing.Size(174, 20);
@@ -150,6 +151,7 @@
             // 
             // txtApellidoC
             // 
+            this.txtApellidoC.Enabled = false;
             this.txtApellidoC.Location = new System.Drawing.Point(100, 119);
             this.txtApellidoC.Name = "txtApellidoC";
             this.txtApellidoC.Size = new System.Drawing.Size(174, 20);
@@ -167,6 +169,7 @@
             // 
             // txtNombreC
             // 
+            this.txtNombreC.Enabled = false;
             this.txtNombreC.Location = new System.Drawing.Point(422, 65);
             this.txtNombreC.Name = "txtNombreC";
             this.txtNombreC.Size = new System.Drawing.Size(174, 20);
@@ -184,6 +187,7 @@
             // 
             // txtcedulaC
             // 
+            this.txtcedulaC.Enabled = false;
             this.txtcedulaC.Location = new System.Drawing.Point(100, 65);
             this.txtcedulaC.Name = "txtcedulaC";
             this.txtcedulaC.Size = new System.Drawing.Size(174, 20);
@@ -199,7 +203,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 17);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Cedula:";
+            this.label2.Text = "Cédula:";
             // 
             // BTEditarC
             // 

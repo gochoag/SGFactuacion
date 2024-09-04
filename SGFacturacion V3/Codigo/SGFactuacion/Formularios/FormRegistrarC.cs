@@ -90,7 +90,8 @@ namespace SGFactuacion
 
         private void FormRegistrarC_Load(object sender, EventArgs e)
         {
-
+            DateTime fechaLimite = DateTime.Now.AddYears(-18);
+            dtFechaC.MaxDate = fechaLimite;
         }
 
         private void txtcedulaC_KeyPress(object sender, KeyPressEventArgs e)
