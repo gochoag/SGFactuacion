@@ -136,6 +136,24 @@
     <Compile Include="Formularios\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmEditarProvee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmEditarProvee.Designer.cs">
+      <DependentUpon>FrmEditarProvee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmListarProveer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmListarProveer.Designer.cs">
+      <DependentUpon>FrmListarProveer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmRegistrarProveer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmRegistrarProveer.Designer.cs">
+      <DependentUpon>FrmRegistrarProveer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmReporteEmpelado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +254,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmEditarProvee.resx">
+      <DependentUpon>FrmEditarProvee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmListarProveer.resx">
+      <DependentUpon>FrmListarProveer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmRegistrarProveer.resx">
+      <DependentUpon>FrmRegistrarProveer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmReporteEmpelado.resx">
       <DependentUpon>FrmReporteEmpelado.cs</DependentUpon>

@@ -59,10 +59,6 @@
             this.btnFacturar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnReportes = new System.Windows.Forms.Button();
-            this.Menutransacion = new System.Windows.Forms.Timer(this.components);
-            this.MenuTrP = new System.Windows.Forms.Timer(this.components);
-            this.SidbarTr = new System.Windows.Forms.Timer(this.components);
-            this.PnContenedor = new System.Windows.Forms.Panel();
             this.FlowEmpleado = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnEmpleado = new System.Windows.Forms.Button();
@@ -72,7 +68,21 @@
             this.btnEditarE = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnListarE = new System.Windows.Forms.Button();
+            this.FlowProveedor = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.BtnProveedor = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.BtnProveeR = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.BtnProveeE = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.BtnProveeL = new System.Windows.Forms.Button();
+            this.Menutransacion = new System.Windows.Forms.Timer(this.components);
+            this.MenuTrP = new System.Windows.Forms.Timer(this.components);
+            this.SidbarTr = new System.Windows.Forms.Timer(this.components);
+            this.PnContenedor = new System.Windows.Forms.Panel();
             this.MenuTrE = new System.Windows.Forms.Timer(this.components);
+            this.MenuTrV = new System.Windows.Forms.Timer(this.components);
             this.Barra_Arriba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Imagelateral)).BeginInit();
@@ -96,6 +106,11 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.FlowProveedor.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // Barra_Arriba
@@ -152,6 +167,7 @@
             this.Panelmenu.Controls.Add(this.PanelFactura);
             this.Panelmenu.Controls.Add(this.panel2);
             this.Panelmenu.Controls.Add(this.FlowEmpleado);
+            this.Panelmenu.Controls.Add(this.FlowProveedor);
             this.Panelmenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Panelmenu.Location = new System.Drawing.Point(0, 34);
             this.Panelmenu.Margin = new System.Windows.Forms.Padding(0);
@@ -461,30 +477,6 @@
             this.btnReportes.UseVisualStyleBackColor = false;
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
-            // Menutransacion
-            // 
-            this.Menutransacion.Interval = 50;
-            this.Menutransacion.Tick += new System.EventHandler(this.Menutransacion_Tick);
-            // 
-            // MenuTrP
-            // 
-            this.MenuTrP.Interval = 50;
-            this.MenuTrP.Tick += new System.EventHandler(this.MenuTrP_Tick);
-            // 
-            // SidbarTr
-            // 
-            this.SidbarTr.Interval = 10;
-            this.SidbarTr.Tick += new System.EventHandler(this.SidbarTr_Tick);
-            // 
-            // PnContenedor
-            // 
-            this.PnContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnContenedor.Location = new System.Drawing.Point(205, 34);
-            this.PnContenedor.Name = "PnContenedor";
-            this.PnContenedor.Size = new System.Drawing.Size(633, 502);
-            this.PnContenedor.TabIndex = 10;
-            this.PnContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.PnContenedor_Paint);
-            // 
             // FlowEmpleado
             // 
             this.FlowEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
@@ -600,10 +592,154 @@
             this.btnListarE.UseVisualStyleBackColor = false;
             this.btnListarE.Click += new System.EventHandler(this.btnListarE_Click);
             // 
+            // FlowProveedor
+            // 
+            this.FlowProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            this.FlowProveedor.Controls.Add(this.panel7);
+            this.FlowProveedor.Controls.Add(this.panel8);
+            this.FlowProveedor.Controls.Add(this.panel9);
+            this.FlowProveedor.Controls.Add(this.panel10);
+            this.FlowProveedor.Location = new System.Drawing.Point(0, 289);
+            this.FlowProveedor.Margin = new System.Windows.Forms.Padding(0);
+            this.FlowProveedor.Name = "FlowProveedor";
+            this.FlowProveedor.Size = new System.Drawing.Size(206, 37);
+            this.FlowProveedor.TabIndex = 7;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.BtnProveedor);
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(206, 37);
+            this.panel7.TabIndex = 3;
+            // 
+            // BtnProveedor
+            // 
+            this.BtnProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(165)))), ((int)(((byte)(93)))));
+            this.BtnProveedor.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.BtnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnProveedor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProveedor.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.BtnProveedor.Image = ((System.Drawing.Image)(resources.GetObject("BtnProveedor.Image")));
+            this.BtnProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnProveedor.Location = new System.Drawing.Point(-2, -2);
+            this.BtnProveedor.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnProveedor.Name = "BtnProveedor";
+            this.BtnProveedor.Size = new System.Drawing.Size(213, 47);
+            this.BtnProveedor.TabIndex = 2;
+            this.BtnProveedor.Text = "Proveedor";
+            this.BtnProveedor.UseVisualStyleBackColor = false;
+            this.BtnProveedor.Click += new System.EventHandler(this.BtnProveedor_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.BtnProveeR);
+            this.panel8.Location = new System.Drawing.Point(3, 40);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(200, 37);
+            this.panel8.TabIndex = 4;
+            // 
+            // BtnProveeR
+            // 
+            this.BtnProveeR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            this.BtnProveeR.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.BtnProveeR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnProveeR.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProveeR.ForeColor = System.Drawing.Color.Transparent;
+            this.BtnProveeR.Image = ((System.Drawing.Image)(resources.GetObject("BtnProveeR.Image")));
+            this.BtnProveeR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnProveeR.Location = new System.Drawing.Point(-2, -2);
+            this.BtnProveeR.Name = "BtnProveeR";
+            this.BtnProveeR.Size = new System.Drawing.Size(212, 44);
+            this.BtnProveeR.TabIndex = 2;
+            this.BtnProveeR.Text = "Registrar";
+            this.BtnProveeR.UseVisualStyleBackColor = false;
+            this.BtnProveeR.Click += new System.EventHandler(this.BtnProveeR_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.BtnProveeE);
+            this.panel9.Location = new System.Drawing.Point(3, 83);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(200, 37);
+            this.panel9.TabIndex = 5;
+            // 
+            // BtnProveeE
+            // 
+            this.BtnProveeE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            this.BtnProveeE.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.BtnProveeE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnProveeE.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProveeE.ForeColor = System.Drawing.Color.Transparent;
+            this.BtnProveeE.Image = ((System.Drawing.Image)(resources.GetObject("BtnProveeE.Image")));
+            this.BtnProveeE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnProveeE.Location = new System.Drawing.Point(-2, -2);
+            this.BtnProveeE.Name = "BtnProveeE";
+            this.BtnProveeE.Size = new System.Drawing.Size(212, 44);
+            this.BtnProveeE.TabIndex = 2;
+            this.BtnProveeE.Text = " Editar";
+            this.BtnProveeE.UseVisualStyleBackColor = false;
+            this.BtnProveeE.Click += new System.EventHandler(this.BtnProveeE_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.BtnProveeL);
+            this.panel10.Location = new System.Drawing.Point(3, 126);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(200, 37);
+            this.panel10.TabIndex = 6;
+            // 
+            // BtnProveeL
+            // 
+            this.BtnProveeL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(59)))));
+            this.BtnProveeL.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.BtnProveeL.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnProveeL.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProveeL.ForeColor = System.Drawing.Color.Transparent;
+            this.BtnProveeL.Image = ((System.Drawing.Image)(resources.GetObject("BtnProveeL.Image")));
+            this.BtnProveeL.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnProveeL.Location = new System.Drawing.Point(-2, -2);
+            this.BtnProveeL.Name = "BtnProveeL";
+            this.BtnProveeL.Size = new System.Drawing.Size(212, 44);
+            this.BtnProveeL.TabIndex = 2;
+            this.BtnProveeL.Text = "Listar";
+            this.BtnProveeL.UseVisualStyleBackColor = false;
+            this.BtnProveeL.Click += new System.EventHandler(this.BtnProveeL_Click);
+            // 
+            // Menutransacion
+            // 
+            this.Menutransacion.Interval = 50;
+            this.Menutransacion.Tick += new System.EventHandler(this.Menutransacion_Tick);
+            // 
+            // MenuTrP
+            // 
+            this.MenuTrP.Interval = 50;
+            this.MenuTrP.Tick += new System.EventHandler(this.MenuTrP_Tick);
+            // 
+            // SidbarTr
+            // 
+            this.SidbarTr.Interval = 10;
+            this.SidbarTr.Tick += new System.EventHandler(this.SidbarTr_Tick);
+            // 
+            // PnContenedor
+            // 
+            this.PnContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PnContenedor.Location = new System.Drawing.Point(205, 34);
+            this.PnContenedor.Name = "PnContenedor";
+            this.PnContenedor.Size = new System.Drawing.Size(633, 502);
+            this.PnContenedor.TabIndex = 10;
+            this.PnContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.PnContenedor_Paint);
+            // 
             // MenuTrE
             // 
             this.MenuTrE.Interval = 50;
             this.MenuTrE.Tick += new System.EventHandler(this.MenuTrE_Tick);
+            // 
+            // MenuTrV
+            // 
+            this.MenuTrV.Interval = 50;
+            this.MenuTrV.Tick += new System.EventHandler(this.MenuTrV_Tick);
             // 
             // Principal
             // 
@@ -644,6 +780,11 @@
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.FlowProveedor.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -693,6 +834,16 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnListarE;
         private System.Windows.Forms.Timer MenuTrE;
+        private System.Windows.Forms.FlowLayoutPanel FlowProveedor;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button BtnProveedor;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button BtnProveeR;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button BtnProveeE;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button BtnProveeL;
+        private System.Windows.Forms.Timer MenuTrV;
     }
 }
 

@@ -52,7 +52,7 @@
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.pnlreportes = new System.Windows.Forms.Panel();
             this.spGetFacturaDetallesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-
+            ((System.ComponentModel.ISupportInitialize)(this.sp_GetFacturaDetallesBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.paneldeDAtos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosBuscados)).BeginInit();
@@ -63,10 +63,6 @@
             // sp_GetFacturaDetallesBindingSource
             // 
             this.sp_GetFacturaDetallesBindingSource.DataMember = "sp_GetFacturaDetalles";
-            // 
-            // dSFacturadetalle
-            // 
-
             // 
             // panel1
             // 
@@ -296,9 +292,6 @@
             // spGetFacturaDetallesBindingSource
             // 
             this.spGetFacturaDetallesBindingSource.DataMember = "sp_GetFacturaDetalles";
-            // 
-            // sp_GetFacturaDetallesTableAdapter
-            // 
             // 
             // FrmReporte
             // 

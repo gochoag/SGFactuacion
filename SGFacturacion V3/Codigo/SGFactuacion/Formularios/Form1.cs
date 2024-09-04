@@ -21,6 +21,7 @@ namespace SGFactuacion
         bool menuExpand = false;
         bool menuExpand2 = false;
         bool menuExpand3 = false;
+        bool menuExpand4 = false;
 
         private void Menutransacion_Tick(object sender, EventArgs e)
         {
@@ -237,6 +238,48 @@ namespace SGFactuacion
         private void btnListarE_Click(object sender, EventArgs e)
         {
             AbrirHijo(new FrmListarE());
+        }
+
+        private void BtnProveedor_Click(object sender, EventArgs e)
+        {
+            MenuTrV.Start();
+        }
+
+        private void MenuTrV_Tick(object sender, EventArgs e)
+        {
+            if (menuExpand4 == false)
+            {
+                FlowProveedor.Height += 40;
+                if (FlowProveedor.Height >= 160)
+                {
+                    MenuTrV.Stop();
+                    menuExpand4 = true;
+                }
+            }
+            else
+            {
+                FlowProveedor.Height -= 40;
+                if (FlowProveedor.Height <= 37)
+                {
+                    MenuTrV.Stop();
+                    menuExpand4 = false;
+                }
+            }
+        }
+
+        private void BtnProveeR_Click(object sender, EventArgs e)
+        {
+            AbrirHijo(new FrmRegistrarProveer());
+        }
+
+        private void BtnProveeE_Click(object sender, EventArgs e)
+        {
+            AbrirHijo(new FrmEditarProvee());
+        }
+
+        private void BtnProveeL_Click(object sender, EventArgs e)
+        {
+            AbrirHijo(new FrmListarProveer());
         }
     }
 }

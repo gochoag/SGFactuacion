@@ -37,6 +37,8 @@
             this.TBStockP = new System.Windows.Forms.TextBox();
             this.BTRegistrarP = new System.Windows.Forms.Button();
             this.PnDiseñoP = new System.Windows.Forms.Panel();
+            this.cbRazoncomercial = new System.Windows.Forms.ComboBox();
+            this.LblRazon = new System.Windows.Forms.Label();
             this.PnDiseñoP.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +57,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(127, 143);
+            this.label2.Location = new System.Drawing.Point(133, 122);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 17);
             this.label2.TabIndex = 2;
@@ -65,7 +67,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(127, 192);
+            this.label3.Location = new System.Drawing.Point(133, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 17);
             this.label3.TabIndex = 3;
@@ -75,7 +77,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(135, 246);
+            this.label4.Location = new System.Drawing.Point(141, 225);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 17);
             this.label4.TabIndex = 4;
@@ -83,14 +85,14 @@
             // 
             // TBNombreP
             // 
-            this.TBNombreP.Location = new System.Drawing.Point(254, 143);
+            this.TBNombreP.Location = new System.Drawing.Point(260, 122);
             this.TBNombreP.Name = "TBNombreP";
             this.TBNombreP.Size = new System.Drawing.Size(184, 20);
             this.TBNombreP.TabIndex = 5;
             // 
             // TBPrecioP
             // 
-            this.TBPrecioP.Location = new System.Drawing.Point(254, 192);
+            this.TBPrecioP.Location = new System.Drawing.Point(260, 171);
             this.TBPrecioP.Name = "TBPrecioP";
             this.TBPrecioP.Size = new System.Drawing.Size(184, 20);
             this.TBPrecioP.TabIndex = 6;
@@ -98,7 +100,7 @@
             // 
             // TBStockP
             // 
-            this.TBStockP.Location = new System.Drawing.Point(254, 246);
+            this.TBStockP.Location = new System.Drawing.Point(260, 225);
             this.TBStockP.Name = "TBStockP";
             this.TBStockP.Size = new System.Drawing.Size(184, 20);
             this.TBStockP.TabIndex = 7;
@@ -110,7 +112,7 @@
             this.BTRegistrarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BTRegistrarP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTRegistrarP.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BTRegistrarP.Location = new System.Drawing.Point(412, 396);
+            this.BTRegistrarP.Location = new System.Drawing.Point(429, 417);
             this.BTRegistrarP.Name = "BTRegistrarP";
             this.BTRegistrarP.Size = new System.Drawing.Size(99, 33);
             this.BTRegistrarP.TabIndex = 12;
@@ -128,11 +130,33 @@
             this.PnDiseñoP.Size = new System.Drawing.Size(633, 37);
             this.PnDiseñoP.TabIndex = 13;
             // 
+            // cbRazoncomercial
+            // 
+            this.cbRazoncomercial.FormattingEnabled = true;
+            this.cbRazoncomercial.Location = new System.Drawing.Point(260, 273);
+            this.cbRazoncomercial.Name = "cbRazoncomercial";
+            this.cbRazoncomercial.Size = new System.Drawing.Size(184, 21);
+            this.cbRazoncomercial.TabIndex = 14;
+            // 
+            // LblRazon
+            // 
+            this.LblRazon.AutoSize = true;
+            this.LblRazon.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRazon.Location = new System.Drawing.Point(122, 277);
+            this.LblRazon.Name = "LblRazon";
+            this.LblRazon.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblRazon.Size = new System.Drawing.Size(114, 17);
+            this.LblRazon.TabIndex = 15;
+            this.LblRazon.Text = "Razon Comercial:";
+            this.LblRazon.Click += new System.EventHandler(this.label5_Click);
+            // 
             // FormResgistrarP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 502);
+            this.Controls.Add(this.LblRazon);
+            this.Controls.Add(this.cbRazoncomercial);
             this.Controls.Add(this.PnDiseñoP);
             this.Controls.Add(this.BTRegistrarP);
             this.Controls.Add(this.TBStockP);
@@ -163,5 +187,7 @@
         private System.Windows.Forms.TextBox TBStockP;
         private System.Windows.Forms.Button BTRegistrarP;
         private System.Windows.Forms.Panel PnDiseñoP;
+        private System.Windows.Forms.ComboBox cbRazoncomercial;
+        private System.Windows.Forms.Label LblRazon;
     }
 }
