@@ -41,7 +41,7 @@
             this.btnEntrar = new System.Windows.Forms.Button();
             this.imglistOjos = new System.Windows.Forms.ImageList(this.components);
             this.btnOjo = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +49,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(165)))), ((int)(((byte)(93)))));
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.lblSGFacturacion);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -158,13 +158,17 @@
             this.btnOjo.UseVisualStyleBackColor = true;
             this.btnOjo.Click += new System.EventHandler(this.btnOjo_Click);
             // 
-            // button1
+            // btnCerrar
             // 
-            this.button1.Location = new System.Drawing.Point(224, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 28);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(224, 6);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(33, 33);
+            this.btnCerrar.TabIndex = 2;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // FrmLogin
             // 
@@ -206,6 +210,6 @@
         private System.Windows.Forms.ImageList imglistOjos;
         private System.Windows.Forms.Button btnOjo;
         public System.Windows.Forms.Button btnEntrar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }
