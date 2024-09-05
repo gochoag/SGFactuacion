@@ -132,11 +132,13 @@
             // 
             // cbRazoncomercial
             // 
+            this.cbRazoncomercial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRazoncomercial.FormattingEnabled = true;
             this.cbRazoncomercial.Location = new System.Drawing.Point(260, 273);
             this.cbRazoncomercial.Name = "cbRazoncomercial";
             this.cbRazoncomercial.Size = new System.Drawing.Size(184, 21);
             this.cbRazoncomercial.TabIndex = 14;
+            this.cbRazoncomercial.SelectedIndexChanged += new System.EventHandler(this.cbRazoncomercial_SelectedIndexChanged);
             // 
             // LblRazon
             // 

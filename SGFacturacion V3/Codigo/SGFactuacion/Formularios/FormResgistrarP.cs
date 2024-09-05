@@ -114,5 +114,10 @@ namespace SGFactuacion
         {
 
         }
+
+        private void cbRazoncomercial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
