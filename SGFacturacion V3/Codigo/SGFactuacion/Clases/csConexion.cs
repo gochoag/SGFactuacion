@@ -19,7 +19,7 @@ namespace SGFactuacion
         public csConexion()
         {
             Server = ".";
-            DataBase = "BDFactura";
+            DataBase = "BDFacturav3";
             Usuario = "sa";
             Contraseña = "123456";
             connectionString = $"Server={Server};Database={DataBase};User Id={Usuario};Password={Contraseña};";
