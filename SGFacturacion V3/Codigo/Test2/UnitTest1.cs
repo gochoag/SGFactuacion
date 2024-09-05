@@ -13,10 +13,10 @@ namespace Test2
         public void RegistrarCliente_ShouldReturnTrue_WhenRegistrationIsSuccessful()
         {
             // Arrange
-            var cliente = new csCliente(1, "2100562321", "Maria", "Elizabe", DateTime.Now, "asss22@example.com");
+            var cliente = new csPersona(1, "2100562321", "Maria", "Elizabe", DateTime.Now, "asss22@example.com");
 
             // Act
-            bool registrado = cliente.RegistrarCliente();
+            bool registrado = cliente.RegistrarPersona();
 
             // Assert
             Assert.IsTrue(registrado);
@@ -26,10 +26,10 @@ namespace Test2
         public void RegistrarCliente_ShouldReturnFalse_OnDuplicateCedula()
         {
             // Arrange
-            var cliente = new csCliente(1, "0304056789", "Jona", "Martin", DateTime.Now, "jasasahn@example.com");
+            var cliente = new csPersona(1, "0304056789", "Jona", "Martin", DateTime.Now, "jasasahn@example.com");
 
             // Act
-            bool registrado = cliente.RegistrarCliente();
+            bool registrado = cliente.RegistrarPersona();
 
             // Assert
             Assert.IsFalse(registrado);
@@ -39,10 +39,10 @@ namespace Test2
         public void EditarCliente_ShouldReturnTrue_WhenEditIsSuccessful()
         {
             // Arrange
-            var cliente = new csCliente(1, "1234567890", "John", "Doe", DateTime.Now, "john@example.com");
+            var cliente = new csPersona(1, "1234567890", "John", "Doe", DateTime.Now, "john@example.com");
 
             // Act
-            bool editado = cliente.EditarCliente();
+            bool editado = cliente.EditarPersona();
 
             // Assert
             Assert.IsTrue(editado);
@@ -52,7 +52,7 @@ namespace Test2
         public void ListarClientes_ShouldReturnListOfClients()
         {
             // Act
-            List<csCliente> clientes = csCliente.ListarClientes();
+            List<csPersona> clientes = csPersona.ListarPersona();
 
             // Assert
             Assert.IsNotNull(clientes);
@@ -66,7 +66,7 @@ namespace Test2
             string busqueda = "John"; // Ejemplo de término de búsqueda
 
             // Act
-            List<csCliente> clientes = csCliente.BuscarClientes(busqueda);
+            List<csPersona> clientes = csPersona.BuscarPersona(busqueda);
 
             // Assert
             Assert.IsNotNull(clientes);
@@ -81,13 +81,11 @@ namespace Test2
             DateTime fecha = Convert.ToDateTime("2024-07-18 00:53:52.380"); // Fecha válida
 
             // Act
-            long idFactura = csCliente.GetFacturaIDByClienteIDAndFecha(idCliente, fecha);
+            long idFactura = csPersona.GetFacturaIDByClienteIDAndFecha(idCliente, fecha);
 
             // Assert
             Assert.IsFalse(idFactura >= 1); // Se espera que el ID de factura sea válido
         }
-
-
 
         [TestMethod]
         public void RegistrarEmpleado_ShouldReturnTrue_WhenRegistrationIsSuccessful()
@@ -169,119 +167,173 @@ namespace Test2
         }
 
 
-        [TestMethod]
-        public void RegistrarProducto_ShouldReturnTrue_WhenRegistrationIsSuccessful()
-        {
-            // Arrange
-            var producto = new csProducto("Producto de Prueba", 10.5m, 100);
+  
 
-            // Act
-            bool registrado = producto.RegistrarProducto();
 
-            // Assert
-            Assert.IsTrue(registrado);
-        }
+           [TestMethod]
+           public void RegistrarProducto_ShouldReturnTrue_WhenRegistrationIsSuccessful()
+           {
+               // Arrange
+               var producto = new csProducto("Producto de Prueba", 10.5m, 100);
 
-        [TestMethod]
-        public void EditarProducto_ShouldReturnTrue_WhenEditIsSuccessful()
-        {
-            // Arrange
-            var producto = new csProducto(1, "Producto Actualizado", 15.75m, 200);
+               // Act
+               bool registrado = producto.RegistrarProducto();
 
-            // Act
-            bool editado = producto.EditarProducto();
+               // Assert
+               Assert.IsTrue(registrado);
+           }
 
-            // Assert
-            Assert.IsTrue(editado);
-        }
+           [TestMethod]
+           public void EditarProducto_ShouldReturnTrue_WhenEditIsSuccessful()
+           {
+               // Arrange
+               var producto = new csProducto(1, "Producto Actualizado", 15.75m, 200);
 
-        [TestMethod]
-        public void ListarProductos_ShouldReturnListOfProducts()
-        {
-            // Act
-            List<csProducto> productos = csProducto.ListarProductos();
+               // Act
+               bool editado = producto.EditarProducto();
 
-            // Assert
-            Assert.IsNotNull(productos);
-            Assert.IsTrue(productos.Count > 0);
-        }
+               // Assert
+               Assert.IsTrue(editado);
+           }
 
-        [TestMethod]
-        public void BuscarProductoPorNombre_ShouldReturnMatchingProducts()
-        {
-            // Arrange
-            string patronNombre = "Banano"; // Ejemplo de término de búsqueda
+           [TestMethod]
+           public void ListarProductos_ShouldReturnListOfProducts()
+           {
+               // Act
+               List<csProducto> productos = csProducto.ListarProductos();
 
-            // Act
-            List<csProducto> productos = csProducto.BuscarProductoPorNombre(patronNombre);
+               // Assert
+               Assert.IsNotNull(productos);
+               Assert.IsTrue(productos.Count > 0);
+           }
 
-            // Assert
-            Assert.IsNotNull(productos);
-            Assert.IsTrue(productos.Count > 0);
-        }
+           [TestMethod]
+           public void BuscarProductoPorNombre_ShouldReturnMatchingProducts()
+           {
+               // Arrange
+               string patronNombre = "Banano"; // Ejemplo de término de búsqueda
 
-        [TestMethod]
-        public void RegistrarFactura_ShouldReturnTrue_WhenRegistrationIsSuccessful()
-        {
-            // Arrange
-            csFactura.FacturaDetalle detalle1 = new csFactura.FacturaDetalle
-            {
-                ID_Produc = 1,
-                Precio = 10.5m,
-                Cantidad = 2,
-                IVA = 0.12m
-            };
+               // Act
+               List<csProducto> productos = csProducto.BuscarProductoPorNombre(patronNombre);
 
-            csFactura.FacturaDetalle detalle2 = new csFactura.FacturaDetalle
-            {
-                ID_Produc = 2,
-                Precio = 15.75m,
-                Cantidad = 1,
-                IVA = 0.12m
-            };
+               // Assert
+               Assert.IsNotNull(productos);
+               Assert.IsTrue(productos.Count > 0);
+           }
 
-            List<csFactura.FacturaDetalle> detalles = new List<csFactura.FacturaDetalle>();
-            detalles.Add(detalle1);
-            detalles.Add(detalle2);
+           [TestMethod]
+           public void RegistrarFactura_ShouldReturnTrue_WhenRegistrationIsSuccessful()
+           {
+               // Arrange
+               csFactura.FacturaDetalle detalle1 = new csFactura.FacturaDetalle
+               {
+                   ID_Produc = 1,
+                   Precio = 10.5m,
+                   Cantidad = 2,
+                   IVA = 0.12m
+               };
 
-            csFactura factura = new csFactura();
-            DateTime fecha = DateTime.Now;
-            long idCliente = 1; // ID de cliente válido en tu base de datos
-            long idEmpleado = 1; // ID de empleado válido en tu base de datos
+               csFactura.FacturaDetalle detalle2 = new csFactura.FacturaDetalle
+               {
+                   ID_Produc = 2,
+                   Precio = 15.75m,
+                   Cantidad = 1,
+                   IVA = 0.12m
+               };
 
-            // Act
-            bool registrado = factura.RegistrarFactura(idCliente, fecha, detalles, idEmpleado);
+               List<csFactura.FacturaDetalle> detalles = new List<csFactura.FacturaDetalle>();
+               detalles.Add(detalle1);
+               detalles.Add(detalle2);
 
-            // Assert
-            Assert.IsTrue(registrado);
-        }
+               csFactura factura = new csFactura();
+               DateTime fecha = DateTime.Now;
+               long idCliente = 1; // ID de cliente válido en tu base de datos
+               long idEmpleado = 1; // ID de empleado válido en tu base de datos
 
-        [TestMethod]
-        public void ObtenerUltimoIDFactura_ShouldReturnValidID()
-        {
-            // Arrange
-            csFactura factura = new csFactura();
+               // Act
+               bool registrado = factura.RegistrarFactura(idCliente, fecha, detalles, idEmpleado);
 
-            // Act
-            long ultimoID = factura.ObtenerUltimoIDFactura();
+               // Assert
+               Assert.IsTrue(registrado);
+           }
 
-            // Assert
-            Assert.IsTrue(ultimoID > 0);
-        }
+           [TestMethod]
+           public void ObtenerUltimoIDFactura_ShouldReturnValidID()
+           {
+               // Arrange
+               csFactura factura = new csFactura();
 
-        [TestMethod]
-        public void FechaFacturaCliente_ShouldReturnListOfDates()
-        {
-            // Arrange
-            long idCliente = 1; // ID de cliente válido en tu base de datos
+               // Act
+               long ultimoID = factura.ObtenerUltimoIDFactura();
 
-            // Act
-            List<csFactura> fechasFacturas = csFactura.FechaFacturaCliente(idCliente);
+               // Assert
+               Assert.IsTrue(ultimoID > 0);
+           }
 
-            // Assert
-            Assert.IsNotNull(fechasFacturas);
-            Assert.IsTrue(fechasFacturas.Count > 0);
-        }
+           [TestMethod]
+           public void FechaFacturaCliente_ShouldReturnListOfDates()
+           {
+               // Arrange
+               long idCliente = 1; // ID de cliente válido en tu base de datos
+
+               // Act
+               List<csFactura> fechasFacturas = csFactura.FechaFacturaCliente(idCliente);
+
+               // Assert
+               Assert.IsNotNull(fechasFacturas);
+               Assert.IsTrue(fechasFacturas.Count > 0);
+           }
+
+           TestMethod]
+           public void RegistrarProveedor_ShouldReturnTrue_WhenRegistrationIsSuccessful()
+           {
+               // Arrange
+               var proveedor = new CsProveedor("1234567890123", "Proveedor Prueba", "0987654321", "Calle Ejemplo 123", "proveedor@example.com");
+
+               // Act
+               bool registrado = proveedor.RegistrarProveedor();
+
+               // Assert
+               Assert.IsTrue(registrado);
+           }
+
+           [TestMethod]
+           public void EditarProveedor_ShouldReturnTrue_WhenEditIsSuccessful()
+           {
+               // Arrange
+               var proveedor = new CsProveedor(1, "1234567890123", "Proveedor Modificado", "0987654321", "Calle Nueva 123", "proveedor@modificado.com");
+
+               // Act
+               bool editado = proveedor.EditarProveedor();
+
+               // Assert
+               Assert.IsTrue(editado);
+           }
+
+           [TestMethod]
+           public void ListarProveedores_ShouldReturnListOfProviders()
+           {
+               // Act
+               List<CsProveedor> proveedores = CsProveedor.ListarProveedores();
+
+               // Assert
+               Assert.IsNotNull(proveedores);
+               Assert.IsTrue(proveedores.Count > 0);
+           }
+
+           [TestMethod]
+           public void BuscarProveedor_ShouldReturnMatchingProviders()
+           {
+               // Arrange
+               string busqueda = "Proveedor";
+
+               // Act
+               List<CsProveedor> proveedores = CsProveedor.BuscarProveedor(busqueda);
+
+               // Assert
+               Assert.IsNotNull(proveedores);
+               Assert.IsTrue(proveedores.Count > 0);
+           }
 
     }
 

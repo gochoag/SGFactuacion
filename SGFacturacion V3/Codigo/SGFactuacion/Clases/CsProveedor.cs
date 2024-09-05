@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace SGFactuacion.Clases
 {
-    class CsProveedor
+    public class CsProveedor
     {
         public long ID_Proveedor { get; set; }
         public string Ruc { get; set; }
@@ -211,5 +211,8 @@ namespace SGFactuacion.Clases
             }
             return proveedores;
         }
+
+
+
     }
 }
