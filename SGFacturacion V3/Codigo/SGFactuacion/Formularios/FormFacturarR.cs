@@ -260,18 +260,44 @@ namespace SGFactuacion
 
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Permitir teclas de control como backspace
             if (char.IsControl(e.KeyChar))
             {
                 return;
             }
+
+            // Permitir solo números
             if (char.IsDigit(e.KeyChar))
             {
+                // Verificar si ya hay un punto decimal en el texto
+                if (txtCantidad.Text.Contains("."))
+                {
+                    // Si ya hay un punto, restringir a 4 decimales
+                    string[] partes = txtCantidad.Text.Split('.');
+                    if (partes.Length > 1 && partes[1].Length >= 4)
+                    {
+                        e.Handled = true;
+                        return;
+                    }
+                }
+
+                // Verificar que el número total de dígitos no exceda 10 (incluyendo decimales)
+                if (txtCantidad.Text.Length >= 10 && !txtCantidad.Text.Contains("."))
+                {
+                    e.Handled = true;
+                    return;
+                }
+
                 return;
             }
+
+            // Permitir un solo punto decimal
             if (e.KeyChar == '.' && !txtCantidad.Text.Contains("."))
             {
                 return;
             }
+
+            // Bloquear cualquier otro carácter
             e.Handled = true;
         }
 

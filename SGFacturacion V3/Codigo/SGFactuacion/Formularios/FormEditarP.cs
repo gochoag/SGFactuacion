@@ -125,6 +125,7 @@ namespace SGFactuacion
                         MessageBox.Show("El producto ha sido editado con éxito", "Modificación de producto", MessageBoxButtons.OK);
                         LimpiarCampos();
                         Apagar_Prender();
+                        bindingSource.DataSource = csProducto.ListarProductos();
                     }
                     else
                     {
@@ -141,35 +142,87 @@ namespace SGFactuacion
 
         private void TBStockP_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Permitir teclas de control como backspace
             if (char.IsControl(e.KeyChar))
             {
                 return;
             }
+
+            // Permitir solo números
             if (char.IsDigit(e.KeyChar))
             {
+                // Verificar si ya hay un punto decimal en el texto
+                if (TBStockP.Text.Contains("."))
+                {
+                    // Si ya hay un punto, restringir a 4 decimales
+                    string[] partes = TBStockP.Text.Split('.');
+                    if (partes.Length > 1 && partes[1].Length >= 4)
+                    {
+                        e.Handled = true;
+                        return;
+                    }
+                }
+
+                // Verificar que el número total de dígitos no exceda 10 (incluyendo decimales)
+                if (TBStockP.Text.Length >= 10 && !TBStockP.Text.Contains("."))
+                {
+                    e.Handled = true;
+                    return;
+                }
+
                 return;
             }
-            if (e.KeyChar == '.' && !TBPrecioP.Text.Contains("."))
+
+            // Permitir un solo punto decimal
+            if (e.KeyChar == '.' && !TBStockP.Text.Contains("."))
             {
                 return;
             }
+
+            // Bloquear cualquier otro carácter
             e.Handled = true;
         }
 
         private void TBPrecioP_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Permitir teclas de control como backspace
             if (char.IsControl(e.KeyChar))
             {
                 return;
             }
+
+            // Permitir solo números
             if (char.IsDigit(e.KeyChar))
             {
+                // Verificar si ya hay un punto decimal en el texto
+                if (TBPrecioP.Text.Contains("."))
+                {
+                    // Si ya hay un punto, restringir a 4 decimales
+                    string[] partes = TBPrecioP.Text.Split('.');
+                    if (partes.Length > 1 && partes[1].Length >= 4)
+                    {
+                        e.Handled = true;
+                        return;
+                    }
+                }
+
+                // Verificar que el número total de dígitos no exceda 10 (incluyendo decimales)
+                if (TBPrecioP.Text.Length >= 10 && !TBPrecioP.Text.Contains("."))
+                {
+                    e.Handled = true;
+                    return;
+                }
+
                 return;
             }
+
+            // Permitir un solo punto decimal
             if (e.KeyChar == '.' && !TBPrecioP.Text.Contains("."))
             {
                 return;
             }
+
+            // Bloquear cualquier otro carácter
             e.Handled = true;
         }
 
