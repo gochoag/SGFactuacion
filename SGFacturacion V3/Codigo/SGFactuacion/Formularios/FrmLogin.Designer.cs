@@ -66,7 +66,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(224, 6);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(33, 33);
-            this.btnCerrar.TabIndex = 10;
+            this.btnCerrar.TabIndex = 5;
             this.btnCerrar.TabStop = false;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -79,7 +79,7 @@
             this.lblSGFacturacion.Location = new System.Drawing.Point(41, 37);
             this.lblSGFacturacion.Name = "lblSGFacturacion";
             this.lblSGFacturacion.Size = new System.Drawing.Size(199, 37);
-            this.lblSGFacturacion.TabIndex = 1;
+            this.lblSGFacturacion.TabIndex = 6;
             this.lblSGFacturacion.Text = "SGFacturacion";
             // 
             // pictureBox1
@@ -118,7 +118,7 @@
             this.txtbUsuario.Location = new System.Drawing.Point(21, 84);
             this.txtbUsuario.Name = "txtbUsuario";
             this.txtbUsuario.Size = new System.Drawing.Size(266, 20);
-            this.txtbUsuario.TabIndex = 3;
+            this.txtbUsuario.TabIndex = 1;
             this.txtbUsuario.Enter += new System.EventHandler(this.txtbUsuario_Enter);
             this.txtbUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbUsuario_KeyPress);
             // 
@@ -138,7 +138,7 @@
             this.txtbContraseña.Name = "txtbContraseña";
             this.txtbContraseña.PasswordChar = '*';
             this.txtbContraseña.Size = new System.Drawing.Size(266, 20);
-            this.txtbContraseña.TabIndex = 5;
+            this.txtbContraseña.TabIndex = 2;
             this.txtbContraseña.Enter += new System.EventHandler(this.txtbContraseña_Enter);
             this.txtbContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbContraseña_KeyPress);
             // 
@@ -171,7 +171,7 @@
             this.btnOjo.Location = new System.Drawing.Point(293, 161);
             this.btnOjo.Name = "btnOjo";
             this.btnOjo.Size = new System.Drawing.Size(32, 32);
-            this.btnOjo.TabIndex = 8;
+            this.btnOjo.TabIndex = 3;
             this.btnOjo.UseVisualStyleBackColor = true;
             this.btnOjo.Click += new System.EventHandler(this.btnOjo_Click);
             this.btnOjo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnOjo_KeyPress);

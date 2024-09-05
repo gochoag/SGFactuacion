@@ -104,6 +104,10 @@ namespace SGFactuacion
             {
                 return;
             }
+            if (e.KeyChar == '.' && !TBPrecioP.Text.Contains("."))
+            {
+                return;
+            }
             e.Handled = true;
         }
 
@@ -113,6 +117,11 @@ namespace SGFactuacion
         }
 
         private void cbRazoncomercial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TBStockP_TextChanged(object sender, EventArgs e)
         {
 
         }

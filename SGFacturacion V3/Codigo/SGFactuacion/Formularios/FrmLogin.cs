@@ -29,11 +29,11 @@ namespace SGFactuacion.Formularios
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            //string usuario = txtbUsuario.Text.Trim();
-           // string contraseña = txtbContraseña.Text.Trim();
+           string usuario = txtbUsuario.Text.Trim();
+           string contraseña = txtbContraseña.Text.Trim();
 
-            string usuario = "jp";
-            string contraseña = "root";
+            //string usuario = "jp";
+            //string contraseña = "root";
 
 
 

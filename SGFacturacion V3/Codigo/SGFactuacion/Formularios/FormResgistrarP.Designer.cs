@@ -104,6 +104,7 @@
             this.TBStockP.Name = "TBStockP";
             this.TBStockP.Size = new System.Drawing.Size(184, 20);
             this.TBStockP.TabIndex = 7;
+            this.TBStockP.TextChanged += new System.EventHandler(this.TBStockP_TextChanged);
             this.TBStockP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBStockP_KeyPress);
             // 
             // BTRegistrarP
