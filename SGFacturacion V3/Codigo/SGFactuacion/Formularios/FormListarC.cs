@@ -13,34 +13,14 @@ namespace SGFactuacion
 {
     public partial class FormListarC : Form
     {
-        private List<csPersona> clientes;
-        private BindingSource bindingSource;
+        
+        private BindingSource bindingSource = new BindingSource();
         public FormListarC()
         {
             InitializeComponent();
-            try
-            {
-                CargarClientes();
-                bindingSource = new BindingSource();
-                bindingSource.DataSource = clientes;
-                dgvListarCliente.DataSource = bindingSource;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error al inicializar el formulario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
         }
-        private void CargarClientes()
-        {
-            try
-            {
-                clientes = csPersona.ListarPersona();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error al cargar los clientes: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+       
         private void FormListarC_Load(object sender, EventArgs e)
         {
 
@@ -53,12 +33,13 @@ namespace SGFactuacion
                 string filterText = txtBuscar.Text;
                 if (string.IsNullOrWhiteSpace(filterText))
                 {
-                    bindingSource.DataSource = clientes;
+                    bindingSource.DataSource = csPersona.ListarPersona();
                 }
                 else
                 {
                     bindingSource.DataSource = csPersona.BuscarPersona(filterText);
                 }
+                dgvListarCliente.DataSource = bindingSource;
             }
             catch (Exception ex)
             {

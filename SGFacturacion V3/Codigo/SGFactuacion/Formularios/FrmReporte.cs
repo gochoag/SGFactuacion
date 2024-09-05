@@ -105,7 +105,8 @@ namespace SGFactuacion
         {
             try
             {
-               
+                paneldeDAtos.Visible = false;
+                btnCerrarDGV.Enabled = false;
 
                 switch (cbTipoReporte.SelectedItem.ToString())
                 {

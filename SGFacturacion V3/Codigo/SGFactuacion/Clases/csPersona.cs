@@ -69,7 +69,17 @@ namespace SGFactuacion.Clases
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Error cliente: Cedula duplicada", "Error de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                MessageBox.Show(
+                   ex.Number == 2627 ? "Este registro ya existe en la base de datos." :
+                   ex.Number == 547 ? "No puedes eliminar este registro porque está relacionado con otros datos." :
+                   ex.Number == 2601 ? "El índice ya existe. Verifica los valores duplicados." :
+                   ex.Number == 53 ? "No se puede conectar al servidor. Verifica tu conexión de red." :
+                   $"Ocurrió un error de base de datos: {ex.Message}",
+                   "Error de SQL",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Error
+               );
                 registrado = false;
             }
             finally
@@ -80,6 +90,7 @@ namespace SGFactuacion.Clases
 
             return registrado;
         }
+       
         public bool EditarPersona()
         {
             try
@@ -102,7 +113,16 @@ namespace SGFactuacion.Clases
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("Error al editar el cliente: " + ex.Message);
+                MessageBox.Show(
+                  ex.Number == 2627 ? "Este registro ya existe en la base de datos." :
+                  ex.Number == 547 ? "No puedes eliminar este registro porque está relacionado con otros datos." :
+                  ex.Number == 2601 ? "El índice ya existe. Verifica los valores duplicados." :
+                  ex.Number == 53 ? "No se puede conectar al servidor. Verifica tu conexión de red." :
+                  $"Ocurrió un error de base de datos: {ex.Message}",
+                  "Error de SQL",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Error
+              );
                 return false;
             }
         }
@@ -137,7 +157,16 @@ namespace SGFactuacion.Clases
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("Error al listar los clientes: " + ex.Message);
+                MessageBox.Show(
+                  ex.Number == 2627 ? "Este registro ya existe en la base de datos." :
+                  ex.Number == 547 ? "No puedes eliminar este registro porque está relacionado con otros datos." :
+                  ex.Number == 2601 ? "El índice ya existe. Verifica los valores duplicados." :
+                  ex.Number == 53 ? "No se puede conectar al servidor. Verifica tu conexión de red." :
+                  $"Ocurrió un error de base de datos: {ex.Message}",
+                  "Error de SQL",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Error
+              );
             }
             return personas;
         }
@@ -172,7 +201,16 @@ namespace SGFactuacion.Clases
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("Error al buscar los clientes: " + ex.Message);
+                MessageBox.Show(
+                  ex.Number == 2627 ? "Este registro ya existe en la base de datos." :
+                  ex.Number == 547 ? "No puedes eliminar este registro porque está relacionado con otros datos." :
+                  ex.Number == 2601 ? "El índice ya existe. Verifica los valores duplicados." :
+                  ex.Number == 53 ? "No se puede conectar al servidor. Verifica tu conexión de red." :
+                  $"Ocurrió un error de base de datos: {ex.Message}",
+                  "Error de SQL",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Error
+              );
             }
             return personas;
         }
@@ -203,7 +241,16 @@ namespace SGFactuacion.Clases
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("Error al obtener el ID de la factura: " + ex.Message);
+                MessageBox.Show(
+                  ex.Number == 2627 ? "Este registro ya existe en la base de datos." :
+                  ex.Number == 547 ? "No puedes eliminar este registro porque está relacionado con otros datos." :
+                  ex.Number == 2601 ? "El índice ya existe. Verifica los valores duplicados." :
+                  ex.Number == 53 ? "No se puede conectar al servidor. Verifica tu conexión de red." :
+                  $"Ocurrió un error de base de datos: {ex.Message}",
+                  "Error de SQL",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Error
+              );
             }
 
             return idFactura;

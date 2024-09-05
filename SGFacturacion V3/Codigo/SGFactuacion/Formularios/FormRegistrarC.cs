@@ -60,10 +60,6 @@ namespace SGFactuacion
                             MessageBox.Show("Cliente registrado con éxito", "Registro de cliente", MessageBoxButtons.OK);
                             LimpiarControles();
                         }
-                        else
-                        {
-                            MessageBox.Show("No se pudo lograr el registro", "Registro de cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
                     }
                 }
                 else

@@ -142,7 +142,7 @@ namespace SGFactuacion
                 {
                     conn.Open();
                     da.Fill(ds);
-                    MessageBox.Show("Número de filas cargadas: " + ds.Tables[0].Rows.Count);
+                  
 
                     reportViewer1.LocalReport.DataSources.Clear();
                     reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DSFacturaDetails", ds.Tables[0]));
@@ -172,7 +172,7 @@ namespace SGFactuacion
                 {
                     conn.Open();
                     da.Fill(ds);
-                    MessageBox.Show("Número de filas cargadas: " + ds.Tables[0].Rows.Count);
+                  
 
                     reportViewer1.LocalReport.DataSources.Clear();
                     reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", ds.Tables[0]));

@@ -149,6 +149,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmListarProveer";
             this.Text = "FrmListarProveer";
+            this.Load += new System.EventHandler(this.FrmListarProveer_Load);
             this.PnlDgvEmpleado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarProveedores)).EndInit();
             this.PnDiseñoE.ResumeLayout(false);

@@ -21,8 +21,8 @@ namespace SGFactuacion.Clases
              conexion=new csConexion();
         }
 
-        public csEmpleados(long idEmpleado, string cedula, string nombre, string apellido, DateTime fechaNacimiento, string email, string usuario, string contraseña)
-            : base( cedula, nombre, apellido, fechaNacimiento, email)
+        public csEmpleados(long idEmpleado,long idPersona, string cedula, string nombre, string apellido, DateTime fechaNacimiento, string email, string usuario, string contraseña)
+            : base(idPersona, cedula, nombre, apellido, fechaNacimiento, email)
         {
             IdEmpleado = idEmpleado;
             Usuario = usuario;
@@ -79,7 +79,16 @@ namespace SGFactuacion.Clases
                 }
                 catch (SqlException ex)
                 {
-                    Console.WriteLine("Error al iniciar sesión: " + ex.Message);
+                    MessageBox.Show(
+                      ex.Number == 2627 ? "Este registro ya existe en la base de datos." :
+                      ex.Number == 547 ? "No puedes eliminar este registro porque está relacionado con otros datos." :
+                      ex.Number == 2601 ? "El índice ya existe. Verifica los valores duplicados." :
+                      ex.Number == 53 ? "No se puede conectar al servidor. Verifica tu conexión de red." :
+                      $"Ocurrió un error de base de datos: {ex.Message}",
+                      "Error de SQL",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Error
+                  );
                 }
 
                 return sesionIniciada;
@@ -110,7 +119,16 @@ namespace SGFactuacion.Clases
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Error empleados: " + ex.Message, "Error de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                  ex.Number == 2627 ? "Este registro ya existe en la base de datos." :
+                  ex.Number == 547 ? "No puedes eliminar este registro porque está relacionado con otros datos." :
+                  ex.Number == 2601 ? "El índice ya existe. Verifica los valores duplicados." :
+                  ex.Number == 53 ? "No se puede conectar al servidor. Verifica tu conexión de red." :
+                  $"Ocurrió un error de base de datos: {ex.Message}",
+                  "Error de SQL",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Error
+              );
                 registrado = false;
             }
             finally
@@ -145,7 +163,16 @@ namespace SGFactuacion.Clases
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("Error al editar el empleados: " + ex.Message);
+                MessageBox.Show(
+                   ex.Number == 2627 ? "Este registro ya existe en la base de datos." :
+                   ex.Number == 547 ? "No puedes eliminar este registro porque está relacionado con otros datos." :
+                   ex.Number == 2601 ? "El índice ya existe. Verifica los valores duplicados." :
+                   ex.Number == 53 ? "No se puede conectar al servidor. Verifica tu conexión de red." :
+                   $"Ocurrió un error de base de datos: {ex.Message}",
+                   "Error de SQL",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Error
+               );
                 return false;
             }
         }
@@ -166,6 +193,7 @@ namespace SGFactuacion.Clases
                         {
                             csEmpleados empleado = new csEmpleados(
                                 reader.GetInt64(reader.GetOrdinal("ID_Empleado")),
+                                reader.GetInt64(reader.GetOrdinal("ID_Persona")),
                                 reader.GetString(reader.GetOrdinal("Cedula")).Trim(),
                                 reader.GetString(reader.GetOrdinal("Nombre")).Trim(),
                                 reader.GetString(reader.GetOrdinal("Apellido")).Trim(),
@@ -183,7 +211,16 @@ namespace SGFactuacion.Clases
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("Error al listar los empleados: " + ex.Message);
+                MessageBox.Show(
+                   ex.Number == 2627 ? "Este registro ya existe en la base de datos." :
+                   ex.Number == 547 ? "No puedes eliminar este registro porque está relacionado con otros datos." :
+                   ex.Number == 2601 ? "El índice ya existe. Verifica los valores duplicados." :
+                   ex.Number == 53 ? "No se puede conectar al servidor. Verifica tu conexión de red." :
+                   $"Ocurrió un error de base de datos: {ex.Message}",
+                   "Error de SQL",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Error
+               );
             }
             return empleados;
         }
@@ -205,6 +242,7 @@ namespace SGFactuacion.Clases
                         {
                             csEmpleados empleado = new csEmpleados(
                                 reader.GetInt64(reader.GetOrdinal("ID_Empleado")),
+                                reader.GetInt64(reader.GetOrdinal("ID_Persona")),
                                 reader.GetString(reader.GetOrdinal("Cedula")).Trim(),
                                 reader.GetString(reader.GetOrdinal("Nombre")).Trim(),
                                 reader.GetString(reader.GetOrdinal("Apellido")).Trim(),
@@ -222,7 +260,16 @@ namespace SGFactuacion.Clases
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("Error al buscar los empleados: " + ex.Message);
+                MessageBox.Show(
+                  ex.Number == 2627 ? "Este registro ya existe en la base de datos." :
+                  ex.Number == 547 ? "No puedes eliminar este registro porque está relacionado con otros datos." :
+                  ex.Number == 2601 ? "El índice ya existe. Verifica los valores duplicados." :
+                  ex.Number == 53 ? "No se puede conectar al servidor. Verifica tu conexión de red." :
+                  $"Ocurrió un error de base de datos: {ex.Message}",
+                  "Error de SQL",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Error
+              );
             }
             return empleados;
         }
@@ -244,7 +291,7 @@ namespace SGFactuacion.Clases
                 {
                     conn.Open();
                     da.Fill(ds);
-                    MessageBox.Show("Número de filas cargadas: " + ds.Tables[0].Rows.Count);
+                  
 
                     reportViewer1.LocalReport.DataSources.Clear();
                     reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DSVentaempleado", ds.Tables[0]));

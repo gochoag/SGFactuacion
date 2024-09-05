@@ -12,37 +12,14 @@ namespace SGFactuacion
 {
     public partial class FormListarP : Form
     {
-        private List<csProducto> producto;
-        private BindingSource bindingSource;
+
+        private BindingSource bindingSource = new BindingSource();
         public FormListarP()
         {
             InitializeComponent();
-            try
-            {
-                CargarProductos();
-                bindingSource = new BindingSource();
-                bindingSource.DataSource = producto;
-                dgvListProductos.DataSource = bindingSource;
-               
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error al inicializar el formulario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+           
         }
-        private void CargarProductos()
-        {
-            try
-            {
-                producto = csProducto.ListarProductos();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error al cargar los productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+       
 
         private void FormListarP_Load(object sender, EventArgs e)
         {
@@ -56,13 +33,14 @@ namespace SGFactuacion
                 string filterText = txtBuscar.Text;
                 if (string.IsNullOrWhiteSpace(filterText))
                 {
-                    bindingSource.DataSource = producto;
-                    
+                    bindingSource.DataSource = csProducto.ListarProductos();
+
                 }
                 else
                 {
                     bindingSource.DataSource = csProducto.BuscarProductoPorNombre(filterText);
                 }
+                dgvListProductos.DataSource = bindingSource;
             }
             catch (Exception ex)
             {

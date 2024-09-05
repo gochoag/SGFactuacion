@@ -112,7 +112,7 @@
             this.BTRegistrarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BTRegistrarP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTRegistrarP.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BTRegistrarP.Location = new System.Drawing.Point(429, 417);
+            this.BTRegistrarP.Location = new System.Drawing.Point(434, 385);
             this.BTRegistrarP.Name = "BTRegistrarP";
             this.BTRegistrarP.Size = new System.Drawing.Size(99, 33);
             this.BTRegistrarP.TabIndex = 12;

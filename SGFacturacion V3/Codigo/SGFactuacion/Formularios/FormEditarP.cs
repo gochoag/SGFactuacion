@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGFactuacion.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,48 +14,39 @@ namespace SGFactuacion
 {
     public partial class FormEditarP : Form
     {
-        private List<csProducto> producto;
-        private BindingSource bindingSource;
+    
+        private BindingSource bindingSource = new BindingSource();
+        private BindingSource bindingSource2 = new BindingSource();
         public FormEditarP()
         {
             InitializeComponent();
-            try
-            {
-                CargarProductos();
-                bindingSource = new BindingSource();
-                bindingSource.DataSource = producto;
-                dgvEditProdu.DataSource = bindingSource;
-                TBPrecioP.KeyPress += TBPrecioP_KeyPress;
-                TBStockP.KeyPress += TBStockP_KeyPress;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error al inicializar el formulario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            bindingSource2.DataSource = CsProveedor.ListarProveedores();
+            cbRazoncomercial.DataSource = bindingSource2;
+            cbRazoncomercial.DisplayMember = "RazonComercial";
+            cbRazoncomercial.ValueMember = "ID_Proveedor";
+            cbRazoncomercial.SelectedIndex = -1;
 
         }
-        private void CargarProductos()
-        {
-            try
-            {
-                producto = csProducto.ListarProductos();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error al cargar los productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        
         public void LimpiarCampos()
         {
             TBNombreP.Text = string.Empty;
             TBPrecioP.Text = string.Empty;
             TBStockP.Text = string.Empty;
             txtBuscar.Text = string.Empty;
+            cbRazoncomercial.SelectedIndex = -1;
         }
-
+        private void Apagar_Prender()
+        {
+            TBNombreP.Enabled = TBNombreP.Enabled ? false : true;
+            TBPrecioP.Enabled = TBPrecioP.Enabled ? false : true;
+            TBStockP.Enabled = TBStockP.Enabled ? false : true;
+            cbRazoncomercial.Enabled = cbRazoncomercial.Enabled ? false : true;
+ 
+        }
         private void FormEditarP_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -64,12 +56,13 @@ namespace SGFactuacion
                 string filterText = txtBuscar.Text;
                 if (string.IsNullOrWhiteSpace(filterText))
                 {
-                    bindingSource.DataSource = producto;
+                    bindingSource.DataSource  = csProducto.ListarProductos();
                 }
                 else
                 {
                     bindingSource.DataSource = csProducto.BuscarProductoPorNombre(filterText);
                 }
+                dgvEditProdu.DataSource = bindingSource;
             }
             catch (Exception ex)
             {
@@ -90,6 +83,7 @@ namespace SGFactuacion
                     TBNombreP.Text = row.Cells["Nombre"].Value.ToString();
                     TBPrecioP.Text = row.Cells["PrecioUnitario"].Value.ToString();
                     TBStockP.Text = row.Cells["Stock"].Value.ToString();
+                    cbRazoncomercial.Text = (row.Cells["RazonComercial"].Value.ToString()); Apagar_Prender();
                 }
             }
             catch (Exception ex)
@@ -103,6 +97,7 @@ namespace SGFactuacion
         {
             try
             {
+                
                 string nombre = TBNombreP.Text;
                 string precioTexto = TBPrecioP.Text;
                 string stockTexto = TBStockP.Text;
@@ -123,13 +118,12 @@ namespace SGFactuacion
 
                 if (resultado == DialogResult.Yes)
                 {
-                    csProducto product = new csProducto(idProducto, nombre, preciouni, stock);
+                    csProducto product = new csProducto(idProducto,(long)cbRazoncomercial.SelectedValue, nombre, preciouni, stock);
                     if (product.EditarProducto())
                     {
                         MessageBox.Show("El producto ha sido editado con éxito", "Modificación de producto", MessageBoxButtons.OK);
                         LimpiarCampos();
-                        CargarProductos();
-                        bindingSource.DataSource = producto;
+                        Apagar_Prender();
                     }
                     else
                     {
@@ -175,6 +169,11 @@ namespace SGFactuacion
         }
 
         private void TBPrecioP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbRazoncomercial_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

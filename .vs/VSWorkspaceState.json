@@ -1,14 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\SGFacturacion V2",
     "\\SGFacturacion V2\\Codigo",
     "\\SGFacturacion V2\\Codigo\\SGFactuacion",
     "\\SGFacturacion V2\\Codigo\\SGFactuacion\\Clases",
     "\\SGFacturacion V2\\Codigo\\SGFactuacion\\Formularios",
     "\\SGFacturacion V2\\Codigo\\SGFactuacion\\Reportes",
-    "\\SGFacturacion V2\\Codigo\\Test2"
+    "\\SGFacturacion V2\\Codigo\\Test2",
+    "\\SGFacturacion V3",
+    "\\SGFacturacion V3\\Codigo"
   ],
-  "SelectedNode": "\\SGFacturacion V2\\Codigo\\SGFactuacion\\Formularios\\FormFacturarR.cs",
+  "SelectedNode": "\\SGFacturacion V3\\Codigo\\SGFactuacion.sln",
   "PreviewInSolutionExplorer": false
 }

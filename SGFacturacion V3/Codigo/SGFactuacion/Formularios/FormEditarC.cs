@@ -15,36 +15,12 @@ namespace SGFactuacion
 {
     public partial class FormEditarC : Form
     {
-        private List<csPersona> clientes;
-        private BindingSource bindingSource;
+        private BindingSource bindingSource = new BindingSource();
         public FormEditarC()
         {
-            InitializeComponent();
-            try
-            {
-                CargarClientes();
-                bindingSource = new BindingSource();
-                bindingSource.DataSource = clientes;
-                dgvListadoCliente.DataSource = bindingSource;
-                txtcedulaC.KeyPress += txtcedulaC_KeyPress;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error al inicializar el formulario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            InitializeComponent(); 
         }
-        private void CargarClientes()
-        {
-            try
-            {
-                clientes = csPersona.ListarPersona();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error al cargar los clientes: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
+       
         private void FormEditarC_Load(object sender, EventArgs e)
         {
 
@@ -57,12 +33,13 @@ namespace SGFactuacion
                 string filterText = txtBuscar.Text;
                 if (string.IsNullOrWhiteSpace(filterText))
                 {
-                    bindingSource.DataSource = clientes;
+                    bindingSource.DataSource  = csPersona.ListarPersona();
                 }
                 else
                 {
                     bindingSource.DataSource = csPersona.BuscarPersona(filterText);
                 }
+                dgvListadoCliente.DataSource = bindingSource;
             }
             catch (Exception ex)
             {
@@ -84,6 +61,7 @@ namespace SGFactuacion
                     txtApellidoC.Text = row.Cells["Apellido"].Value.ToString();
                     dtFechaC.Value = Convert.ToDateTime(row.Cells["FechaNacimiento"].Value);
                     txtEmailC.Text = row.Cells["Email"].Value.ToString();
+                    Apagar_Prender();
                 }
             }
             catch (Exception ex)
@@ -91,6 +69,14 @@ namespace SGFactuacion
                 MessageBox.Show($"Ocurrió un error al seleccionar un cliente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+        private void Apagar_Prender()
+        {
+            txtApellidoC.Enabled = txtApellidoC.Enabled ? false : true;
+            txtcedulaC.Enabled = txtcedulaC.Enabled ? false : true;
+            txtEmailC.Enabled = txtEmailC.Enabled ? false : true;
+            txtNombreC.Enabled = txtNombreC.Enabled ? false : true;
+            dtFechaC.Enabled = dtFechaC.Enabled ? false : true;
         }
         public void LimpiarControles()
         {
@@ -101,7 +87,7 @@ namespace SGFactuacion
                 txtNombreC.Text = string.Empty;
                 txtEmailC.Text = string.Empty;
                 dtFechaC.Value = new DateTime(2000, 9, 1);
-                txtBuscar.Text = String.Empty;
+                txtBuscar.Text = string.Empty;
                 txtEmailC.Text = string.Empty;
             }
             catch (Exception ex)
@@ -144,13 +130,9 @@ namespace SGFactuacion
                     {
                         MessageBox.Show("Cliente editado exitosamente.", "Edición exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiarControles();
-                        CargarClientes();
-                        bindingSource.DataSource = clientes;
+                        Apagar_Prender();
                     }
-                    else
-                    {
-                        MessageBox.Show("Ocurrió un error al editar el cliente", "Error de edición", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                  
                 }
             }
             catch (Exception ex)
@@ -193,6 +175,26 @@ namespace SGFactuacion
         }
 
         private void txtcedulaC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtApellidoC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmailC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombreC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtFechaC_ValueChanged(object sender, EventArgs e)
         {
 
         }

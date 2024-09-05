@@ -89,10 +89,7 @@ namespace SGFactuacion.Formularios
                         MessageBox.Show("Proveedor registrado con éxito", "Registro de proveedor", MessageBoxButtons.OK);
                         LimpiarControles();
                     }
-                    else
-                    {
-                        MessageBox.Show("No se pudo lograr el registro", "Registro de proveedor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    
                 }
             }
             catch (Exception ex)

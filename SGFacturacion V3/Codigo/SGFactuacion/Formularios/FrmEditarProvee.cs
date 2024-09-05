@@ -16,7 +16,7 @@ namespace SGFactuacion.Formularios
 {
     public partial class FrmEditarProvee : Form
     {
-        private List<CsProveedor> listaProveedor;
+
         private BindingSource bindingSource = new BindingSource();
         public FrmEditarProvee()
         {

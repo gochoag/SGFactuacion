@@ -13,36 +13,15 @@ namespace SGFactuacion.Formularios
 {
     public partial class FrmListarE : Form
     {
-        private List<csEmpleados> empleados;
-        private BindingSource bindingSource;
+     
+        private BindingSource bindingSource = new BindingSource();
         public FrmListarE()
         {
             InitializeComponent();
-            try
-            {
-                CargarEmpleados();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error al inicializar el formulario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
         }
 
-        private void CargarEmpleados()
-        {
-            try
-            {
-                empleados = csEmpleados.ListarEmpleados();
-                bindingSource = new BindingSource();
-                bindingSource.DataSource = empleados;
-                dgvListarEmpleado.DataSource = bindingSource;
-                dgvListarEmpleado.Columns["Contraseña"].Visible = false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error al cargar los empleados: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+       
 
 
         private void txtBuscarE_TextChanged(object sender, EventArgs e)
@@ -52,12 +31,13 @@ namespace SGFactuacion.Formularios
                 string filterText = txtBuscarE.Text;
                 if (string.IsNullOrWhiteSpace(filterText))
                 {
-                    bindingSource.DataSource = empleados;
+                    bindingSource.DataSource = csEmpleados.ListarEmpleados();
                 }
                 else
                 {
                     bindingSource.DataSource = csEmpleados.BuscarEmpleados(filterText);
                 }
+                dgvListarEmpleado.DataSource = bindingSource; dgvListarEmpleado.Columns["Contraseña"].Visible = false;
             }
             catch (Exception ex)
             {

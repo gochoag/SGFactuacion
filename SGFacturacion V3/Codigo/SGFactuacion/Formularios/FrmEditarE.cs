@@ -15,41 +15,16 @@ namespace SGFactuacion.Formularios
 {
     public partial class FrmEditarE : Form
     {
-        private List<csEmpleados> empleados;
-        private BindingSource bindingSource;
+       
+        private BindingSource bindingSource = new BindingSource();
         private long idEmpleadoSeleccionado;
 
         public FrmEditarE()
         {
             InitializeComponent();
-            try
-            {
-                CargarEmpleados();
-                dgvListadoEmpleado.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                bindingSource = new BindingSource();
-                bindingSource.DataSource = empleados;
-                dgvListadoEmpleado.DataSource = bindingSource;
-                dgvListadoEmpleado.Columns["Contraseña"].Visible = false;
-                txtcedulaE.KeyPress += txtcedulaE_KeyPress;
-                dgvListadoEmpleado.CellClick += dgvListadoEmpleado_CellClick;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error al inicializar el formulario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
         }
-        private void CargarEmpleados()
-        {
-            try
-            {
-                empleados = csEmpleados.ListarEmpleados();
-          
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error al cargar los empleados: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+       
 
         private void txtcedulaE_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -83,6 +58,7 @@ namespace SGFactuacion.Formularios
                     txtEmailE.Text = row.Cells["Email"].Value.ToString();
                     txtUser.Text = row.Cells["Usuario"].Value.ToString();
                     txtPassword.Text = row.Cells["Contraseña"].Value.ToString();
+                    Apagar_Prender();
                 }
             }
             catch (Exception ex)
@@ -138,9 +114,7 @@ namespace SGFactuacion.Formularios
                     {
                         MessageBox.Show("Empleado editado exitosamente.", "Edición exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiarControles();
-                        CargarEmpleados();
-
-                        bindingSource.DataSource = empleados;
+                        Apagar_Prender();
 
                     }
                     else
@@ -155,6 +129,16 @@ namespace SGFactuacion.Formularios
             }
 
         }
+        private void Apagar_Prender()
+        {
+            txtcedulaE.Enabled = txtcedulaE.Enabled ? false : true;
+            txtNombreE.Enabled = txtNombreE.Enabled ? false : true;
+            txtApellidoE.Enabled = txtApellidoE.Enabled ? false : true;
+            dtFechaE.Enabled = dtFechaE.Enabled ? false : true;
+            txtEmailE.Enabled = txtEmailE.Enabled ? false : true;
+            txtUser.Enabled = txtUser.Enabled ? false : true;
+            txtPassword.Enabled = txtPassword.Enabled ? false : true;
+        }
         private void LimpiarControles()
         {
             txtcedulaE.Text = string.Empty;
@@ -164,6 +148,7 @@ namespace SGFactuacion.Formularios
             txtEmailE.Text = string.Empty;
             txtUser.Text = string.Empty;
             txtPassword.Text = string.Empty;
+            txtBuscarE.Text = string.Empty;
         }
 
         private void txtBuscarE_TextChanged(object sender, EventArgs e)
@@ -173,12 +158,16 @@ namespace SGFactuacion.Formularios
                 string filterText = txtBuscarE.Text;
                 if (string.IsNullOrWhiteSpace(filterText))
                 {
-                    bindingSource.DataSource = empleados;
+                    bindingSource.DataSource = csEmpleados.ListarEmpleados();
                 }
                 else
                 {
                     bindingSource.DataSource = csEmpleados.BuscarEmpleados(filterText);
                 }
+                dgvListadoEmpleado.DataSource = bindingSource;
+                dgvListadoEmpleado.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvListadoEmpleado.Columns["Contraseña"].Visible = false;
+                dgvListadoEmpleado.Columns["IdPersona"].Visible = false;
             }
             catch (Exception ex)
             {

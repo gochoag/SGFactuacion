@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.lblSGFacturacion = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblIniciar = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.btnEntrar = new System.Windows.Forms.Button();
             this.imglistOjos = new System.Windows.Forms.ImageList(this.components);
             this.btnOjo = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +57,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(264, 288);
             this.panel1.TabIndex = 0;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(224, 6);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(33, 33);
+            this.btnCerrar.TabIndex = 10;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // lblSGFacturacion
             // 
@@ -87,7 +100,7 @@
             this.lblIniciar.Location = new System.Drawing.Point(102, 9);
             this.lblIniciar.Name = "lblIniciar";
             this.lblIniciar.Size = new System.Drawing.Size(167, 32);
-            this.lblIniciar.TabIndex = 1;
+            this.lblIniciar.TabIndex = 8;
             this.lblIniciar.Text = "Iniciar Sesión";
             // 
             // lblUsuario
@@ -106,6 +119,8 @@
             this.txtbUsuario.Name = "txtbUsuario";
             this.txtbUsuario.Size = new System.Drawing.Size(266, 20);
             this.txtbUsuario.TabIndex = 3;
+            this.txtbUsuario.Enter += new System.EventHandler(this.txtbUsuario_Enter);
+            this.txtbUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbUsuario_KeyPress);
             // 
             // lblcontra
             // 
@@ -124,6 +139,7 @@
             this.txtbContraseña.PasswordChar = '*';
             this.txtbContraseña.Size = new System.Drawing.Size(266, 20);
             this.txtbContraseña.TabIndex = 5;
+            this.txtbContraseña.Enter += new System.EventHandler(this.txtbContraseña_Enter);
             this.txtbContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbContraseña_KeyPress);
             // 
             // btnEntrar
@@ -135,10 +151,11 @@
             this.btnEntrar.Location = new System.Drawing.Point(125, 221);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(121, 38);
-            this.btnEntrar.TabIndex = 6;
+            this.btnEntrar.TabIndex = 4;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+            this.btnEntrar.Enter += new System.EventHandler(this.btnEntrar_Enter);
             // 
             // imglistOjos
             // 
@@ -157,18 +174,7 @@
             this.btnOjo.TabIndex = 8;
             this.btnOjo.UseVisualStyleBackColor = true;
             this.btnOjo.Click += new System.EventHandler(this.btnOjo_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(224, 6);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(33, 33);
-            this.btnCerrar.TabIndex = 2;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.btnOjo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnOjo_KeyPress);
             // 
             // FrmLogin
             // 
@@ -189,6 +195,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmLogin_KeyPress);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

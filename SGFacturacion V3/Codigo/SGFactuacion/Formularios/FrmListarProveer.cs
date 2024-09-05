@@ -13,7 +13,7 @@ namespace SGFactuacion.Formularios
 {
     public partial class FrmListarProveer : Form
     {
-        private List<CsProveedor> listaProveedor;
+       
         private BindingSource bindingSource = new BindingSource();
         public FrmListarProveer()
         {
@@ -42,6 +42,11 @@ namespace SGFactuacion.Formularios
                 MessageBox.Show(ex.Message); 
             }
             
+        }
+
+        private void FrmListarProveer_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

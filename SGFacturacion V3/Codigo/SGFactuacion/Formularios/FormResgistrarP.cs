@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGFactuacion.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,19 +15,15 @@ namespace SGFactuacion
 {
     public partial class FormResgistrarP : Form
     {
-
+        BindingSource bindingsource = new BindingSource();
         public FormResgistrarP()
         {
             InitializeComponent();
-            try
-            {
-                TBPrecioP.KeyPress += TBPrecioP_KeyPress;
-                TBStockP.KeyPress += TBStockP_KeyPress;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error al inicializar el formulario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            bindingsource.DataSource = CsProveedor.ListarProveedores();
+            cbRazoncomercial.DataSource = bindingsource;
+            cbRazoncomercial.DisplayMember = "RazonComercial";
+            cbRazoncomercial.ValueMember = "ID_Proveedor";
         }
         public void LimpiarCampos()
         {
@@ -50,7 +47,7 @@ namespace SGFactuacion
 
                     if (result == DialogResult.Yes)
                     {
-                        csProducto regisprodu = new csProducto(TBNombreP.Text, decimal.Parse(TBPrecioP.Text, CultureInfo.InvariantCulture), int.Parse(TBStockP.Text));
+                        csProducto regisprodu = new csProducto((long)cbRazoncomercial.SelectedValue,TBNombreP.Text, decimal.Parse(TBPrecioP.Text, CultureInfo.InvariantCulture), int.Parse(TBStockP.Text));
                         if (regisprodu.RegistrarProducto())
                         {
                             MessageBox.Show("El producto se ha registrado con éxito", "Registro de producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
