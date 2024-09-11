@@ -92,7 +92,7 @@ namespace Test2
         {
             // Arrange
             var credenciales = new csEmpleados.csCredenciales("johndoe", "password");
-            var empleado = new csEmpleados(1, "1234567890", "John", "Doe", DateTime.Now, "john@example.com");
+            var empleado = new csEmpleados(0,"5465879852", "John", "Doe", DateTime.Now, "john@example.com");
 
             // Act
             bool registrado = empleado.RegistrarEmpleado(credenciales);
@@ -106,7 +106,7 @@ namespace Test2
         {
             // Arrange
             var credenciales = new csEmpleados.csCredenciales("jp", "root");
-            var empleado = new csEmpleados(1, "1234567890", "John", "Doe", DateTime.Now, "john@example.com");
+            var empleado = new csEmpleados(1, "0102034567", "Johen", "Doe", DateTime.Now, "john@example.com");
 
             // Act
             bool editado = empleado.EditarEmpleado(credenciales);
@@ -156,7 +156,7 @@ namespace Test2
         public void BuscarEmpleados_ShouldReturnMatchingEmployees()
         {
             // Arrange
-            string busqueda = "John"; // Ejemplo de término de búsqueda
+            string busqueda = "jp"; // Ejemplo de término de búsqueda
 
             // Act
             List<csEmpleados> empleados = csEmpleados.BuscarEmpleados(busqueda);
@@ -174,7 +174,7 @@ namespace Test2
            public void RegistrarProducto_ShouldReturnTrue_WhenRegistrationIsSuccessful()
            {
                // Arrange
-               var producto = new csProducto("Producto de Prueba", 10.5m, 100);
+               var producto = new csProducto(1,"Producto de Prueba", 10.5m, 100);
 
                // Act
                bool registrado = producto.RegistrarProducto();
@@ -284,11 +284,11 @@ namespace Test2
                Assert.IsTrue(fechasFacturas.Count > 0);
            }
 
-           TestMethod]
+           [TestMethod]
            public void RegistrarProveedor_ShouldReturnTrue_WhenRegistrationIsSuccessful()
            {
                // Arrange
-               var proveedor = new CsProveedor("1234567890123", "Proveedor Prueba", "0987654321", "Calle Ejemplo 123", "proveedor@example.com");
+               var proveedor = new CsProveedor("1777567860123", "Proveedor Prueba", "0987654321", "Calle Ejemplo 123", "proveedor@example.com");
 
                // Act
                bool registrado = proveedor.RegistrarProveedor();
@@ -325,7 +325,7 @@ namespace Test2
            public void BuscarProveedor_ShouldReturnMatchingProviders()
            {
                // Arrange
-               string busqueda = "Proveedor";
+               string busqueda = "Bimbo";
 
                // Act
                List<CsProveedor> proveedores = CsProveedor.BuscarProveedor(busqueda);
